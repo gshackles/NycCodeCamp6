@@ -105,6 +105,7 @@
     </Compile>
     <Compile Include="SessionListByTrackViewController.cs" />
     <Compile Include="SessionListViewController.cs" />
+    <Compile Include="ListControllerBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />

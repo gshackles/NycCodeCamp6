@@ -5,7 +5,7 @@ using MonoTouch.UIKit;
 
 namespace NycCodeCamp.MonoTouchApp
 {
-	public class SpeakerListViewController : UITableViewController
+	public class SpeakerListViewController : ListControllerBase
 	{
 		private IList<Speaker> _speakers;
 		
@@ -46,6 +46,7 @@ namespace NycCodeCamp.MonoTouchApp
 				var speaker = _speakers[indexPath.Row];
 				
 				cell.TextLabel.Text = speaker.Name;
+				cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 				
 				return cell;
 			}
@@ -55,6 +56,11 @@ namespace NycCodeCamp.MonoTouchApp
 				var selectedSpeaker = _speakers[indexPath.Row];
 				_hostController.NavigationController.PushViewController(
 					new SpeakerViewController(selectedSpeaker), true);
+			}
+			
+			public override float GetHeightForRow(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+			{
+				return 55;
 			}
 		}
 	}

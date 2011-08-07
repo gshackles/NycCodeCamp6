@@ -6,8 +6,8 @@
 			<Title>Test Session 1</Title>
 			<Abstract>This session is gonna be awesome</Abstract>
 			<Speaker>gshackles</Speaker>
-			<StartDate>2011-07-23T10:15:00</StartDate>
-			<EndDate>2011-07-23T11:15:00</EndDate>
+			<StartDate>2011-07-23T14:15:00</StartDate>
+			<EndDate>2011-07-23T15:15:00</EndDate>
 			<Track>Awesome Track</Track>
 		</Session>
 		<Session>
@@ -15,8 +15,8 @@
 			<Title>Test Session 2</Title>
 			<Abstract>This session is gonna be even more awesome</Abstract>
 			<Speaker>gshackles2</Speaker>
-			<StartDate>2011-07-23T12:15:00</StartDate>
-			<EndDate>2011-07-23T13:15:00</EndDate>
+			<StartDate>2011-07-23T16:15:00</StartDate>
+			<EndDate>2011-07-23T17:15:00</EndDate>
 			<Track>Awesomer Track</Track>
 		</Session>
 	</Sessions>

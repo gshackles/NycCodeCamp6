@@ -3,11 +3,17 @@ using System.Linq;
 using MonoTouch.UIKit;
 using CodeCamp.Core.Entities;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace NycCodeCamp.MonoTouchApp
 {
-	public class SessionListViewController : UITableViewController
+	public class SessionListViewController : ListControllerBase
 	{
+		public SessionListViewController ()
+			: base(UITableViewStyle.Plain)
+		{
+		}
+		
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad ();
@@ -24,7 +30,6 @@ namespace NycCodeCamp.MonoTouchApp
 			private Dictionary<string, List<Session>> _sessions;
 			private SessionListViewController _hostController;
 			private const string SESSION_CELL = "sessionCell";
-			
 			
 			public SessionsByTrackTableViewSource (SessionListViewController hostController, IList<Session> sessions)
 			{
@@ -60,10 +65,16 @@ namespace NycCodeCamp.MonoTouchApp
 							?? new UITableViewCell(UITableViewCellStyle.Subtitle, SESSION_CELL);
 				var session = getSession(indexPath);
 				
+				cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 				cell.TextLabel.Text = session.Title;
 				cell.DetailTextLabel.Text = session.Speaker.Name;
 				
 				return cell;
+			}
+			
+			public override float GetHeightForRow(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+			{
+				return 65;
 			}
 			
 			public override string TitleForHeader(UITableView tableView, int section)

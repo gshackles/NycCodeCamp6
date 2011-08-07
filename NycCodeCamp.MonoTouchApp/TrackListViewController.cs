@@ -4,7 +4,7 @@ using MonoTouch.UIKit;
 
 namespace NycCodeCamp.MonoTouchApp
 {
-	public class TrackListViewController : UITableViewController
+	public class TrackListViewController : ListControllerBase
 	{
 		private IList<string> _tracks;
 		
@@ -44,6 +44,7 @@ namespace NycCodeCamp.MonoTouchApp
 							?? new UITableViewCell(UITableViewCellStyle.Default, TRACK_CELL);
 				
 				cell.TextLabel.Text = _tracks[indexPath.Row];
+				cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 				
 				return cell;
 			}
@@ -52,6 +53,11 @@ namespace NycCodeCamp.MonoTouchApp
 			{
 				_hostController.NavigationController.PushViewController(
 					new SessionListByTrackViewController(_tracks[indexPath.Row]), true);
+			}
+			
+			public override float GetHeightForRow(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
+			{
+				return 55;
 			}
 		}
 	}
