@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeCamp>
+	<Sessions>
+		<Session>
+			<Key>test1</Key>
+			<Title>Test Session 1</Title>
+			<Abstract>This session is gonna be awesome</Abstract>
+			<Speaker>gshackles</Speaker>
+			<StartDate>2011-07-23T10:15:00</StartDate>
+			<EndDate>2011-07-23T11:15:00</EndDate>
+			<Track>Awesome Track</Track>
+		</Session>
+		<Session>
+			<Key>test2</Key>
+			<Title>Test Session 2</Title>
+			<Abstract>This session is gonna be even more awesome</Abstract>
+			<Speaker>gshackles2</Speaker>
+			<StartDate>2011-07-23T12:15:00</StartDate>
+			<EndDate>2011-07-23T13:15:00</EndDate>
+			<Track>Awesomer Track</Track>
+		</Session>
+	</Sessions>
+	<Speakers>
+		<Speaker>
+			<Key>gshackles</Key>
+			<Name>Greg Shackles</Name>
+			<Website>gregshackles.com</Website>
+			<Email>greg@gregshackles.com</Email>
+			<Bio>Greg is awesome</Bio>
+		</Speaker>
+		<Speaker>
+			<Key>gshackles2</Key>
+			<Name>Greg Shackles 2</Name>
+			<Website>gregshackles2.com</Website>
+			<Email>greg2@gregshackles.com</Email>
+			<Bio>Greg2 is awesome</Bio>
+		</Speaker>
+	</Speakers>
+</CodeCamp>

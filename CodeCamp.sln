@@ -7,10 +7,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCamp.Core.MonoTouch", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCamp.Core.MonoAndroid", "CodeCamp.Core.MonoAndroid\CodeCamp.Core.MonoAndroid.csproj", "{D8BE3E81-EC9A-40A3-BF00-821B5791AC34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NycCodeCamp.MonoTouchApp", "NycCodeCamp.MonoTouchApp\NycCodeCamp.MonoTouchApp.csproj", "{D78D167A-FBCA-465D-AC08-2E489B3BEF33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B76DD2C9-0780-462E-83EE-1310D2F8F30B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -21,13 +27,25 @@ Global
 		{C38A563E-A3E4-461E-954C-875557FDDD83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C38A563E-A3E4-461E-954C-875557FDDD83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C38A563E-A3E4-461E-954C-875557FDDD83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Debug|iPhone.Build.0 = Debug|iPhone
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|iPhone.ActiveCfg = Release|iPhone
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|iPhone.Build.0 = Release|iPhone
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{D8BE3E81-EC9A-40A3-BF00-821B5791AC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D8BE3E81-EC9A-40A3-BF00-821B5791AC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8BE3E81-EC9A-40A3-BF00-821B5791AC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8BE3E81-EC9A-40A3-BF00-821B5791AC34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = CodeCamp.Core\CodeCamp.Core.csproj
+		StartupItem = NycCodeCamp.MonoTouchApp\NycCodeCamp.MonoTouchApp.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

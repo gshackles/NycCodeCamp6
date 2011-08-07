@@ -3,3 +3,5 @@
 obj/
 *.suo
 bin/
+
+.DS_Store
