@@ -44,7 +44,6 @@ namespace NycCodeCamp.MonoTouchApp
 		{
 			base.ViewDidLoad ();
 			
-			Title = "Speaker Details";
 			SpeakerName.Text = _speaker.Name;
 			SpeakerBio.Text = _speaker.Bio;
 		}

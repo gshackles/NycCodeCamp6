@@ -48,7 +48,9 @@ namespace NycCodeCamp.MonoTouchApp
 				var session = _sessions[indexPath.Row];
 				
 				cell.TextLabel.Text = session.Title;
-				cell.DetailTextLabel.Text = session.Speaker.Name;
+				cell.DetailTextLabel.Text = string.Format("{0} - {1}",
+														  session.Starts.ToLocalTime().ToShortTimeString(),
+														  session.Ends.ToLocalTime().ToShortTimeString());
 				cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 				
 				return cell;

@@ -106,6 +106,7 @@
     <Compile Include="SessionListByTrackViewController.cs" />
     <Compile Include="SessionListViewController.cs" />
     <Compile Include="ListControllerBase.cs" />
+    <Compile Include="CampOverviewViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />
@@ -127,6 +128,8 @@
     <Content Include="Content\Images\todo-list.png" />
     <Content Include="Content\Images\todo-list%402x.png" />
     <Content Include="Content\Images\megaphone%402x.png" />
+    <Content Include="Content\Images\home1.png" />
+    <Content Include="Content\Images\home1%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />

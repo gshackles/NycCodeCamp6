@@ -45,7 +45,6 @@ namespace NycCodeCamp.MonoTouchApp
 		{
 			base.ViewDidLoad ();
 			
-			Title = "Session Details";
 			SessionTitle.Text = _session.Title;
 			SpeakerName.Text = _session.Speaker.Name;
 			SessionTime.Text = _session.Starts.ToLocalTime().ToShortTimeString();
