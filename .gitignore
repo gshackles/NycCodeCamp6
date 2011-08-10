@@ -7,3 +7,13 @@ bin/
 *.pidb
 
 CodeCamp.Core.MonoTouch/CodeCamp.Core.MonoTouch.pidb
+
+NycCodeCamp.MonoTouchApp/NycCodeCamp.MonoTouchApp.pidb
+
+CodeCamp.Core.MonoAndroid/CodeCamp.Core.MonoAndroid.pidb
+
+CodeCamp.Core.MonoTouch/CodeCamp.Core.MonoTouch.pidb
+
+CodeCamp.Core/CodeCamp.Core.pidb
+
+NycCodeCamp.MonoTouchApp/NycCodeCamp.MonoTouchApp.pidb
