@@ -59,16 +59,15 @@
               <double key="NSSize">24</double>
               <int key="NSfFlags">16</int>
             </object>
-            <object class="NSColor" key="IBUITextColor" id="85300506">
-              <int key="NSColorSpace">1</int>
-              <bytes key="NSRGB">MCAwIDAAA</bytes>
-            </object>
-            <object class="NSColor" key="IBUIHighlightedColor" id="391721480">
+            <object class="NSColor" key="IBUITextColor" id="391721480">
               <int key="NSColorSpace">3</int>
               <bytes key="NSWhite">MQA</bytes>
             </object>
+            <reference key="IBUIHighlightedColor" ref="391721480"/>
             <int key="IBUIBaselineAdjustment">1</int>
+            <bool key="IBUIAdjustsFontSizeToFit">NO</bool>
             <float key="IBUIMinimumFontSize">10</float>
+            <int key="IBUINumberOfLines">0</int>
             <int key="IBUILineBreakMode">0</int>
           </object>
           <object class="IBUILabel" id="598889520">
@@ -88,20 +87,20 @@
               <double key="NSSize">17</double>
               <int key="NSfFlags">16</int>
             </object>
-            <reference key="IBUITextColor" ref="85300506"/>
+            <reference key="IBUITextColor" ref="391721480"/>
             <reference key="IBUIHighlightedColor" ref="391721480"/>
             <int key="IBUIBaselineAdjustment">1</int>
+            <bool key="IBUIAdjustsFontSizeToFit">NO</bool>
             <float key="IBUIMinimumFontSize">10</float>
+            <int key="IBUINumberOfLines">0</int>
+            <int key="IBUILineBreakMode">0</int>
           </object>
         </object>
         <string key="NSFrameSize">{320, 460}</string>
         <reference key="NSSuperview"/>
         <object class="NSColor" key="IBUIBackgroundColor">
           <int key="NSColorSpace">3</int>
-          <bytes key="NSWhite">MQA</bytes>
-          <object class="NSColorSpace" key="NSCustomColorSpace">
-            <int key="NSID">2</int>
-          </object>
+          <bytes key="NSWhite">MCAwAA</bytes>
         </object>
         <object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
         <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -192,7 +191,7 @@
           <bool key="EncodedWithXMLCoder">YES</bool>
           <string>SpeakerViewController</string>
           <string>UIResponder</string>
-          <string>{{357, 275}, {320, 480}}</string>
+          <string>{{484, 204}, {320, 480}}</string>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

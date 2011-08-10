@@ -47,6 +47,7 @@ namespace NycCodeCamp.MonoTouchApp
 				
 				cell.TextLabel.Text = speaker.Name;
 				cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
+				cell.BackgroundView = new UIView(cell.Frame) { BackgroundColor = UIColor.White };
 				
 				return cell;
 			}
@@ -54,8 +55,10 @@ namespace NycCodeCamp.MonoTouchApp
 			public override void RowSelected(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 			{
 				var selectedSpeaker = _speakers[indexPath.Row];
+				var speakerController = new SpeakerViewController(selectedSpeaker);
+				
 				_hostController.NavigationController.PushViewController(
-					new SpeakerViewController(selectedSpeaker), true);
+					speakerController, true);
 			}
 			
 			public override float GetHeightForRow(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)

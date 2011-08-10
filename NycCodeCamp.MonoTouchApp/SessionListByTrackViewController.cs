@@ -52,6 +52,7 @@ namespace NycCodeCamp.MonoTouchApp
 														  session.Starts.ToLocalTime().ToShortTimeString(),
 														  session.Ends.ToLocalTime().ToShortTimeString());
 				cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
+				cell.BackgroundView = new UIView(cell.Frame) { BackgroundColor = UIColor.White };
 				
 				return cell;
 			}

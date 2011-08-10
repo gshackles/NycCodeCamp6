@@ -31,6 +31,7 @@ namespace NycCodeCamp.MonoTouchApp
 			Initialize ();
 			
 			_session = session;
+			HidesBottomBarWhenPushed = true;
 		}
 		
 		void Initialize()
@@ -46,9 +47,31 @@ namespace NycCodeCamp.MonoTouchApp
 			base.ViewDidLoad ();
 			
 			SessionTitle.Text = _session.Title;
-			SpeakerName.Text = _session.Speaker.Name;
-			SessionTime.Text = _session.Starts.ToLocalTime().ToShortTimeString();
+			SpeakerName.SetTitle(_session.Speaker.Name, UIControlState.Normal);
+			SessionTime.Text = string.Format("{0} - {1}",
+											 _session.Starts.ToLocalTime().ToShortTimeString(),
+											 _session.Ends.ToLocalTime().ToShortTimeString());
 			SessionAbstract.Text = _session.Abstract;
+			
+			SpeakerName.TouchUpInside += delegate 
+			{
+				NavigationController.PushViewController(
+					new SpeakerViewController(_session.Speaker), true);
+			};
+		}
+		
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear (animated);
+			
+			TabBarController.TabBar.Hidden = true;
+		}
+		
+		public override void ViewWillDisappear(bool animated)
+		{
+			base.ViewWillDisappear (animated);
+			
+			TabBarController.TabBar.Hidden = false;
 		}
 	}
 }

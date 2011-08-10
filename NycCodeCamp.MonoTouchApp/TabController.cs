@@ -45,6 +45,7 @@ namespace NycCodeCamp.MonoTouchApp
 				_tracksController,
 				_speakersController
 			};
+			
 			SelectedIndex = 0;
 		}
 	}

@@ -3,6 +3,7 @@ using System.Linq;
 using CodeCamp.Core.Entities;
 using System.Collections.Generic;
 using MonoTouch.UIKit;
+using System.Drawing;
 
 namespace NycCodeCamp.MonoTouchApp
 {
@@ -21,6 +22,7 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			NavigationItem.Title = "NYC Code Camp";
 			TableView.Source = new OverviewTableViewSource(this, allSessions);
+			TableView.BackgroundColor = UIColor.Clear;
 		}
 		
 		private class OverviewTableViewSource : UITableViewSource
@@ -104,7 +106,32 @@ namespace NycCodeCamp.MonoTouchApp
 						: 55;
 			}
 			
-			public override string TitleForHeader(UITableView tableView, int section)
+			public override float GetHeightForHeader(UITableView tableView, int section)
+			{
+				return 50;
+			}
+			
+			public override UIView GetViewForHeader(UITableView tableView, int section)
+			{
+				string headerText = getTitleForSectionHeader(section);
+				
+				if (string.IsNullOrEmpty(headerText))
+					return null;
+				
+				var headerView = new UIView(new RectangleF(0, 0, tableView.Bounds.Size.Width, 50));
+				var headerLabel = new UILabel(new RectangleF(15, 0, headerView.Frame.Width - 15, headerView.Frame.Height));
+				
+				headerLabel.Text = headerText;
+				headerLabel.BackgroundColor = UIColor.Clear;
+				headerLabel.TextColor = UIColor.White;
+				headerLabel.ShadowColor = UIColor.LightGray;
+				
+				headerView.AddSubview(headerLabel);
+				
+				return headerView;
+			}
+			
+			private string getTitleForSectionHeader(int section)
 			{
 				if (section < _upcomingSlots.Keys.Count)
 				{

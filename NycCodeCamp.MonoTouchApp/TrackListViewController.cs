@@ -45,6 +45,7 @@ namespace NycCodeCamp.MonoTouchApp
 				
 				cell.TextLabel.Text = _tracks[indexPath.Row];
 				cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
+				cell.BackgroundView = new UIView(cell.Frame) { BackgroundColor = UIColor.White };
 				
 				return cell;
 			}

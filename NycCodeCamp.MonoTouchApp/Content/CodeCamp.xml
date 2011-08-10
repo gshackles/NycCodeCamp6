@@ -24,14 +24,14 @@
 		<Speaker>
 			<Key>gshackles</Key>
 			<Name>Greg Shackles</Name>
-			<Website>gregshackles.com</Website>
+			<Website>http://gregshackles.com</Website>
 			<Email>greg@gregshackles.com</Email>
 			<Bio>Greg is awesome</Bio>
 		</Speaker>
 		<Speaker>
 			<Key>gshackles2</Key>
 			<Name>Greg Shackles 2</Name>
-			<Website>gregshackles2.com</Website>
+			<Website>http://gregshackles2.com</Website>
 			<Email>greg2@gregshackles.com</Email>
 			<Bio>Greg2 is awesome</Bio>
 		</Speaker>

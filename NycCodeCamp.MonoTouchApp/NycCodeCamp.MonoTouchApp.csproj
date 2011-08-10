@@ -130,6 +130,12 @@
     <Content Include="Content\Images\megaphone%402x.png" />
     <Content Include="Content\Images\home1.png" />
     <Content Include="Content\Images\home1%402x.png" />
+    <Content Include="Content\Images\background.png" />
+    <Content Include="Content\Images\background%402x.png" />
+    <Content Include="Content\Images\email.png" />
+    <Content Include="Content\Images\email%402x.png" />
+    <Content Include="Content\Images\globe.png" />
+    <Content Include="Content\Images\globe%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />

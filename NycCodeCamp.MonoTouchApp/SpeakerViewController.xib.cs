@@ -4,6 +4,7 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using CodeCamp.Core.Entities;
+using MonoTouch.MessageUI;
 
 namespace NycCodeCamp.MonoTouchApp
 {
@@ -30,6 +31,7 @@ namespace NycCodeCamp.MonoTouchApp
 			Initialize ();
 			
 			_speaker = speaker;
+			HidesBottomBarWhenPushed = true;
 		}
 		
 		void Initialize()
@@ -39,13 +41,77 @@ namespace NycCodeCamp.MonoTouchApp
 		#endregion
 		
 		private Speaker _speaker;
+		private MFMailComposeViewController _mailController;
 		
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad ();
-			
+		
 			SpeakerName.Text = _speaker.Name;
 			SpeakerBio.Text = _speaker.Bio;
+			
+			var toolbarButtons = new List<UIBarButtonItem>();
+			
+			if (!string.IsNullOrEmpty(_speaker.Email))
+			{
+				var emailButton = 
+					new UIBarButtonItem(UIImage.FromFile("Content/Images/email.png"), 
+										UIBarButtonItemStyle.Plain, new EventHandler(sendEmail));
+				
+				emailButton.Enabled = MFMailComposeViewController.CanSendMail;
+				
+				toolbarButtons.Add(emailButton);
+			}
+			
+			if (!string.IsNullOrEmpty(_speaker.Website))
+			{
+				var url = new NSUrl(_speaker.Website);
+				
+				var websiteButton =
+					new UIBarButtonItem(UIImage.FromFile("Content/Images/globe.png"),
+										UIBarButtonItemStyle.Plain, 
+										(s, e) => UIApplication.SharedApplication.OpenUrl(url));
+				
+				websiteButton.Enabled = UIApplication.SharedApplication.CanOpenUrl(url);
+				
+				toolbarButtons.Add(websiteButton);
+			}
+			
+			ToolbarItems = toolbarButtons.ToArray();
+			NavigationController.Toolbar.BarStyle = UIBarStyle.Black;
+			NavigationController.Toolbar.Translucent = true;
+		}
+		
+		private void sendEmail(object sender, EventArgs args) 
+		{
+			_mailController = new MFMailComposeViewController();
+			_mailController.NavigationBar.TintColor = UIColor.Black;
+			_mailController.SetToRecipients(new string[] { _speaker.Email });
+			_mailController.Finished += delegate(object mailSender, MFComposeResultEventArgs mailArgs) {
+				if (mailArgs.Result == MFMailComposeResult.Failed)
+				{
+					new UIAlertView("Send Mail Failure", "Unable to send email, please try again later",
+									null, "Ok", null).Show();
+				}
+				
+				NavigationController.DismissModalViewControllerAnimated(true);
+			};
+
+			NavigationController.PresentModalViewController(_mailController, true);
+		}
+		
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear (animated);
+			
+			NavigationController.SetToolbarHidden(ToolbarItems.Count() == 0, true);
+		}
+		
+		public override void ViewWillDisappear(bool animated)
+		{
+			base.ViewWillDisappear (animated);
+			
+			NavigationController.SetToolbarHidden(true, true);
 		}
 	}
 }

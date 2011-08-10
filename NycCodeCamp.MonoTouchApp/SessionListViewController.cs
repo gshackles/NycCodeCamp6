@@ -10,7 +10,7 @@ namespace NycCodeCamp.MonoTouchApp
 	public class SessionListViewController : ListControllerBase
 	{
 		public SessionListViewController ()
-			: base(UITableViewStyle.Plain)
+			: base(UITableViewStyle.Grouped)
 		{
 		}
 		
@@ -77,9 +77,24 @@ namespace NycCodeCamp.MonoTouchApp
 				return 65;
 			}
 			
-			public override string TitleForHeader(UITableView tableView, int section)
+			public override float GetHeightForHeader(UITableView tableView, int section)
 			{
-				return _sessions.Keys.ElementAt(section);
+				return 50;
+			}
+			
+			public override UIView GetViewForHeader(UITableView tableView, int section)
+			{
+				var headerView = new UIView(new RectangleF(0, 0, tableView.Bounds.Size.Width, 50));
+				var headerLabel = new UILabel(new RectangleF(15, 0, headerView.Frame.Width - 15, headerView.Frame.Height));
+				
+				headerLabel.Text = _sessions.Keys.ElementAt(section);
+				headerLabel.BackgroundColor = UIColor.Clear;
+				headerLabel.TextColor = UIColor.White;
+				headerLabel.ShadowColor = UIColor.LightGray;
+				
+				headerView.AddSubview(headerLabel);
+				
+				return headerView;
 			}
 			
 			public override void RowSelected(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)

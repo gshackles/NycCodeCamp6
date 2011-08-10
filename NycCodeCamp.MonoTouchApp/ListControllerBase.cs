@@ -16,6 +16,7 @@ namespace NycCodeCamp.MonoTouchApp
 			base.ViewDidLoad ();
 			
 			TableView.TableFooterView = new UIView(RectangleF.Empty);
+			TableView.BackgroundColor = UIColor.Clear;
 		}
 	}
 }

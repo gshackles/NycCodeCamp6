@@ -27,7 +27,14 @@ namespace NycCodeCamp.MonoTouchApp
 			CodeCampRepository = new XmlCodeCampRepository(getCodeCampXml());
 			
 			_tabController = new TabController();
-			window.AddSubview(_tabController.View);
+			_tabController.View.BackgroundColor = UIColor.Clear;
+			
+			var backgroundImage = new UIImageView(UIImage.FromFile("Content/Images/background.png"));
+			backgroundImage.UserInteractionEnabled = true;
+			backgroundImage.Frame = new System.Drawing.RectangleF(0, 0, window.Frame.Width, window.Frame.Height);
+			backgroundImage.AddSubview(_tabController.View);
+			
+			window.AddSubview(backgroundImage);
 			
 			window.MakeKeyAndVisible ();
 	

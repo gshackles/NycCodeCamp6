@@ -19,11 +19,11 @@ namespace NycCodeCamp.MonoTouchApp {
 		
 		private MonoTouch.UIKit.UILabel __mt_SessionTitle;
 		
-		private MonoTouch.UIKit.UILabel __mt_SpeakerName;
-		
 		private MonoTouch.UIKit.UILabel __mt_SessionTime;
 		
 		private MonoTouch.UIKit.UILabel __mt_SessionAbstract;
+		
+		private MonoTouch.UIKit.UIButton __mt_SpeakerName;
 		
 		#pragma warning disable 0169
 		[MonoTouch.Foundation.Connect("view")]
@@ -50,18 +50,6 @@ namespace NycCodeCamp.MonoTouchApp {
 			}
 		}
 		
-		[MonoTouch.Foundation.Connect("SpeakerName")]
-		private MonoTouch.UIKit.UILabel SpeakerName {
-			get {
-				this.__mt_SpeakerName = ((MonoTouch.UIKit.UILabel)(this.GetNativeField("SpeakerName")));
-				return this.__mt_SpeakerName;
-			}
-			set {
-				this.__mt_SpeakerName = value;
-				this.SetNativeField("SpeakerName", value);
-			}
-		}
-		
 		[MonoTouch.Foundation.Connect("SessionTime")]
 		private MonoTouch.UIKit.UILabel SessionTime {
 			get {
@@ -83,6 +71,18 @@ namespace NycCodeCamp.MonoTouchApp {
 			set {
 				this.__mt_SessionAbstract = value;
 				this.SetNativeField("SessionAbstract", value);
+			}
+		}
+		
+		[MonoTouch.Foundation.Connect("SpeakerName")]
+		private MonoTouch.UIKit.UIButton SpeakerName {
+			get {
+				this.__mt_SpeakerName = ((MonoTouch.UIKit.UIButton)(this.GetNativeField("SpeakerName")));
+				return this.__mt_SpeakerName;
+			}
+			set {
+				this.__mt_SpeakerName = value;
+				this.SetNativeField("SpeakerName", value);
 			}
 		}
 	}
