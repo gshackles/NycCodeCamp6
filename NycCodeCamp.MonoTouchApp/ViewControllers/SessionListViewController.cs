@@ -18,7 +18,7 @@ namespace NycCodeCamp.MonoTouchApp
 		{
 			base.ViewDidLoad ();
 			
-			Title = "Sessions";
+			Title = "Schedule";
 			
 			var allSessions = AppDelegate.CodeCampRepository.GetSessions();
 			

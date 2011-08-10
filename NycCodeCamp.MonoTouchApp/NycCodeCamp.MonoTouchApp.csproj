@@ -107,6 +107,7 @@
     <Compile Include="ViewControllers\TabController.cs" />
     <Compile Include="ViewControllers\ListControllerBase.cs" />
     <Compile Include="ViewControllers\SessionListByTrackViewController.cs" />
+    <Compile Include="ViewControllers\CodeCampNavigationController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />
