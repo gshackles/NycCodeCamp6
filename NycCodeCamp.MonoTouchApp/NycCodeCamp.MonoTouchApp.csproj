@@ -87,31 +87,31 @@
     <Compile Include="MainWindow.xib.designer.cs">
       <DependentUpon>MainWindow.xib</DependentUpon>
     </Compile>
-    <Compile Include="TabController.cs" />
-    <Compile Include="SessionViewController.xib.cs">
-      <DependentUpon>SessionViewController.xib</DependentUpon>
-    </Compile>
-    <Compile Include="SessionViewController.xib.designer.cs">
-      <DependentUpon>SessionViewController.xib</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs" />
-    <Compile Include="TrackListViewController.cs" />
-    <Compile Include="SpeakerListViewController.cs" />
-    <Compile Include="SpeakerViewController.xib.cs">
+    <Compile Include="ViewControllers\CampOverviewViewController.cs" />
+    <Compile Include="ViewControllers\SessionViewController.xib.cs">
+      <DependentUpon>SessionViewController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SessionViewController.xib.designer.cs">
+      <DependentUpon>SessionViewController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SpeakerViewController.xib.cs">
       <DependentUpon>SpeakerViewController.xib</DependentUpon>
     </Compile>
-    <Compile Include="SpeakerViewController.xib.designer.cs">
+    <Compile Include="ViewControllers\SpeakerViewController.xib.designer.cs">
       <DependentUpon>SpeakerViewController.xib</DependentUpon>
     </Compile>
-    <Compile Include="SessionListByTrackViewController.cs" />
-    <Compile Include="SessionListViewController.cs" />
-    <Compile Include="ListControllerBase.cs" />
-    <Compile Include="CampOverviewViewController.cs" />
+    <Compile Include="ViewControllers\TrackListViewController.cs" />
+    <Compile Include="ViewControllers\SpeakerListViewController.cs" />
+    <Compile Include="ViewControllers\SessionListViewController.cs" />
+    <Compile Include="ViewControllers\TabController.cs" />
+    <Compile Include="ViewControllers\ListControllerBase.cs" />
+    <Compile Include="ViewControllers\SessionListByTrackViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />
-    <Page Include="SessionViewController.xib" />
-    <Page Include="SpeakerViewController.xib" />
+    <Page Include="ViewControllers\SessionViewController.xib" />
+    <Page Include="ViewControllers\SpeakerViewController.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -139,5 +139,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
+    <Folder Include="ViewControllers\" />
   </ItemGroup>
 </Project>

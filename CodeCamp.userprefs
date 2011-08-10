@@ -1,11 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NycCodeCamp.MonoTouchApp/Content/CodeCamp.xml">
-    <Files>
-      <File FileName="NycCodeCamp.MonoTouchApp/SpeakerViewController.xib.cs" Line="72" Column="77" />
-      <File FileName="NycCodeCamp.MonoTouchApp/Content/CodeCamp.xml" Line="34" Column="20" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
