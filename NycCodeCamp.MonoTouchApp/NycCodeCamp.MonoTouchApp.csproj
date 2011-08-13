@@ -101,13 +101,13 @@
     <Compile Include="ViewControllers\SpeakerViewController.xib.designer.cs">
       <DependentUpon>SpeakerViewController.xib</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\TrackListViewController.cs" />
     <Compile Include="ViewControllers\SpeakerListViewController.cs" />
     <Compile Include="ViewControllers\SessionListViewController.cs" />
     <Compile Include="ViewControllers\TabController.cs" />
     <Compile Include="ViewControllers\ListControllerBase.cs" />
-    <Compile Include="ViewControllers\SessionListByTrackViewController.cs" />
     <Compile Include="ViewControllers\CodeCampNavigationController.cs" />
+    <Compile Include="ViewControllers\TagListViewController.cs" />
+    <Compile Include="ViewControllers\SessionListByTagViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />

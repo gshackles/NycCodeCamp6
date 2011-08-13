@@ -8,7 +8,10 @@
 			<Speaker>gshackles</Speaker>
 			<StartDate>2011-08-23T14:15:00</StartDate>
 			<EndDate>2011-08-23T15:15:00</EndDate>
-			<Track>Awesome Track</Track>
+			<Tags>
+				<Tag>Tag 1</Tag>
+				<Tag>Tag 2</Tag>
+			</Tags>
 		</Session>
 		<Session>
 			<Key>test2</Key>
@@ -17,7 +20,10 @@
 			<Speaker>gshackles2</Speaker>
 			<StartDate>2011-08-23T16:15:00</StartDate>
 			<EndDate>2011-08-23T17:15:00</EndDate>
-			<Track>Awesomer Track</Track>
+			<Tags>
+				<Tag>Tag 1</Tag>
+				<Tag>Tag 3</Tag>
+			</Tags>
 		</Session>
 	</Sessions>
 	<Speakers>

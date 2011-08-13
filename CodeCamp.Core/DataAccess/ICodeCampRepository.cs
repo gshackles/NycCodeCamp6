@@ -12,8 +12,8 @@ namespace CodeCamp.Core.DataAccess
 
         Session GetSession(string sessionKey);
         IList<Session> GetSessions();
-        IList<Session> GetSessionsByTrack(string track);
+        IList<Session> GetSessionsByTag(string tag);
 
-        IList<string> GetTrackNames();
+        IList<string> GetTags();
     }
 }

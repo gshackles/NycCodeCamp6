@@ -12,6 +12,6 @@ namespace CodeCamp.Core.Entities
         public Speaker Speaker { get; set; }
         public DateTime Starts { get; set; }
         public DateTime Ends { get; set; }
-        public string Track { get; set; }
+		public IList<string> Tags { get; set; }
     }
 }

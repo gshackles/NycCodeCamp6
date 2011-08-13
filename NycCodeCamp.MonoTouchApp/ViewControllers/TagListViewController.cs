@@ -4,46 +4,46 @@ using MonoTouch.UIKit;
 
 namespace NycCodeCamp.MonoTouchApp
 {
-	public class TrackListViewController : ListControllerBase
+	public class TagListViewController : ListControllerBase
 	{
-		private IList<string> _tracks;
+		private IList<string> _tags;
 		
-		public TrackListViewController(IList<string> tracks)
+		public TagListViewController(IList<string> tags)
 		{
-			_tracks = tracks;
+			_tags = tags;
 		}
 		
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad ();
 			
-			Title = "Tracks";
-			TableView.Source = new TrackTableViewSource(this, _tracks);
+			Title = "Tags";
+			TableView.Source = new TagTableViewSource(this, _tags);
 		}
 		
-		private class TrackTableViewSource : UITableViewSource
+		private class TagTableViewSource : UITableViewSource
 		{
-			private IList<string> _tracks;
-			private TrackListViewController _hostController;
-			private const string TRACK_CELL = "trackCell";
+			private IList<string> _tags;
+			private TagListViewController _hostController;
+			private const string TAG_CELL = "tagCell";
 			
-			public TrackTableViewSource (TrackListViewController hostController, IList<string> tracks)
+			public TagTableViewSource (TagListViewController hostController, IList<string> tags)
 			{
-				_tracks = tracks;
+				_tags = tags;
 				_hostController = hostController;
 			}
 			
 			public override int RowsInSection(UITableView tableview, int section)
 			{
-				return _tracks.Count;
+				return _tags.Count;
 			}
 
 			public override UITableViewCell GetCell(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 			{
-				var cell = tableView.DequeueReusableCell(TRACK_CELL)
-							?? new UITableViewCell(UITableViewCellStyle.Default, TRACK_CELL);
+				var cell = tableView.DequeueReusableCell(TAG_CELL)
+							?? new UITableViewCell(UITableViewCellStyle.Default, TAG_CELL);
 				
-				cell.TextLabel.Text = _tracks[indexPath.Row];
+				cell.TextLabel.Text = _tags[indexPath.Row];
 				cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 				cell.BackgroundView = new UIView(cell.Frame) { BackgroundColor = UIColor.White };
 				
@@ -53,7 +53,7 @@ namespace NycCodeCamp.MonoTouchApp
 			public override void RowSelected(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 			{
 				_hostController.NavigationController.PushViewController(
-					new SessionListByTrackViewController(_tracks[indexPath.Row]), true);
+					new SessionListByTagViewController(_tags[indexPath.Row]), true);
 			}
 			
 			public override float GetHeightForRow(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)

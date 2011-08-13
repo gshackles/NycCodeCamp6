@@ -4,33 +4,33 @@ using MonoTouch.UIKit;
 
 namespace NycCodeCamp.MonoTouchApp
 {
-	public class SessionListByTrackViewController : ListControllerBase
+	public class SessionListByTagViewController : ListControllerBase
 	{
-		private string _trackName;
+		private string _tagName;
 		
-		public SessionListByTrackViewController(string trackName)
+		public SessionListByTagViewController(string tagName)
 		{
-			_trackName = trackName;
+			_tagName = tagName;
 		}
 		
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad ();
 			
-			Title = _trackName;
+			Title = _tagName;
 			
-			var sessionsInTrack = AppDelegate.CodeCampRepository.GetSessionsByTrack(_trackName);
+			var sessionsInTag = AppDelegate.CodeCampRepository.GetSessionsByTag(_tagName);
 			
-			TableView.Source = new SessionsByTrackTableViewSource(this, sessionsInTrack);
+			TableView.Source = new SessionsByTagTableViewSource(this, sessionsInTag);
 		}
 		
-		private class SessionsByTrackTableViewSource : UITableViewSource
+		private class SessionsByTagTableViewSource : UITableViewSource
 		{
 			private IList<Session> _sessions;
-			private SessionListByTrackViewController _hostController;
+			private SessionListByTagViewController _hostController;
 			private const string SESSION_CELL = "sessionCell";
 			
-			public SessionsByTrackTableViewSource (SessionListByTrackViewController hostController, IList<Session> sessions)
+			public SessionsByTagTableViewSource (SessionListByTagViewController hostController, IList<Session> sessions)
 			{
 				_sessions = sessions;
 				_hostController = hostController;

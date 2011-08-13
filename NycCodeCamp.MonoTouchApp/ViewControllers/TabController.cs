@@ -9,7 +9,7 @@ namespace NycCodeCamp.MonoTouchApp
 	public class TabController : UITabBarController
 	{
 		private CodeCampNavigationController _sessionsController,
-									   		 _tracksController,
+									   		 _tagsController,
 									   		 _speakersController,
 									   		 _campOverviewController;
 		
@@ -27,11 +27,11 @@ namespace NycCodeCamp.MonoTouchApp
 			_sessionsController.PushViewController(new SessionListViewController(), false);
 			_sessionsController.TabBarItem = new UITabBarItem("Schedule", UIImage.FromFile("Content/Images/megaphone.png"), 1);
 			
-			var tracks = AppDelegate.CodeCampRepository.GetTrackNames();
-			_tracksController = new CodeCampNavigationController();
-			_tracksController.NavigationBar.BarStyle = UIBarStyle.Black;
-			_tracksController.PushViewController(new TrackListViewController(tracks), false);
-			_tracksController.TabBarItem = new UITabBarItem("Tracks", UIImage.FromFile("Content/Images/todo-list.png"), 2);
+			var tags = AppDelegate.CodeCampRepository.GetTags();
+			_tagsController = new CodeCampNavigationController();
+			_tagsController.NavigationBar.BarStyle = UIBarStyle.Black;
+			_tagsController.PushViewController(new TagListViewController(tags), false);
+			_tagsController.TabBarItem = new UITabBarItem("Tags", UIImage.FromFile("Content/Images/todo-list.png"), 2);
 			
 			var speakers = AppDelegate.CodeCampRepository.GetSpeakers();
 			_speakersController = new CodeCampNavigationController();
@@ -42,7 +42,7 @@ namespace NycCodeCamp.MonoTouchApp
 			ViewControllers = new UIViewController[] {
 				_campOverviewController,
 				_sessionsController,
-				_tracksController,
+				_tagsController,
 				_speakersController
 			};
 			

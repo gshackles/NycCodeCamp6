@@ -10,7 +10,7 @@ namespace CodeCamp.Core.DataAccess
     {
         private IList<Speaker> _speakers;
         private IList<Session> _sessions;
-        private IDictionary<string, List<Session>> _tracks;
+        private IDictionary<string, List<Session>> _tags;
 
         public XmlCodeCampRepository(string xml)
         {
@@ -47,18 +47,19 @@ namespace CodeCamp.Core.DataAccess
                         Speaker = speaker,
                         Starts = DateTime.Parse(session.Element("StartDate").Value),
                         Ends = DateTime.Parse(session.Element("EndDate").Value),
-                        Track = session.Element("Track").Value
+						Tags = session.Element("Tags").Elements("Tag").Select(tag => tag.Value).ToList()
                     }
                 ).ToList();
 
-            _tracks =
+            _tags =
                 (
                     from session in _sessions
-                    group session by session.Track into track
+					from sessionTag in session.Tags
+                    group session by sessionTag into tag
                     select new
                     {
-                        Name = track.Key,
-                        Sessions = track.ToList()
+                        Name = tag.Key,
+                        Sessions = tag.ToList()
                     }
                 ).ToDictionary(track => track.Name, track => track.Sessions);
         }
@@ -83,17 +84,17 @@ namespace CodeCamp.Core.DataAccess
             return _sessions;
         }
 
-        public IList<Session> GetSessionsByTrack(string track)
+        public IList<Session> GetSessionsByTag(string tag)
         {
-            if (!_tracks.ContainsKey(track))
+            if (!_tags.ContainsKey(tag))
                 return null;
 
-            return _tracks[track];
+            return _tags[tag];
         }
 
-        public IList<string> GetTrackNames()
+        public IList<string> GetTags()
         {
-            return _tracks.Keys.ToList();
+            return _tags.Keys.ToList();
         }
     }
 }
