@@ -1,9 +1,22 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="CodeCamp.Core/DataAccess/CodeCampService.cs">
+    <Files>
+      <File FileName="CodeCamp.Core/DataAccess/CodeCampDataClient.cs" Line="36" Column="1" />
+      <File FileName="CodeCamp.Core/DataAccess/CodeCampService.cs" Line="23" Column="36" />
+      <File FileName="NycCodeCamp.MonoTouchApp/Main.cs" Line="38" Column="1" />
+      <File FileName="CodeCamp.Core/DataAccess/StandardFileSystemHelper.cs" Line="19" Column="33" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True" />
+        <State expanded="True" selected="True">
+          <Node name="CodeCamp.Core.MonoTouch" expanded="True">
+            <Node name="DataAccess" expanded="True" />
+          </Node>
+          <Node name="NycCodeCamp.MonoTouchApp" expanded="True">
+            <Node name="ViewControllers" expanded="True" />
+          </Node>
+        </State>
       </Pad>
       <Pad Id="ClassPad">
         <State expanded="True" selected="True" />
@@ -11,7 +24,9 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/gshackles/github/CodeCamp/CodeCamp.Core/DataAccess/StandardFileSystemHelper.cs" line="32" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
