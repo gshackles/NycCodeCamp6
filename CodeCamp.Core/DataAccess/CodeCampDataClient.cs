@@ -1,7 +1,7 @@
 using System;
 using System.Net;
 
-namespace CodeCamp.Core
+namespace CodeCamp.Core.DataAccess
 {
 	public class CodeCampDataClient
 	{

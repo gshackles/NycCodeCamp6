@@ -1,7 +1,7 @@
 using System;
 using TinyMessenger;
 
-namespace CodeCamp.Core
+namespace CodeCamp.Core.Messaging.Messages
 {
 	public class StartedCheckingForUpdatedScheduleMessage : TinyMessageBase
 	{

@@ -1,32 +1,39 @@
 using System;
-using CodeCamp.Core.DataAccess;
 using System.IO;
+using CodeCamp.Core.Messaging;
+using CodeCamp.Core.Messaging.Messages;
 
-namespace CodeCamp.Core
+namespace CodeCamp.Core.DataAccess
 {
 	public class CodeCampService
 	{
 		public CodeCampRepository Repository { get; private set; }
 		
 		private readonly CodeCampDataClient _client;
-		private readonly string _xmlPath;
+	    private readonly IFileSystemHelper _fileHelper;
+	    private readonly string _fileName;
 		
-		public CodeCampService(string xmlPath, string baseUrl, string campKey)
+		public CodeCampService(string baseUrl, string campKey)
 		{
+#if WINDOWS_PHONE
+            _fileHelper = new IsolatedStorageFileSystemHelper();
+#else
+            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), 
+											 "../Library/Caches/CodeCamp.xml");
+            _fileHelper = new StandardFileSystemHelper(folderPath);
+#endif
+
+            _fileName = campKey + ".xml";
 			Repository = new CodeCampRepository(null);
 			_client = new CodeCampDataClient(baseUrl, campKey);
-			_xmlPath = xmlPath;
-			
-			if (!File.Exists(xmlPath))
-			{
-				downloadNewXmlFile();
-			}
+
+            if (!_fileHelper.FileExists(_fileName))
+            {
+                downloadNewXmlFile();
+            }
 			else
 			{
-				using (var reader = new StreamReader(_xmlPath))
-				{
-					Repository = new CodeCampRepository(reader.ReadToEnd());
-				}
+                Repository = new CodeCampRepository(_fileHelper.ReadFile(_fileName));
 			}
 		}
 		
@@ -65,12 +72,9 @@ namespace CodeCamp.Core
 				}
 				else
 				{
-					using (var writer = new StreamWriter(_xmlPath))
-					{
-						writer.Write(xml);
-					}
-					
-					Repository = new CodeCampRepository(xml);
+				    _fileHelper.WriteFile(_fileName, xml);
+
+                    Repository = new CodeCampRepository(xml);
 					
 					MessageHub.Instance.Publish(new FinishedUpdatingScheduleMessage(this));
 				}

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -44,6 +44,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
+    <Compile Include="..\CodeCamp.Core\DataAccess\IFileSystemHelper.cs">
+      <Link>DataAccess\IFileSystemHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\DataAccess\StandardFileSystemHelper.cs">
+      <Link>DataAccess\StandardFileSystemHelper.cs</Link>
+    </Compile>
     <Compile Include="..\CodeCamp.Core\Entities\Session.cs">
       <Link>Entities\Session.cs</Link>
     </Compile>
@@ -92,8 +98,9 @@
     <Compile Include="..\CodeCamp.Core\ViewModels\CampOverviewViewModel.cs">
       <Link>ViewModels\CampOverviewViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\CodeCamp.Core\ViewModels\FullScheduleViewModel.cs">
+      <Link>ViewModels\FullScheduleViewModel.cs</Link>
+    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataAccess\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

@@ -1,6 +1,6 @@
 using System;
 
-namespace CodeCamp.Core
+namespace CodeCamp.Core.Entities
 {
 	public class Sponsor
 	{

@@ -58,6 +58,12 @@
     <Compile Include="..\CodeCamp.Core\DataAccess\CodeCampService.cs">
       <Link>DataAccess\CodeCampService.cs</Link>
     </Compile>
+    <Compile Include="..\CodeCamp.Core\DataAccess\IFileSystemHelper.cs">
+      <Link>DataAccess\IFileSystemHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\DataAccess\StandardFileSystemHelper.cs">
+      <Link>DataAccess\StandardFileSystemHelper.cs</Link>
+    </Compile>
     <Compile Include="..\CodeCamp.Core\Entities\Session.cs">
       <Link>Entities\Session.cs</Link>
     </Compile>
@@ -97,6 +103,10 @@
     <Compile Include="..\CodeCamp.Core\ViewModels\CampOverviewViewModel.cs">
       <Link>ViewModels\CampOverviewViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\CodeCamp.Core\ViewModels\FullScheduleViewModel.cs">
+      <Link>ViewModels\FullScheduleViewModel.cs</Link>
+    </Compile>
+    <Compile Include="DataAccess\IsolatedStorageFileSystemHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />

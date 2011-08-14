@@ -1,14 +1,13 @@
 using System;
 using TinyMessenger;
 
-namespace CodeCamp.Core
+namespace CodeCamp.Core.Messaging
 {
 	public class MessageHub
     {
         private static readonly TinyMessengerHub _instance = new TinyMessengerHub();
 
-        static MessageHub() { }
-        private MessageHub() { }
+	    private MessageHub() { }
 
         public static TinyMessengerHub Instance
         {

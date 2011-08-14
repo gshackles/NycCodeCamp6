@@ -46,6 +46,8 @@
     <Compile Include="DataAccess\CodeCampService.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DataAccess\IFileSystemHelper.cs" />
+    <Compile Include="DataAccess\StandardFileSystemHelper.cs" />
     <Compile Include="Entities\Session.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +88,7 @@
     <Compile Include="ViewModels\CampOverviewViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\FullScheduleViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

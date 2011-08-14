@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CodeCamp.Core.Entities;
 
-namespace CodeCamp.Core
+namespace CodeCamp.Core.ViewModels
 {
 	public class CampOverviewViewModel
 	{
