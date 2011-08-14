@@ -4,6 +4,7 @@ using System.Linq;
 using CodeCamp.Core;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using CodeCamp.Core.Entities;
 
 namespace NycCodeCamp.MonoTouchApp
 {

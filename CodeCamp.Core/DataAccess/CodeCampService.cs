@@ -19,7 +19,7 @@ namespace CodeCamp.Core.DataAccess
             _fileHelper = new IsolatedStorageFileSystemHelper();
 #else
             string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), 
-											 "../Library/Caches/CodeCamp.xml");
+											 "../Library/Caches");
             _fileHelper = new StandardFileSystemHelper(folderPath);
 #endif
 

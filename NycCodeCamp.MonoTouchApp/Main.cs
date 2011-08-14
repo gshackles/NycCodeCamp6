@@ -7,6 +7,8 @@ using System.IO;
 using CodeCamp.Core.DataAccess;
 using CodeCamp.Core;
 using System.Drawing;
+using CodeCamp.Core.Messaging;
+using CodeCamp.Core.Messaging.Messages;
 
 namespace NycCodeCamp.MonoTouchApp
 {
@@ -22,8 +24,6 @@ namespace NycCodeCamp.MonoTouchApp
 	{
 		private TabController _tabController;
 		private WaitingView _waitingView;
-		private readonly string _xmlFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), 
-															"../Library/Caches/CodeCamp.xml");
 		
 		public static CodeCampService CodeCampService { get; private set; }
 		
@@ -33,7 +33,7 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			subscribeToMessages();
 			
-			CodeCampService = new CodeCampService(_xmlFilePath, "http://localhost:8080/v1", "sample");
+			CodeCampService = new CodeCampService("http://localhost:8080/v1", "sample");
 			
 			_tabController = new TabController();
 			_tabController.View.BackgroundColor = UIColor.Clear;

@@ -4,6 +4,7 @@ using MonoTouch.UIKit;
 using CodeCamp.Core.Entities;
 using System.Collections.Generic;
 using System.Drawing;
+using CodeCamp.Core.ViewModels;
 
 namespace NycCodeCamp.MonoTouchApp
 {
@@ -22,41 +23,29 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			var allSessions = AppDelegate.CodeCampService.Repository.GetSessions();
 			
-			TableView.Source = new SessionsByTrackTableViewSource(this, allSessions);
+			TableView.Source = new SessionsTableViewSource(this, allSessions);
 		}
 		
-		private class SessionsByTrackTableViewSource : UITableViewSource
+		private class SessionsTableViewSource : UITableViewSource
 		{
-			private Dictionary<string, List<Session>> _sessions;
 			private SessionListViewController _hostController;
 			private const string SESSION_CELL = "sessionCell";
+			private readonly FullScheduleViewModel _viewModel;
 			
-			public SessionsByTrackTableViewSource (SessionListViewController hostController, IList<Session> sessions)
+			public SessionsTableViewSource (SessionListViewController hostController, IList<Session> sessions)
 			{
 				_hostController = hostController;
-				
-				_sessions =
-					(
-						from session in sessions
-						group session by new { session.Starts, session.Ends } into timeSlot
-						orderby timeSlot.Key.Starts, timeSlot.Key.Ends
-						select new {
-							TimeSlot = string.Format("{0} - {1}",
-										  			 timeSlot.Key.Starts.ToLocalTime().ToShortTimeString(),
-										  			 timeSlot.Key.Ends.ToLocalTime().ToShortTimeString()),
-							Sessions = timeSlot.ToList()
-						}
-					).ToDictionary(slot => slot.TimeSlot, slot => slot.Sessions);
+				_viewModel = new FullScheduleViewModel(sessions);
 			}
 			
 			public override int RowsInSection(UITableView tableview, int section)
 			{
-				return _sessions[_sessions.Keys.ElementAt(section)].Count;
+				return _viewModel.Schedule[section].Sessions.Count;
 			}
 			
 			public override int NumberOfSections(UITableView tableView)
 			{
-				return _sessions.Keys.Count;
+				return _viewModel.Schedule.Count;
 			}
 
 			public override UITableViewCell GetCell(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
@@ -87,7 +76,7 @@ namespace NycCodeCamp.MonoTouchApp
 				var headerView = new UIView(new RectangleF(0, 0, tableView.Bounds.Size.Width, 50));
 				var headerLabel = new UILabel(new RectangleF(15, 0, headerView.Frame.Width - 15, headerView.Frame.Height));
 				
-				headerLabel.Text = _sessions.Keys.ElementAt(section);
+				headerLabel.Text = _viewModel.Schedule[section].Description;
 				headerLabel.BackgroundColor = UIColor.Clear;
 				headerLabel.TextColor = UIColor.White;
 				headerLabel.ShadowColor = UIColor.LightGray;
@@ -107,7 +96,7 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			private Session getSession(MonoTouch.Foundation.NSIndexPath indexPath) 
 			{
-				return _sessions[_sessions.Keys.ElementAt(indexPath.Section)].ElementAt(indexPath.Row);
+				return _viewModel.Schedule[indexPath.Section].Sessions[indexPath.Row];
 			}
 		}
 	}
