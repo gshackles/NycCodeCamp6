@@ -10,6 +10,7 @@ namespace CodeCamp.Core.DataAccess
     {
         private IList<Speaker> _speakers;
         private IList<Session> _sessions;
+		private IList<Sponsor> _sponsors;
         private IDictionary<string, List<Session>> _tags;
 		
 		public int CurrentVersion { get; private set; }
@@ -21,6 +22,7 @@ namespace CodeCamp.Core.DataAccess
 				_speakers = new List<Speaker>();
 				_sessions = new List<Session>();
 				_tags = new Dictionary<string, List<Session>>();
+				_sponsors = new List<Sponsor>();
 			}
 			else
 			{
@@ -75,6 +77,16 @@ namespace CodeCamp.Core.DataAccess
                         Sessions = tag.ToList()
                     }
                 ).ToDictionary(track => track.Name, track => track.Sessions);
+			
+			_sponsors =
+				(
+					from sponsor in doc.Element("Sponsors").Descendants("Sponsor")
+					select new Sponsor
+					{
+						Name = sponsor.Element("Name").Value,
+						Website = sponsor.Element("Website").Value
+					}
+				).ToList();
         }
 		
         public Speaker GetSpeaker(string speakerKey)
@@ -109,5 +121,10 @@ namespace CodeCamp.Core.DataAccess
         {
             return _tags.Keys.ToList();
         }
+		
+		public IList<Sponsor> GetSponsors()
+		{
+			return _sponsors;
+		}
     }
 }

@@ -1,9 +1,10 @@
 using System;
-using System.Linq;
-using CodeCamp.Core.Entities;
 using System.Collections.Generic;
-using MonoTouch.UIKit;
 using System.Drawing;
+using System.Linq;
+using CodeCamp.Core;
+using CodeCamp.Core.Entities;
+using MonoTouch.UIKit;
 
 namespace NycCodeCamp.MonoTouchApp
 {
@@ -37,43 +38,30 @@ namespace NycCodeCamp.MonoTouchApp
 		private class OverviewTableViewSource : UITableViewSource
 		{
 			private CampOverviewViewController _hostController;
-			private Dictionary<DateTime, List<Session>> _upcomingSlots;
 			private const string OVERVIEW_SCHEDULE_CELL = "overviewScheduleCell";
 			private const string OVERVIEW_LINK_CELL = "overviewLinkCell";
+			private readonly CampOverviewViewModel _viewModel;
 			
 			public OverviewTableViewSource (CampOverviewViewController hostController, IList<Session> allSessions)
 			{
 				_hostController = hostController;
-				
-				// grab the first two time slots that haven't ended yet
-				_upcomingSlots =
-					allSessions
-						.Where(session => session.Ends > DateTime.UtcNow)
-						.Select(session => session.Starts)
-						.Distinct()
-						.OrderBy(time => time)
-						.Take(2)
-						.ToDictionary(time => time, 
-									  time => allSessions
-												.Where(session => session.Starts == time)
-												.OrderBy(session => session.Title)
-												.ToList());
+				_viewModel = new CampOverviewViewModel(allSessions);
 			}
 			
 			public override int RowsInSection(UITableView tableview, int section)
 			{
-				return section < _upcomingSlots.Keys.Count
-						? _upcomingSlots[_upcomingSlots.Keys.ElementAt(section)].Count
+				return section < _viewModel.UpcomingSlots.Count
+						? _viewModel.UpcomingSlots[section].Sessions.Count
 						: 1;
 			}
 
 			public override UITableViewCell GetCell(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 			{
-				if (indexPath.Section < _upcomingSlots.Keys.Count)
+				if (indexPath.Section < _viewModel.UpcomingSlots.Count)
 				{
 					var cell = tableView.DequeueReusableCell(OVERVIEW_SCHEDULE_CELL)
 								?? new UITableViewCell(UITableViewCellStyle.Subtitle, OVERVIEW_SCHEDULE_CELL);
-					var session = _upcomingSlots[_upcomingSlots.Keys.ElementAt(indexPath.Section)][indexPath.Row];
+					var session = _viewModel.UpcomingSlots[indexPath.Section].Sessions[indexPath.Row];
 					
 					cell.TextLabel.Text = session.Title;
 					cell.DetailTextLabel.Text = session.Speaker.Name;
@@ -95,9 +83,9 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			public override void RowSelected(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 			{
-				if (indexPath.Section < _upcomingSlots.Keys.Count)
+				if (indexPath.Section < _viewModel.UpcomingSlots.Count)
 				{
-					var selectedSession = _upcomingSlots[_upcomingSlots.Keys.ElementAt(indexPath.Section)].ElementAt(indexPath.Row);
+					var selectedSession = _viewModel.UpcomingSlots[indexPath.Section].Sessions[indexPath.Row];
 					
 					_hostController.NavigationController.PushViewController(
 						new SessionViewController(selectedSession), true);
@@ -110,7 +98,7 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			public override float GetHeightForRow(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 			{
-				return indexPath.Section < _upcomingSlots.Keys.Count
+				return indexPath.Section < _viewModel.UpcomingSlots.Count
 						? 65
 						: 55;
 			}
@@ -142,14 +130,9 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			private string getTitleForSectionHeader(int section)
 			{
-				if (section < _upcomingSlots.Keys.Count)
+				if (section < _viewModel.UpcomingSlots.Count)
 				{
-					var slotTime = _upcomingSlots.Keys.ElementAt(section);
-					
-					if (slotTime < DateTime.UtcNow)
-						return "On Now";
-					else
-						return "Starting at " + slotTime.ToLocalTime().ToShortTimeString();
+					return _viewModel.UpcomingSlots[section].Description;
 				}
 				else
 				{
@@ -159,7 +142,7 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			public override int NumberOfSections(UITableView tableView)
 			{
-				return _upcomingSlots.Keys.Count + 1;
+				return _viewModel.UpcomingSlots.Count + 1;
 			}
 		}
 	}

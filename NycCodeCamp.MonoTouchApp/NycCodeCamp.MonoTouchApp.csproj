@@ -111,6 +111,7 @@
     <Compile Include="ViewControllers\TagListViewController.cs" />
     <Compile Include="ViewControllers\SessionListByTagViewController.cs" />
     <Compile Include="Views\WaitingView.cs" />
+    <Compile Include="ViewControllers\SponsorListViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />
@@ -139,6 +140,8 @@
     <Content Include="Content\Images\email%402x.png" />
     <Content Include="Content\Images\globe.png" />
     <Content Include="Content\Images\globe%402x.png" />
+    <Content Include="Content\Images\star.png" />
+    <Content Include="Content\Images\star%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />

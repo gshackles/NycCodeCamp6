@@ -11,7 +11,8 @@ namespace NycCodeCamp.MonoTouchApp
 		private CodeCampNavigationController _sessionsController,
 									   		 _tagsController,
 									   		 _speakersController,
-									   		 _campOverviewController;
+									   		 _campOverviewController,
+											 _sponsorsController;
 		
 		public override void ViewDidLoad()
 		{
@@ -30,6 +31,8 @@ namespace NycCodeCamp.MonoTouchApp
 				_tagsController.Dispose();
 			if (_speakersController != null)
 				_speakersController.Dispose();
+			if (_sponsorsController != null)
+				_sponsorsController.Dispose();
 			
 			_campOverviewController = new CodeCampNavigationController();
 			_campOverviewController.NavigationBar.BarStyle = UIBarStyle.Black;
@@ -53,11 +56,18 @@ namespace NycCodeCamp.MonoTouchApp
 			_speakersController.PushViewController(new SpeakerListViewController(speakers), false);
 			_speakersController.TabBarItem = new UITabBarItem("Speakers", UIImage.FromFile("Content/Images/sing.png"), 3);
 			
+			var sponsors = AppDelegate.CodeCampService.Repository.GetSponsors();
+			_sponsorsController = new CodeCampNavigationController();
+			_sponsorsController.NavigationBar.BarStyle = UIBarStyle.Black;
+			_sponsorsController.PushViewController(new SponsorListViewController(sponsors), false);
+			_sponsorsController.TabBarItem = new UITabBarItem("Sponsors", UIImage.FromFile("Content/Images/star.png"), 4);
+			
 			ViewControllers = new UIViewController[] {
 				_campOverviewController,
 				_sessionsController,
 				_tagsController,
-				_speakersController
+				_speakersController,
+				_sponsorsController
 			};
 			
 			SelectedIndex = 0;

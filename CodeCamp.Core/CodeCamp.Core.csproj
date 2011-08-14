@@ -52,6 +52,8 @@
     <Compile Include="Messaging\Messages\ErrorDownloadingUpdatedScheduleMessage.cs" />
     <Compile Include="Messaging\Messages\FinishedUpdatingScheduleMessage.cs" />
     <Compile Include="Messaging\Messages\NoUpdatedScheduleAvailableMessage.cs" />
+    <Compile Include="Entities\Sponsor.cs" />
+    <Compile Include="ViewModels\CampOverviewViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -66,5 +68,6 @@
     <Folder Include="Messaging\" />
     <Folder Include="Libraries\" />
     <Folder Include="Messaging\Messages\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>

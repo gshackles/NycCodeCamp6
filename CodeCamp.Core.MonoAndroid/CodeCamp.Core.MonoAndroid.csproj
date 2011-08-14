@@ -86,6 +86,12 @@
     <Compile Include="..\CodeCamp.Core\Messaging\Messages\NoUpdatedScheduleAvailableMessage.cs">
       <Link>Messaging\Messages\NoUpdatedScheduleAvailableMessage.cs</Link>
     </Compile>
+    <Compile Include="..\CodeCamp.Core\Entities\Sponsor.cs">
+      <Link>Entities\Sponsor.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\ViewModels\CampOverviewViewModel.cs">
+      <Link>ViewModels\CampOverviewViewModel.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\" />
