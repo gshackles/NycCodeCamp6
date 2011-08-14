@@ -5,6 +5,8 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.IO;
 using CodeCamp.Core.DataAccess;
+using CodeCamp.Core;
+using System.Drawing;
 
 namespace NycCodeCamp.MonoTouchApp
 {
@@ -18,13 +20,20 @@ namespace NycCodeCamp.MonoTouchApp
 	
 	public partial class AppDelegate : UIApplicationDelegate
 	{
-		private UITabBarController _tabController;
+		private TabController _tabController;
+		private WaitingView _waitingView;
+		private readonly string _xmlFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), 
+															"../Library/Caches/CodeCamp.xml");
 		
-		public static ICodeCampRepository CodeCampRepository { get; private set; }
+		public static CodeCampService CodeCampService { get; private set; }
 		
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-			CodeCampRepository = new XmlCodeCampRepository(getCodeCampXml());
+			_waitingView = new WaitingView();
+			
+			subscribeToMessages();
+			
+			CodeCampService = new CodeCampService(_xmlFilePath, "http://localhost:8080/v1", "sample");
 			
 			_tabController = new TabController();
 			_tabController.View.BackgroundColor = UIColor.Clear;
@@ -40,13 +49,52 @@ namespace NycCodeCamp.MonoTouchApp
 	
 			return true;
 		}
-	
-		private string getCodeCampXml() 
+		
+		private void subscribeToMessages()
 		{
-			using (var reader = new StreamReader("Content/CodeCamp.xml"))
+			MessageHub.Instance.Subscribe<StartedCheckingForUpdatedScheduleMessage>(msg =>
+				InvokeOnMainThread(() => _waitingView.Show("Checking for updated schedule")));
+			
+			MessageHub.Instance.Subscribe<ErrorCheckingForUpdatedScheduleMessage>(msg =>
 			{
-				return reader.ReadToEnd();
-			}
+				InvokeOnMainThread(() =>
+				{
+					_waitingView.Hide();
+					
+					new UIAlertView("Error", "Unable to check for an updated schedule, please try again later",
+									null, "Ok", null).Show();
+				});
+			});
+			
+			MessageHub.Instance.Subscribe<NoUpdatedScheduleAvailableMessage>(msg =>
+				InvokeOnMainThread(() => _waitingView.Hide()));
+			
+			MessageHub.Instance.Subscribe<FoundUpdatedScheduleMessage>(msg =>
+				InvokeOnMainThread(() => _waitingView.Hide()));
+			
+			MessageHub.Instance.Subscribe<StartedDownloadingUpdatedScheduleMessage>(msg =>
+				InvokeOnMainThread(() => _waitingView.Show("Downloading updated event details")));
+			
+			MessageHub.Instance.Subscribe<ErrorDownloadingUpdatedScheduleMessage>(msg =>
+			{
+				InvokeOnMainThread(() =>
+				{
+					_waitingView.Hide();
+					
+					new UIAlertView("Error", "Unable to download the event details, please try again later",
+									null, "Ok", null).Show();
+				});
+			});
+			
+			MessageHub.Instance.Subscribe<FinishedUpdatingScheduleMessage>(msg =>
+			{
+				InvokeOnMainThread(() =>
+				{
+					_tabController.ReloadViews();
+					
+					_waitingView.Hide();
+				});
+			});
 		}
 		
 		// This method is required in iPhoneOS 3.0

@@ -20,7 +20,7 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			Title = "Schedule";
 			
-			var allSessions = AppDelegate.CodeCampRepository.GetSessions();
+			var allSessions = AppDelegate.CodeCampService.Repository.GetSessions();
 			
 			TableView.Source = new SessionsByTrackTableViewSource(this, allSessions);
 		}

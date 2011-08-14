@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using MonoTouch.UIKit;
 
@@ -29,7 +30,7 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			public TagTableViewSource (TagListViewController hostController, IList<string> tags)
 			{
-				_tags = tags;
+				_tags = tags.OrderBy(tag => tag).ToList();
 				_hostController = hostController;
 			}
 			

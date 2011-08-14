@@ -18,8 +18,17 @@ namespace NycCodeCamp.MonoTouchApp
 		{
 			base.ViewDidLoad ();
 			
-			var allSessions = AppDelegate.CodeCampRepository.GetSessions();
-			
+			var refreshButton = new UIBarButtonItem(UIBarButtonSystemItem.Refresh, 
+													(s, e) => AppDelegate.CodeCampService.CheckForUpdatedSchedule());
+			NavigationItem.RightBarButtonItem = refreshButton;
+		}
+		
+		public override void ViewDidAppear(bool animated)
+		{
+			base.ViewDidAppear (animated);
+
+			var allSessions = AppDelegate.CodeCampService.Repository.GetSessions();
+
 			NavigationItem.Title = "NYC Code Camp";
 			TableView.Source = new OverviewTableViewSource(this, allSessions);
 			TableView.BackgroundColor = UIColor.Clear;

@@ -44,17 +44,50 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="..\CodeCamp.Core\DataAccess\ICodeCampRepository.cs">
-      <Link>DataAccess\ICodeCampRepository.cs</Link>
-    </Compile>
-    <Compile Include="..\CodeCamp.Core\DataAccess\XmlCodeCampRepository.cs">
-      <Link>DataAccess\XmlCodeCampRepository.cs</Link>
-    </Compile>
     <Compile Include="..\CodeCamp.Core\Entities\Session.cs">
       <Link>Entities\Session.cs</Link>
     </Compile>
     <Compile Include="..\CodeCamp.Core\Entities\Speaker.cs">
       <Link>Entities\Speaker.cs</Link>
     </Compile>
+    <Compile Include="..\CodeCamp.Core\DataAccess\CodeCampDataClient.cs">
+      <Link>DataAccess\CodeCampDataClient.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\DataAccess\CodeCampRepository.cs">
+      <Link>DataAccess\CodeCampRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\DataAccess\CodeCampService.cs">
+      <Link>DataAccess\CodeCampService.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\Libraries\TinyMessenger.cs">
+      <Link>Libraries\TinyMessenger.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\Messaging\MessageHub.cs">
+      <Link>Messaging\MessageHub.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\Messaging\Messages\ErrorCheckingForUpdatedScheduleMessage.cs">
+      <Link>Messaging\Messages\ErrorCheckingForUpdatedScheduleMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\Messaging\Messages\ErrorDownloadingUpdatedScheduleMessage.cs">
+      <Link>Messaging\Messages\ErrorDownloadingUpdatedScheduleMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\Messaging\Messages\FinishedUpdatingScheduleMessage.cs">
+      <Link>Messaging\Messages\FinishedUpdatingScheduleMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\Messaging\Messages\FoundUpdatedScheduleMessage.cs">
+      <Link>Messaging\Messages\FoundUpdatedScheduleMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\Messaging\Messages\StartedCheckingForUpdatedScheduleMessage.cs">
+      <Link>Messaging\Messages\StartedCheckingForUpdatedScheduleMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\Messaging\Messages\StartedDownloadingUpdatedScheduleMessage.cs">
+      <Link>Messaging\Messages\StartedDownloadingUpdatedScheduleMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\CodeCamp.Core\Messaging\Messages\NoUpdatedScheduleAvailableMessage.cs">
+      <Link>Messaging\Messages\NoUpdatedScheduleAvailableMessage.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataAccess\" />
   </ItemGroup>
 </Project>

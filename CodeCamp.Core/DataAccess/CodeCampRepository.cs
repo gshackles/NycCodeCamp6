@@ -6,20 +6,33 @@ using CodeCamp.Core.Entities;
 
 namespace CodeCamp.Core.DataAccess
 {
-    public class XmlCodeCampRepository : ICodeCampRepository
+    public class CodeCampRepository
     {
         private IList<Speaker> _speakers;
         private IList<Session> _sessions;
         private IDictionary<string, List<Session>> _tags;
-
-        public XmlCodeCampRepository(string xml)
+		
+		public int CurrentVersion { get; private set; }
+		
+        public CodeCampRepository(string xml)
         {
-            loadXml(xml);
+			if (string.IsNullOrEmpty(xml))
+			{
+				_speakers = new List<Speaker>();
+				_sessions = new List<Session>();
+				_tags = new Dictionary<string, List<Session>>();
+			}
+			else
+			{
+				loadXml(xml);
+			}
         }
 
         private void loadXml(string xml)
         {
             var doc = XElement.Parse(xml);
+			
+			CurrentVersion = int.Parse(doc.Attribute("version").Value);
 
             _speakers =
                 (
@@ -63,7 +76,7 @@ namespace CodeCamp.Core.DataAccess
                     }
                 ).ToDictionary(track => track.Name, track => track.Sessions);
         }
-
+		
         public Speaker GetSpeaker(string speakerKey)
         {
             return _speakers.FirstOrDefault(speaker => speaker.Key == speakerKey);

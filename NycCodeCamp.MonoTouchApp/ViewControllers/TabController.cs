@@ -17,6 +17,20 @@ namespace NycCodeCamp.MonoTouchApp
 		{
 			base.ViewDidLoad ();
 			
+			ReloadViews();
+		}
+		
+		public void ReloadViews()
+		{
+			if (_campOverviewController != null)
+				_campOverviewController.Dispose();
+			if (_sessionsController != null)
+				_sessionsController.Dispose();
+			if (_tagsController != null)
+				_tagsController.Dispose();
+			if (_speakersController != null)
+				_speakersController.Dispose();
+			
 			_campOverviewController = new CodeCampNavigationController();
 			_campOverviewController.NavigationBar.BarStyle = UIBarStyle.Black;
 			_campOverviewController.PushViewController(new CampOverviewViewController(), false);
@@ -27,13 +41,13 @@ namespace NycCodeCamp.MonoTouchApp
 			_sessionsController.PushViewController(new SessionListViewController(), false);
 			_sessionsController.TabBarItem = new UITabBarItem("Schedule", UIImage.FromFile("Content/Images/megaphone.png"), 1);
 			
-			var tags = AppDelegate.CodeCampRepository.GetTags();
+			var tags = AppDelegate.CodeCampService.Repository.GetTags();
 			_tagsController = new CodeCampNavigationController();
 			_tagsController.NavigationBar.BarStyle = UIBarStyle.Black;
 			_tagsController.PushViewController(new TagListViewController(tags), false);
 			_tagsController.TabBarItem = new UITabBarItem("Tags", UIImage.FromFile("Content/Images/todo-list.png"), 2);
 			
-			var speakers = AppDelegate.CodeCampRepository.GetSpeakers();
+			var speakers = AppDelegate.CodeCampService.Repository.GetSpeakers();
 			_speakersController = new CodeCampNavigationController();
 			_speakersController.NavigationBar.BarStyle = UIBarStyle.Black;
 			_speakersController.PushViewController(new SpeakerListViewController(speakers), false);

@@ -13,6 +13,7 @@
     <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
     <MtouchMinimumOS>3.0</MtouchMinimumOS>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <BundleDisplayName>NYC Code Camp 5</BundleDisplayName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +30,7 @@
     <MtouchUseSGen>false</MtouchUseSGen>
     <MtouchUseThumb>false</MtouchUseThumb>
     <MtouchArch>ARMv6</MtouchArch>
+    <MtouchI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -108,6 +110,7 @@
     <Compile Include="ViewControllers\CodeCampNavigationController.cs" />
     <Compile Include="ViewControllers\TagListViewController.cs" />
     <Compile Include="ViewControllers\SessionListByTagViewController.cs" />
+    <Compile Include="Views\WaitingView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />
@@ -122,7 +125,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\CodeCamp.xml" />
     <Content Include="Content\Images\megaphone.png" />
     <Content Include="Content\Images\sing.png" />
     <Content Include="Content\Images\sing%402x.png" />
@@ -141,5 +143,6 @@
   <ItemGroup>
     <Folder Include="Content\" />
     <Folder Include="ViewControllers\" />
+    <Folder Include="Views\" />
   </ItemGroup>
 </Project>

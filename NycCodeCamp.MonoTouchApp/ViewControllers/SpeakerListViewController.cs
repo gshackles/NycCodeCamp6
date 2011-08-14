@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using CodeCamp.Core.Entities;
 using System.Collections.Generic;
 using MonoTouch.UIKit;
@@ -30,7 +31,7 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			public SpeakerTableViewSource (SpeakerListViewController hostController, IList<Speaker> speakers)
 			{
-				_speakers = speakers;
+				_speakers = speakers.OrderBy(speaker => speaker.Name).ToList();
 				_hostController = hostController;
 			}
 			

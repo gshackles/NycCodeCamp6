@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using CodeCamp.Core.Entities;
 using MonoTouch.UIKit;
+using System.Linq;
 
 namespace NycCodeCamp.MonoTouchApp
 {
@@ -19,7 +20,7 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			Title = _tagName;
 			
-			var sessionsInTag = AppDelegate.CodeCampRepository.GetSessionsByTag(_tagName);
+			var sessionsInTag = AppDelegate.CodeCampService.Repository.GetSessionsByTag(_tagName);
 			
 			TableView.Source = new SessionsByTagTableViewSource(this, sessionsInTag);
 		}
@@ -32,7 +33,7 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			public SessionsByTagTableViewSource (SessionListByTagViewController hostController, IList<Session> sessions)
 			{
-				_sessions = sessions;
+				_sessions = sessions.OrderBy(session => session.Starts).ToList();
 				_hostController = hostController;
 			}
 			
