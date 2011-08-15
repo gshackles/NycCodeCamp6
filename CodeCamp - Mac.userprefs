@@ -3,19 +3,19 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="NycCodeCamp.MonoTouchApp/Main.cs">
     <Files>
       <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SessionViewController.xib.cs" Line="43" Column="27" />
-      <File FileName="NycCodeCamp.MonoTouchApp/Main.cs" Line="77" Column="28" />
+      <File FileName="NycCodeCamp.MonoTouchApp/Main.cs" Line="46" Column="4" />
       <File FileName="CodeCamp.Core/ViewModels/CampOverviewViewModel.cs" Line="22" Column="11" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
+        <State expanded="True">
           <Node name="CodeCamp.Core" expanded="True">
             <Node name="Messaging" expanded="True">
               <Node name="Messages" expanded="True" />
             </Node>
             <Node name="ViewModels" expanded="True" />
           </Node>
-          <Node name="NYCCodeCamp5" expanded="True">
+          <Node name="NYCCodeCamp5" expanded="True" selected="True">
             <Option id="ShowVersionControlOverlays" value="True" />
             <Option id="ShowAllFiles" value="False" />
             <Node name="ViewControllers" expanded="True">
