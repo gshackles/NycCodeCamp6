@@ -33,7 +33,8 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			subscribeToMessages();
 			
-			CodeCampService = new CodeCampService("http://localhost:8080/v1", "sample");
+			//CodeCampService = new CodeCampService("http://localhost:8080/v1", "sample");
+			CodeCampService = new CodeCampService("http://codecamps.gregshackles.com/v1", "sample");
 			
 			_tabController = new TabController();
 			_tabController.View.BackgroundColor = UIColor.Clear;
@@ -67,7 +68,15 @@ namespace NycCodeCamp.MonoTouchApp
 			});
 			
 			MessageHub.Instance.Subscribe<NoUpdatedScheduleAvailableMessage>(msg =>
-				InvokeOnMainThread(() => _waitingView.Hide()));
+			{	
+				InvokeOnMainThread(() => 
+				{
+					_waitingView.Hide();
+				
+					new UIAlertView("", "Your schedule is already up to date",
+									null, "Ok", null).Show();
+				});
+			});
 			
 			MessageHub.Instance.Subscribe<FoundUpdatedScheduleMessage>(msg =>
 				InvokeOnMainThread(() => _waitingView.Hide()));

@@ -1,20 +1,26 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CodeCamp.Core/DataAccess/CodeCampService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NycCodeCamp.MonoTouchApp/Main.cs">
     <Files>
-      <File FileName="CodeCamp.Core/DataAccess/CodeCampDataClient.cs" Line="36" Column="1" />
-      <File FileName="CodeCamp.Core/DataAccess/CodeCampService.cs" Line="23" Column="36" />
-      <File FileName="NycCodeCamp.MonoTouchApp/Main.cs" Line="38" Column="1" />
-      <File FileName="CodeCamp.Core/DataAccess/StandardFileSystemHelper.cs" Line="19" Column="33" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SessionViewController.xib.cs" Line="43" Column="27" />
+      <File FileName="NycCodeCamp.MonoTouchApp/Main.cs" Line="77" Column="28" />
+      <File FileName="CodeCamp.Core/ViewModels/CampOverviewViewModel.cs" Line="22" Column="11" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True" selected="True">
-          <Node name="CodeCamp.Core.MonoTouch" expanded="True">
-            <Node name="DataAccess" expanded="True" />
+          <Node name="CodeCamp.Core" expanded="True">
+            <Node name="Messaging" expanded="True">
+              <Node name="Messages" expanded="True" />
+            </Node>
+            <Node name="ViewModels" expanded="True" />
           </Node>
-          <Node name="NycCodeCamp.MonoTouchApp" expanded="True">
-            <Node name="ViewControllers" expanded="True" />
+          <Node name="NYCCodeCamp5" expanded="True">
+            <Option id="ShowVersionControlOverlays" value="True" />
+            <Option id="ShowAllFiles" value="False" />
+            <Node name="ViewControllers" expanded="True">
+              <Node name="SessionViewController.xib" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

@@ -15,7 +15,7 @@ namespace CodeCamp.Core.ViewModels
                 (
                     from session in allSessions
                     group session by new { session.Starts, session.Ends } into timeSlot
-                    orderby timeSlot.Key.Starts, timeSlot.Key.Ends
+                    orderby timeSlot.Key.Starts
                     select new TimeSlot
                     {
                         Description = string.Format("{0} - {1}",

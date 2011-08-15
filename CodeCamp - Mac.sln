@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCamp.Core.MonoTouch", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCamp.Core.MonoAndroid", "CodeCamp.Core.MonoAndroid\CodeCamp.Core.MonoAndroid.csproj", "{D8BE3E81-EC9A-40A3-BF00-821B5791AC34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NycCodeCamp.MonoTouchApp", "NycCodeCamp.MonoTouchApp\NycCodeCamp.MonoTouchApp.csproj", "{D78D167A-FBCA-465D-AC08-2E489B3BEF33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NYCCodeCamp5", "NycCodeCamp.MonoTouchApp\NYCCodeCamp5.csproj", "{D78D167A-FBCA-465D-AC08-2E489B3BEF33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +33,8 @@ Global
 		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Debug|iPhone.Build.0 = Debug|iPhone
 		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
-		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|Any CPU.Build.0 = Release|iPhone
 		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|iPhone.ActiveCfg = Release|iPhone
 		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|iPhone.Build.0 = Release|iPhone
 		{D78D167A-FBCA-465D-AC08-2E489B3BEF33}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
@@ -45,7 +45,7 @@ Global
 		{D8BE3E81-EC9A-40A3-BF00-821B5791AC34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = NycCodeCamp.MonoTouchApp\NycCodeCamp.MonoTouchApp.csproj
+		StartupItem = NycCodeCamp.MonoTouchApp\NYCCodeCamp5.csproj
 		Policies = $0
 		$0.DotNetNamingPolicy = $1
 		$1.DirectoryNamespaceAssociation = PrefixedHierarchical

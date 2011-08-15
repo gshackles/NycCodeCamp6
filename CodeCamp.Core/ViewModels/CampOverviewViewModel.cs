@@ -14,19 +14,21 @@ namespace CodeCamp.Core.ViewModels
 			// grab the first two time slots that haven't ended yet
 			UpcomingSlots =
 				allSessions
+					.ToList()
 					.Where(session => session.Ends > DateTime.UtcNow)
 					.Select(session => session.Starts)
 					.Distinct()
-					.OrderBy(time => time)
-					.Take(2)
 					.Select(time => new TimeSlot
 									{
+										Starts = time,
 										Description = getDescriptionForTime(time),
 										Sessions = allSessions
 													.Where(session => session.Starts == time)
 													.OrderBy(session => session.Title)
 													.ToList()
 									})
+					.OrderBy(slot => slot.Starts)
+					.Take(2)
 					.ToList();
 		}
 		
@@ -40,6 +42,7 @@ namespace CodeCamp.Core.ViewModels
 		
 		public class TimeSlot
 		{
+			public DateTime Starts { get; set; }
 			public string Description { get; set; }
 			public IList<Session> Sessions { get; set; }
 		}
