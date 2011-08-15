@@ -5,6 +5,7 @@ obj/
 bin/
 .DS_Store
 *.pidb
+Bin/
 
 CodeCamp.Core.MonoTouch/CodeCamp.Core.MonoTouch.pidb
 

@@ -13,33 +13,34 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
-
-    <!--LayoutRoot is the root grid where all page content is placed-->
+    
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <controls:Pivot Title="NYC Code Camp 6">
-            <controls:PivotItem Header="overview">
+        <controls:Pivot Title="NYC Code Camp 5" LoadingPivotItem="Pivot_LoadingPivotItem">
+            <controls:PivotItem Header="overview" x:Name="OverviewPivotItem">
                 <ListBox x:Name="Overview" Margin="0,0,-12,0" ItemsSource="{Binding Overview.UpcomingSlots}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                          <StackPanel Margin="0,0,0,17" Width="432">
-                              <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                            <StackPanel Margin="0,0,0,17">
+                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
 
                                 <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sessions}">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <StackPanel Margin="0,0,0,17" Width="432">
-                                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
-                                                <TextBlock Text="{Binding Speaker.Name}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSmallStyle}"/>
-                                            </StackPanel>
+                                            <Button Margin="0,5,0,5" Name="OverviewSlotButton" Click="SessionSelected" Background="Black" BorderBrush="Black">
+                                                <StackPanel>
+                                                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                                                    <TextBlock Text="{Binding Speaker.Name}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSmallStyle}"/>
+                                                </StackPanel>
+                                            </Button>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
-                          </StackPanel>
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </controls:PivotItem>
- 
+
             <controls:PivotItem Header="sessions">
                 <ListBox x:Name="Sessions" Margin="0,0,-12,0" ItemsSource="{Binding FullSchedule.Schedule}">
                     <ListBox.ItemTemplate>
@@ -50,10 +51,12 @@
                                 <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sessions}">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <StackPanel Margin="0,0,0,17" Width="432">
-                                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
-                                                <TextBlock Text="{Binding Speaker.Name}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSmallStyle}"/>
-                                            </StackPanel>
+                                            <Button Margin="0,5,0,5" Name="SessionsButton" Click="SessionSelected" Background="Black" BorderBrush="Black">
+                                                <StackPanel>
+                                                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                                                    <TextBlock Text="{Binding Speaker.Name}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSmallStyle}"/>
+                                                </StackPanel>
+                                            </Button>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
@@ -62,14 +65,16 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </controls:PivotItem>
-            
+
             <controls:PivotItem Header="tags">
                 <ListBox x:Name="Tags" Margin="0,0,-12,0" ItemsSource="{Binding Tags}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Margin="0,0,0,17" Width="432">
-                                <TextBlock Text="{Binding BindsDirectlyToSource=True}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                            </StackPanel>
+                            <Button Margin="0,5,0,5" Name="TagButton" Click="TagSelected" Background="Black" BorderBrush="Black">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding BindsDirectlyToSource=True}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                </StackPanel>
+                            </Button>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -79,9 +84,11 @@
                 <ListBox x:Name="Speakers" Margin="0,0,-12,0" ItemsSource="{Binding Speakers}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Margin="0,0,0,17" Width="432">
-                                <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                            </StackPanel>
+                            <Button Margin="0,5,0,5" Name="SpeakerButton" Click="SpeakerSelected" Background="Black" BorderBrush="Black">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                </StackPanel>
+                            </Button>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
@@ -91,26 +98,22 @@
                 <ListBox x:Name="Sponsors" Margin="0,0,-12,0" ItemsSource="{Binding Sponsors}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Margin="0,0,0,17" Width="432">
-                                <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                            </StackPanel>
+                            <Button Margin="0,5,0,5" Name="SponsorButton" Click="SponsorSelected" Background="Black" BorderBrush="Black">
+                                <StackPanel Margin="0,0,0,17" Width="432">
+                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                </StackPanel>
+                            </Button>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </controls:PivotItem>
         </controls:Pivot>
     </Grid>
- 
-    <!--Sample code showing usage of ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
-                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
-            </shell:ApplicationBar.MenuItems>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/Icons/appbar.refresh.rest.png" Text="Update" Click="RefreshSchedule" />
         </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>
