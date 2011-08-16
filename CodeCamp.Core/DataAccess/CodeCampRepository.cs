@@ -34,7 +34,7 @@ namespace CodeCamp.Core.DataAccess
         {
             var doc = XElement.Parse(xml);
 			
-			CurrentVersion = int.Parse(doc.Attribute("version").Value);
+			CurrentVersion = int.Parse(doc.Attribute("Version").Value);
 
             _speakers =
                 (

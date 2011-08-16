@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using System.IO;
-using CodeCamp.Core.DataAccess;
-using CodeCamp.Core;
 using System.Drawing;
+using System.IO;
+using System.Linq;
+using CodeCamp.Core;
+using CodeCamp.Core.DataAccess;
 using CodeCamp.Core.Messaging;
 using CodeCamp.Core.Messaging.Messages;
+using MonoTouch.Foundation;
+using MonoTouch.UIKit;
 
 namespace NycCodeCamp.MonoTouchApp
 {
