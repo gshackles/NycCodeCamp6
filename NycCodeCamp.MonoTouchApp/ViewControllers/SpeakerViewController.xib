@@ -53,7 +53,7 @@
             <int key="IBUIContentMode">7</int>
             <bool key="IBUIUserInteractionEnabled">NO</bool>
             <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-            <string key="IBUIText">Speaker Name</string>
+            <string key="IBUIText">Speaker name</string>
             <object class="NSFont" key="IBUIFont">
               <string key="NSName">Helvetica-Bold</string>
               <double key="NSSize">24</double>
@@ -64,7 +64,7 @@
               <bytes key="NSWhite">MQA</bytes>
             </object>
             <reference key="IBUIHighlightedColor" ref="391721480"/>
-            <int key="IBUIBaselineAdjustment">1</int>
+            <int key="IBUIBaselineAdjustment">0</int>
             <bool key="IBUIAdjustsFontSizeToFit">NO</bool>
             <float key="IBUIMinimumFontSize">10</float>
             <int key="IBUINumberOfLines">0</int>
@@ -185,7 +185,9 @@
           <string>1.IBEditorWindowLastContentRect</string>
           <string>1.IBPluginDependency</string>
           <string>8.IBPluginDependency</string>
+          <string>8.IBViewBoundsToFrameTransform</string>
           <string>9.IBPluginDependency</string>
+          <string>9.IBViewBoundsToFrameTransform</string>
         </object>
         <object class="NSMutableArray" key="dict.values">
           <bool key="EncodedWithXMLCoder">YES</bool>
@@ -194,7 +196,13 @@
           <string>{{484, 204}, {320, 480}}</string>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+          <object class="NSAffineTransform">
+            <bytes key="NSTransformStruct">P4AAAL+AAABBoAAAwkQAAA</bytes>
+          </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+          <object class="NSAffineTransform">
+            <bytes key="NSTransformStruct">P4AAAL+AAABBoAAAwq4AAA</bytes>
+          </object>
         </object>
       </object>
       <object class="NSMutableDictionary" key="unlocalizedProperties">

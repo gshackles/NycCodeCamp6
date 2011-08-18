@@ -17,14 +17,12 @@ namespace CodeCamp.Core.DataAccess
 		
         public CodeCampRepository(string xml)
         {
-			if (string.IsNullOrEmpty(xml))
-			{
-				_speakers = new List<Speaker>();
-				_sessions = new List<Session>();
-				_tags = new Dictionary<string, List<Session>>();
-				_sponsors = new List<Sponsor>();
-			}
-			else
+			_speakers = new List<Speaker>();
+			_sessions = new List<Session>();
+			_tags = new Dictionary<string, List<Session>>();
+			_sponsors = new List<Sponsor>();
+			
+			if (!string.IsNullOrEmpty(xml))
 			{
 				loadXml(xml);
 			}
@@ -35,58 +33,71 @@ namespace CodeCamp.Core.DataAccess
             var doc = XElement.Parse(xml);
 			
 			CurrentVersion = int.Parse(doc.Attribute("Version").Value);
-
-            _speakers =
-                (
-                    from speaker in doc.Element("Speakers").Descendants("Speaker")
-                    select new Speaker
-                    {
-                        Key = speaker.Element("Key").Value,
-                        Name = speaker.Element("Name").Value,
-                        Bio = speaker.Element("Bio").Value,
-                        Website = speaker.Element("Website").Value,
-                        Email = speaker.Element("Email").Value
-                    }
-                ).ToList();
-
-            _sessions =
-                (
-                    from session in doc.Element("Sessions").Descendants("Session")
-                    join speaker in _speakers
-                        on session.Element("Speaker").Value equals speaker.Key
-                    select new Session
-                    {
-                        Key = session.Element("Key").Value,
-                        Title = session.Element("Title").Value,
-                        Abstract = session.Element("Abstract").Value,
-                        Speaker = speaker,
-                        Starts = DateTime.Parse(session.Element("StartDate").Value),
-                        Ends = DateTime.Parse(session.Element("EndDate").Value),
-						Tags = session.Element("Tags").Elements("Tag").Select(tag => tag.Value).ToList()
-                    }
-                ).ToList();
-
-            _tags =
-                (
-                    from session in _sessions
-					from sessionTag in session.Tags
-                    group session by sessionTag into tag
-                    select new
-                    {
-                        Name = tag.Key,
-                        Sessions = tag.ToList()
-                    }
-                ).ToDictionary(track => track.Name, track => track.Sessions);
 			
-			_sponsors =
-				(
-					from sponsor in doc.Element("Sponsors").Descendants("Sponsor")
-					select new Sponsor
-					{
-						Name = sponsor.Element("Name").Value,
-						Website = sponsor.Element("Website").Value
-					}
-				).ToList();
+			if (doc.Element("Speakers") != null)
+			{
+	            _speakers =
+	                (
+	                    from speaker in doc.Element("Speakers").Descendants("Speaker")
+	                    select new Speaker
+	                    {
+	                        Key = speaker.Element("Key").Value,
+	                        Name = speaker.Element("Name").Value,
+	                        Bio = speaker.Element("Bio").Value,
+	                        Website = speaker.Element("Website").Value,
+	                        Email = speaker.Element("Email").Value
+	                    }
+	                ).ToList();
+			}
+			
+			if (doc.Element("Sessions") != null)
+			{
+	            _sessions =
+	                (
+	                    from session in doc.Element("Sessions").Descendants("Session")
+	                    join speaker in _speakers
+	                        on session.Element("Speaker").Value equals speaker.Key
+	                    select new Session
+	                    {
+	                        Key = session.Element("Key").Value,
+	                        Title = session.Element("Title").Value,
+	                        Abstract = session.Element("Abstract").Value,
+	                        Speaker = speaker,
+	                        Starts = DateTime.Parse(session.Element("StartDate").Value),
+	                        Ends = DateTime.Parse(session.Element("EndDate").Value),
+							Tags = session.Element("Tags").Elements("Tag").Select(tag => tag.Value).ToList()
+	                    }
+	                ).ToList();
+			}
+			
+			if (_sessions.Count > 0)
+			{
+	            _tags =
+	                (
+	                    from session in _sessions
+						from sessionTag in session.Tags
+	                    group session by sessionTag into tag
+	                    select new
+	                    {
+	                        Name = tag.Key,
+	                        Sessions = tag.ToList()
+	                    }
+	                ).ToDictionary(track => track.Name, track => track.Sessions);
+			}
+			
+			if (doc.Element("Sponsors") != null)
+			{
+				_sponsors =
+					(
+						from sponsor in doc.Element("Sponsors").Descendants("Sponsor")
+						select new Sponsor
+						{
+							Name = sponsor.Element("Name").Value,
+							Website = sponsor.Element("Website").Value,
+							Description = sponsor.Element("Description").Value
+						}
+					).ToList();
+			}
         }
 		
         public Speaker GetSpeaker(string speakerKey)

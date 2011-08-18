@@ -47,11 +47,18 @@ namespace NycCodeCamp.MonoTouchApp
 			base.ViewDidLoad ();
 			
 			SessionTitle.Text = _session.Title;
+			SessionTime.SizeToFit();
+			
 			SpeakerName.SetTitle(_session.Speaker.Name, UIControlState.Normal);
+			SpeakerName.SizeToFit();
+			
 			SessionTime.Text = string.Format("{0} - {1}",
 											 _session.Starts.ToLocalTime().ToShortTimeString(),
 											 _session.Ends.ToLocalTime().ToShortTimeString());
+			SessionTime.SizeToFit();
+			
 			SessionAbstract.Text = _session.Abstract;
+			SessionAbstract.SizeToFit();
 			
 			SpeakerName.TouchUpInside += delegate 
 			{

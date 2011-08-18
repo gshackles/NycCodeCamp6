@@ -47,8 +47,11 @@ namespace NycCodeCamp.MonoTouchApp
 		{
 			base.ViewDidLoad ();
 		
-			SpeakerName.Text = _speaker.Name;
+			SpeakerName.Text = _speaker.Name + _speaker.Name + _speaker.Name;
+			SpeakerName.SizeToFit();
+			
 			SpeakerBio.Text = _speaker.Bio;
+			SpeakerBio.SizeToFit();
 			
 			var toolbarButtons = new List<UIBarButtonItem>();
 			
