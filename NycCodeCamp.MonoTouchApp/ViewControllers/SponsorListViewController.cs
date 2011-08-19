@@ -21,17 +21,19 @@ namespace NycCodeCamp.MonoTouchApp
 			base.ViewDidLoad ();
 			
 			Title = "Sponsors";
-			TableView.Source = new SponsorTableViewSource(_sponsors);
+			TableView.Source = new SponsorTableViewSource(this, _sponsors);
 		}
 		
 		private class SponsorTableViewSource : UITableViewSource
 		{
 			private IList<Sponsor> _sponsors;
 			private const string SPONSOR_CELL = "sponsorCell";
+			private SponsorListViewController _hostController;
 			
-			public SponsorTableViewSource(IList<Sponsor> sponsors)
+			public SponsorTableViewSource(SponsorListViewController hostController, IList<Sponsor> sponsors)
 			{
 				_sponsors = sponsors.OrderBy(sponsor => sponsor.Name).ToList();
+				_hostController = hostController;
 			}
 			
 			public override int RowsInSection(UITableView tableview, int section)
@@ -53,9 +55,11 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			public override void RowSelected(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 			{
-				var url = new NSUrl(_sponsors[indexPath.Row].Website);
+				var selectedSponsor = _sponsors[indexPath.Row];
+				var sponsorController = new SponsorViewController(selectedSponsor);
 				
-				UIApplication.SharedApplication.OpenUrl(url);				
+				_hostController.NavigationController.PushViewController(
+					sponsorController, true);
 			}
 			
 			public override float GetHeightForRow(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)

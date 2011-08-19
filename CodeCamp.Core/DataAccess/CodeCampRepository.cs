@@ -41,7 +41,6 @@ namespace CodeCamp.Core.DataAccess
 	                    from speaker in doc.Element("Speakers").Descendants("Speaker")
 	                    select new Speaker
 	                    {
-	                        Key = speaker.Element("Key").Value,
 	                        Name = speaker.Element("Name").Value,
 	                        Bio = speaker.Element("Bio").Value,
 	                        Website = speaker.Element("Website").Value,
@@ -56,7 +55,7 @@ namespace CodeCamp.Core.DataAccess
 	                (
 	                    from session in doc.Element("Sessions").Descendants("Session")
 	                    join speaker in _speakers
-	                        on session.Element("Speaker").Value equals speaker.Key
+	                        on session.Element("Speaker").Value equals speaker.Email
 	                    select new Session
 	                    {
 	                        Key = session.Element("Key").Value,
@@ -100,9 +99,9 @@ namespace CodeCamp.Core.DataAccess
 			}
         }
 		
-        public Speaker GetSpeaker(string speakerKey)
+        public Speaker GetSpeaker(string email)
         {
-            return _speakers.FirstOrDefault(speaker => speaker.Key == speakerKey);
+            return _speakers.FirstOrDefault(speaker => speaker.Email == email);
         }
 
         public IList<Speaker> GetSpeakers()

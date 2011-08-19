@@ -14,7 +14,6 @@
     <MtouchMinimumOS>3.0</MtouchMinimumOS>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <BundleDisplayName>NYC Code Camp 5</BundleDisplayName>
-    <Description />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -118,11 +117,18 @@
     <Compile Include="ViewControllers\SessionListByTagViewController.cs" />
     <Compile Include="Views\WaitingView.cs" />
     <Compile Include="ViewControllers\SponsorListViewController.cs" />
+    <Compile Include="ViewControllers\SponsorViewController.xib.cs">
+      <DependentUpon>SponsorViewController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SponsorViewController.xib.designer.cs">
+      <DependentUpon>SponsorViewController.xib</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />
     <Page Include="ViewControllers\SessionViewController.xib" />
     <Page Include="ViewControllers\SpeakerViewController.xib" />
+    <Page Include="ViewControllers\SponsorViewController.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

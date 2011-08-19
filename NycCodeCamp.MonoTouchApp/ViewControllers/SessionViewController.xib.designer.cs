@@ -25,6 +25,8 @@ namespace NycCodeCamp.MonoTouchApp {
 		
 		private MonoTouch.UIKit.UIButton __mt_SpeakerName;
 		
+		private MonoTouch.UIKit.UIScrollView __mt_Scroller;
+		
 		#pragma warning disable 0169
 		[MonoTouch.Foundation.Connect("view")]
 		private MonoTouch.UIKit.UIView view {
@@ -83,6 +85,18 @@ namespace NycCodeCamp.MonoTouchApp {
 			set {
 				this.__mt_SpeakerName = value;
 				this.SetNativeField("SpeakerName", value);
+			}
+		}
+		
+		[MonoTouch.Foundation.Connect("Scroller")]
+		private MonoTouch.UIKit.UIScrollView Scroller {
+			get {
+				this.__mt_Scroller = ((MonoTouch.UIKit.UIScrollView)(this.GetNativeField("Scroller")));
+				return this.__mt_Scroller;
+			}
+			set {
+				this.__mt_Scroller = value;
+				this.SetNativeField("Scroller", value);
 			}
 		}
 	}

@@ -12,16 +12,16 @@ namespace NycCodeCamp.MonoTouchApp {
 	
 	
 	// Base type probably should be MonoTouch.UIKit.UIViewController or subclass
-	[MonoTouch.Foundation.Register("SpeakerViewController")]
-	public partial class SpeakerViewController {
+	[MonoTouch.Foundation.Register("SponsorViewController")]
+	public partial class SponsorViewController {
 		
 		private MonoTouch.UIKit.UIView __mt_view;
 		
-		private MonoTouch.UIKit.UILabel __mt_SpeakerBio;
-		
-		private MonoTouch.UIKit.UILabel __mt_SpeakerName;
+		private MonoTouch.UIKit.UILabel __mt_SponsorName;
 		
 		private MonoTouch.UIKit.UIScrollView __mt_Scroller;
+		
+		private MonoTouch.UIKit.UILabel __mt_Description;
 		
 		#pragma warning disable 0169
 		[MonoTouch.Foundation.Connect("view")]
@@ -36,27 +36,15 @@ namespace NycCodeCamp.MonoTouchApp {
 			}
 		}
 		
-		[MonoTouch.Foundation.Connect("SpeakerBio")]
-		private MonoTouch.UIKit.UILabel SpeakerBio {
+		[MonoTouch.Foundation.Connect("SponsorName")]
+		private MonoTouch.UIKit.UILabel SponsorName {
 			get {
-				this.__mt_SpeakerBio = ((MonoTouch.UIKit.UILabel)(this.GetNativeField("SpeakerBio")));
-				return this.__mt_SpeakerBio;
+				this.__mt_SponsorName = ((MonoTouch.UIKit.UILabel)(this.GetNativeField("SponsorName")));
+				return this.__mt_SponsorName;
 			}
 			set {
-				this.__mt_SpeakerBio = value;
-				this.SetNativeField("SpeakerBio", value);
-			}
-		}
-		
-		[MonoTouch.Foundation.Connect("SpeakerName")]
-		private MonoTouch.UIKit.UILabel SpeakerName {
-			get {
-				this.__mt_SpeakerName = ((MonoTouch.UIKit.UILabel)(this.GetNativeField("SpeakerName")));
-				return this.__mt_SpeakerName;
-			}
-			set {
-				this.__mt_SpeakerName = value;
-				this.SetNativeField("SpeakerName", value);
+				this.__mt_SponsorName = value;
+				this.SetNativeField("SponsorName", value);
 			}
 		}
 		
@@ -69,6 +57,18 @@ namespace NycCodeCamp.MonoTouchApp {
 			set {
 				this.__mt_Scroller = value;
 				this.SetNativeField("Scroller", value);
+			}
+		}
+		
+		[MonoTouch.Foundation.Connect("Description")]
+		private MonoTouch.UIKit.UILabel Description {
+			get {
+				this.__mt_Description = ((MonoTouch.UIKit.UILabel)(this.GetNativeField("Description")));
+				return this.__mt_Description;
+			}
+			set {
+				this.__mt_Description = value;
+				this.SetNativeField("Description", value);
 			}
 		}
 	}

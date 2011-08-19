@@ -2,20 +2,28 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="NycCodeCamp.MonoTouchApp/Main.cs">
     <Files>
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SessionViewController.xib.cs" Line="43" Column="27" />
-      <File FileName="NycCodeCamp.MonoTouchApp/Main.cs" Line="21" Column="3" />
-      <File FileName="CodeCamp.Core/ViewModels/CampOverviewViewModel.cs" Line="22" Column="11" />
-      <File FileName="CodeCamp.Core/DataAccess/CodeCampRepository.cs" Line="35" Column="18" />
-      <File FileName="CodeCamp.Core/DataAccess/CodeCampService.cs" Line="1" Column="1" />
-      <File FileName="CodeCamp.Core/DataAccess/CodeCampDataClient.cs" Line="1" Column="1" />
+      <File FileName="NycCodeCamp.MonoTouchApp/Main.cs" Line="36" Column="6" />
+      <File FileName="CodeCamp.Core/DataAccess/CodeCampRepository.cs" Line="90" Column="24" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/CampOverviewViewController.cs" Line="1" Column="1" />
+      <File FileName="NycCodeCamp.MonoTouchApp/MainWindow.xib.designer.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
+          <Node name="CodeCamp.Core" expanded="True">
+            <Node name="DataAccess" expanded="True" />
+            <Node name="Entities" expanded="True" />
+            <Node name="ViewModels" expanded="True" />
+          </Node>
+          <Node name="CodeCamp.Core.MonoAndroid" expanded="True" selected="True" />
           <Node name="NYCCodeCamp5" expanded="True">
             <Option id="ShowVersionControlOverlays" value="True" />
             <Option id="ShowAllFiles" value="False" />
-            <Node name="Default.png" selected="True" />
+            <Node name="ViewControllers" expanded="True">
+              <Node name="SessionViewController.xib" expanded="True" />
+              <Node name="SpeakerViewController.xib" expanded="True" />
+            </Node>
+            <Node name="MainWindow.xib" expanded="True" />
           </Node>
         </State>
       </Pad>

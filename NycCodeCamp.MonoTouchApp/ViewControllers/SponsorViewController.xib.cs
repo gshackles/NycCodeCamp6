@@ -4,34 +4,33 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using CodeCamp.Core.Entities;
-using MonoTouch.MessageUI;
 using System.Drawing;
 
 namespace NycCodeCamp.MonoTouchApp
 {
-	public partial class SpeakerViewController : UIViewController
+	public partial class SponsorViewController : UIViewController
 	{
 		#region Constructors
 		
 		// The IntPtr and initWithCoder constructors are required for items that need 
 		// to be able to be created from a xib rather than from managed code
 		
-		public SpeakerViewController(IntPtr handle) : base (handle)
+		public SponsorViewController(IntPtr handle) : base (handle)
 		{
 			Initialize ();
 		}
 		
 		[Export ("initWithCoder:")]
-		public SpeakerViewController(NSCoder coder) : base (coder)
+		public SponsorViewController(NSCoder coder) : base (coder)
 		{
 			Initialize ();
 		}
 		
-		public SpeakerViewController(Speaker speaker) : base ("SpeakerViewController", null)
+		public SponsorViewController(Sponsor sponsor) : base ("SponsorViewController", null)
 		{
 			Initialize ();
 			
-			_speaker = speaker;
+			_sponsor = sponsor;
 			HidesBottomBarWhenPushed = true;
 		}
 		
@@ -41,23 +40,22 @@ namespace NycCodeCamp.MonoTouchApp
 		
 		#endregion
 		
-		private Speaker _speaker;
-		private MFMailComposeViewController _mailController;
+		private readonly Sponsor _sponsor;
 		
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad ();
 		
-			SpeakerName.Text = _speaker.Name;
-			SpeakerName.SizeToFit();
+			SponsorName.Text = _sponsor.Name;
+			SponsorName.SizeToFit();
 			
-			SpeakerBio.Frame = new RectangleF(SpeakerBio.Frame.X, SpeakerName.Frame.Y + SpeakerName.Frame.Height,
-											  SpeakerBio.Frame.Width, SpeakerBio.Frame.Height);
-			SpeakerBio.Text = _speaker.Bio;
-			SpeakerBio.SizeToFit();
+			Description.Frame = new RectangleF(Description.Frame.X, SponsorName.Frame.Y + SponsorName.Frame.Height + 5,
+										  	   Description.Frame.Width, Description.Frame.Height);
+			Description.Text = _sponsor.Description;
+			Description.SizeToFit();
 			
 			Scroller.ContentSize = new SizeF(Scroller.Frame.Width, 
-											 SpeakerName.Frame.Height + SpeakerBio.Frame.Height);
+											 SponsorName.Frame.Height + Description.Frame.Height);
 			Scroller.Frame = new RectangleF(Scroller.Frame.X, 
 											Scroller.Frame.Y, 
 											Scroller.Frame.Width, 
@@ -67,20 +65,9 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			var toolbarButtons = new List<UIBarButtonItem>();
 			
-			if (!string.IsNullOrEmpty(_speaker.Email))
+			if (!string.IsNullOrEmpty(_sponsor.Website))
 			{
-				var emailButton = 
-					new UIBarButtonItem(UIImage.FromFile("Content/Images/email.png"), 
-										UIBarButtonItemStyle.Plain, new EventHandler(sendEmail));
-				
-				emailButton.Enabled = MFMailComposeViewController.CanSendMail;
-				
-				toolbarButtons.Add(emailButton);
-			}
-			
-			if (!string.IsNullOrEmpty(_speaker.Website))
-			{
-				var url = new NSUrl(_speaker.Website);
+				var url = new NSUrl(_sponsor.Website);
 				
 				var websiteButton =
 					new UIBarButtonItem(UIImage.FromFile("Content/Images/globe.png"),
@@ -95,24 +82,6 @@ namespace NycCodeCamp.MonoTouchApp
 			ToolbarItems = toolbarButtons.ToArray();
 			NavigationController.Toolbar.BarStyle = UIBarStyle.Black;
 			NavigationController.Toolbar.Translucent = true;
-		}
-		
-		private void sendEmail(object sender, EventArgs args) 
-		{
-			_mailController = new MFMailComposeViewController();
-			_mailController.NavigationBar.TintColor = UIColor.Black;
-			_mailController.SetToRecipients(new string[] { _speaker.Email });
-			_mailController.Finished += delegate(object mailSender, MFComposeResultEventArgs mailArgs) {
-				if (mailArgs.Result == MFMailComposeResult.Failed)
-				{
-					new UIAlertView("Send Mail Failure", "Unable to send email, please try again later",
-									null, "Ok", null).Show();
-				}
-				
-				NavigationController.DismissModalViewControllerAnimated(true);
-			};
-
-			NavigationController.PresentModalViewController(_mailController, true);
 		}
 		
 		public override void ViewWillAppear(bool animated)
