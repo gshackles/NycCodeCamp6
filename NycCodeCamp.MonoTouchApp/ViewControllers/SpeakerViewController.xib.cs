@@ -51,19 +51,20 @@ namespace NycCodeCamp.MonoTouchApp
 			SpeakerName.Text = _speaker.Name;
 			SpeakerName.SizeToFit();
 			
-			SpeakerBio.Frame = new RectangleF(SpeakerBio.Frame.X, SpeakerName.Frame.Y + SpeakerName.Frame.Height,
+			SpeakerBio.Frame = new RectangleF(SpeakerBio.Frame.X, SpeakerName.Frame.Y + SpeakerName.Frame.Height + 10,
 											  SpeakerBio.Frame.Width, SpeakerBio.Frame.Height);
 			SpeakerBio.Text = _speaker.Bio;
 			SpeakerBio.SizeToFit();
 			
 			Scroller.ContentSize = new SizeF(Scroller.Frame.Width, 
-											 SpeakerName.Frame.Height + SpeakerBio.Frame.Height);
+											 SpeakerName.Frame.Height 
+												+ SpeakerBio.Frame.Height
+												+ TabBarController.TabBar.Frame.Height);
 			Scroller.Frame = new RectangleF(Scroller.Frame.X, 
 											Scroller.Frame.Y, 
 											Scroller.Frame.Width, 
 											Scroller.Superview.Frame.Height 
-												- NavigationController.Toolbar.Frame.Height 
-												- NavigationController.NavigationBar.Frame.Height);
+												- NavigationController.Toolbar.Frame.Height);
 			
 			var toolbarButtons = new List<UIBarButtonItem>();
 			
@@ -120,7 +121,6 @@ namespace NycCodeCamp.MonoTouchApp
 			base.ViewWillAppear (animated);
 			
 			NavigationController.SetToolbarHidden(ToolbarItems.Count() == 0, true);
-			TabBarController.TabBar.Hidden = true;
 		}
 		
 		public override void ViewWillDisappear(bool animated)
@@ -128,7 +128,6 @@ namespace NycCodeCamp.MonoTouchApp
 			base.ViewWillDisappear (animated);
 			
 			NavigationController.SetToolbarHidden(true, true);
-			TabBarController.TabBar.Hidden = false;
 		}
 	}
 }

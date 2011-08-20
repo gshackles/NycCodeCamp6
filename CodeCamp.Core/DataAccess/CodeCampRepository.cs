@@ -61,6 +61,7 @@ namespace CodeCamp.Core.DataAccess
 	                        Key = session.Element("Key").Value,
 	                        Title = session.Element("Title").Value,
 	                        Abstract = session.Element("Abstract").Value,
+							Room = session.Element("Room").Value,
 	                        Speaker = speaker,
 	                        Starts = DateTime.Parse(session.Element("StartDate").Value),
 	                        Ends = DateTime.Parse(session.Element("EndDate").Value),

@@ -62,7 +62,12 @@ namespace NycCodeCamp.MonoTouchApp
 											 _session.Ends.ToLocalTime().ToShortTimeString());
 			SessionTime.SizeToFit();
 			
-			SessionAbstract.Frame = new RectangleF(SessionAbstract.Frame.X, SessionTime.Frame.Y + SessionTime.Frame.Height + 5,
+			SessionRoom.Text = "Room: " + _session.Room;
+			SessionRoom.SizeToFit();
+			SessionRoom.Frame = new RectangleF(SessionRoom.Frame.X, SessionTime.Frame.Y + SessionTime.Frame.Height + 5,
+											  SessionRoom.Frame.Width, SessionRoom.Frame.Height);
+			
+			SessionAbstract.Frame = new RectangleF(SessionAbstract.Frame.X, SessionRoom.Frame.Y + SessionRoom.Frame.Height + 10,
 											   	   SessionAbstract.Frame.Width, SessionAbstract.Frame.Height);
 			SessionAbstract.Text = _session.Abstract;
 			SessionAbstract.SizeToFit();
@@ -71,34 +76,14 @@ namespace NycCodeCamp.MonoTouchApp
 											 SessionTitle.Frame.Height
 												+ SpeakerName.Frame.Height
 												+ SessionTime.Frame.Height
-												+ SessionAbstract.Frame.Height);
-			Scroller.Frame = new RectangleF(Scroller.Frame.X, 
-											Scroller.Frame.Y, 
-											Scroller.Frame.Width, 
-											Scroller.Superview.Frame.Height 
-												- NavigationController.Toolbar.Frame.Height 
-												- NavigationController.NavigationBar.Frame.Height);
-			
-			
+												+ SessionAbstract.Frame.Height
+												+ TabBarController.TabBar.Frame.Height);
+
 			SpeakerName.TouchUpInside += delegate 
 			{
 				NavigationController.PushViewController(
 					new SpeakerViewController(_session.Speaker), true);
 			};
-		}
-		
-		public override void ViewWillAppear(bool animated)
-		{
-			base.ViewWillAppear (animated);
-			
-			TabBarController.TabBar.Hidden = true;
-		}
-		
-		public override void ViewWillDisappear(bool animated)
-		{
-			base.ViewWillDisappear (animated);
-			
-			TabBarController.TabBar.Hidden = false;
 		}
 	}
 }
