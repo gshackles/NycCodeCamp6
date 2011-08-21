@@ -123,6 +123,7 @@
     <Compile Include="ViewControllers\SponsorViewController.xib.designer.cs">
       <DependentUpon>SponsorViewController.xib</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\DetailViewControllerBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />

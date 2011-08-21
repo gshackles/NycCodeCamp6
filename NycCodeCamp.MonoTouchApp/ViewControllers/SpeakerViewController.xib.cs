@@ -9,7 +9,7 @@ using System.Drawing;
 
 namespace NycCodeCamp.MonoTouchApp
 {
-	public partial class SpeakerViewController : UIViewController
+	public partial class SpeakerViewController : DetailViewControllerBase
 	{
 		#region Constructors
 		
@@ -32,7 +32,6 @@ namespace NycCodeCamp.MonoTouchApp
 			Initialize ();
 			
 			_speaker = speaker;
-			HidesBottomBarWhenPushed = true;
 		}
 		
 		void Initialize()
@@ -44,27 +43,36 @@ namespace NycCodeCamp.MonoTouchApp
 		private Speaker _speaker;
 		private MFMailComposeViewController _mailController;
 		
+		protected override MonoTouch.UIKit.UIScrollView ScrollView 
+		{
+			get { return Scroller; }
+		}
+		
+		private List<UIView> _views = null;
+		protected override List<UIView> Views 
+		{
+			get 
+			{
+				if (_views == null)
+				{
+					_views = new List<UIView>() { SpeakerName, SpeakerBio };
+				}
+				
+				return _views;
+			}
+		}
+		
+		protected override bool ToolbarVisible 
+		{
+			get { return true; }
+		}
+		
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad ();
 		
 			SpeakerName.Text = _speaker.Name;
-			SpeakerName.SizeToFit();
-			
-			SpeakerBio.Frame = new RectangleF(SpeakerBio.Frame.X, SpeakerName.Frame.Y + SpeakerName.Frame.Height + 10,
-											  SpeakerBio.Frame.Width, SpeakerBio.Frame.Height);
 			SpeakerBio.Text = _speaker.Bio;
-			SpeakerBio.SizeToFit();
-			
-			Scroller.ContentSize = new SizeF(Scroller.Frame.Width, 
-											 SpeakerName.Frame.Height 
-												+ SpeakerBio.Frame.Height
-												+ TabBarController.TabBar.Frame.Height);
-			Scroller.Frame = new RectangleF(Scroller.Frame.X, 
-											Scroller.Frame.Y, 
-											Scroller.Frame.Width, 
-											Scroller.Superview.Frame.Height 
-												- NavigationController.Toolbar.Frame.Height);
 			
 			var toolbarButtons = new List<UIBarButtonItem>();
 			

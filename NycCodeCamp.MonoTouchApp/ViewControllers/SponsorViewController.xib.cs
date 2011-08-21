@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace NycCodeCamp.MonoTouchApp
 {
-	public partial class SponsorViewController : UIViewController
+	public partial class SponsorViewController : DetailViewControllerBase
 	{
 		#region Constructors
 		
@@ -31,7 +31,6 @@ namespace NycCodeCamp.MonoTouchApp
 			Initialize ();
 			
 			_sponsor = sponsor;
-			HidesBottomBarWhenPushed = true;
 		}
 		
 		void Initialize()
@@ -41,28 +40,37 @@ namespace NycCodeCamp.MonoTouchApp
 		#endregion
 		
 		private readonly Sponsor _sponsor;
+
+		private List<UIView> _views = null;
+		protected override List<UIView> Views 
+		{
+			get 
+			{
+				if (_views == null)
+				{
+					_views = new List<UIView>() { SponsorName, Description };
+				}
+				
+				return _views;
+			}
+		}
+		
+		protected override MonoTouch.UIKit.UIScrollView ScrollView 
+		{
+			get { return Scroller; }
+		}
+		
+		protected override bool ToolbarVisible 
+		{
+			get { return true; }
+		}
 		
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad ();
 		
 			SponsorName.Text = _sponsor.Name;
-			SponsorName.SizeToFit();
-			
-			Description.Frame = new RectangleF(Description.Frame.X, SponsorName.Frame.Y + SponsorName.Frame.Height + 10,
-										  	   Description.Frame.Width, Description.Frame.Height);
 			Description.Text = _sponsor.Description;
-			Description.SizeToFit();
-			
-			Scroller.ContentSize = new SizeF(Scroller.Frame.Width, 
-											 SponsorName.Frame.Height 
-												+ Description.Frame.Height
-												+ TabBarController.TabBar.Frame.Height);
-			Scroller.Frame = new RectangleF(Scroller.Frame.X, 
-											Scroller.Frame.Y, 
-											Scroller.Frame.Width, 
-											Scroller.Superview.Frame.Height 
-												- NavigationController.Toolbar.Frame.Height);
 			
 			var toolbarButtons = new List<UIBarButtonItem>();
 			
