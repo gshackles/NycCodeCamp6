@@ -106,6 +106,9 @@
     <Compile Include="..\CodeCamp.Core\ViewModels\FullScheduleViewModel.cs">
       <Link>ViewModels\FullScheduleViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\CodeCamp.Core\ViewModels\SponsorListViewModel.cs">
+      <Link>ViewModels\SponsorListViewModel.cs</Link>
+    </Compile>
     <Compile Include="DataAccess\IsolatedStorageFileSystemHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

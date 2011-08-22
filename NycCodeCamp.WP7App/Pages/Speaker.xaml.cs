@@ -21,7 +21,7 @@ namespace NycCodeCamp.WP7App.Pages
 
         void Speaker_Loaded(object sender, RoutedEventArgs e)
         {
-            _speaker = App.CodeCampService.Repository.GetSpeaker(NavigationContext.QueryString["key"]);
+            _speaker = App.CodeCampService.Repository.GetSpeaker(NavigationContext.QueryString["email"]);
 
             DataContext = _speaker;
         }

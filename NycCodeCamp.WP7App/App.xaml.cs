@@ -24,7 +24,8 @@ namespace NycCodeCamp.WP7App
         /// </summary>
         public App()
         {
-            CodeCampService = new CodeCampService("http://localhost/codecamp/v1", "sample");
+            //CodeCampService = new CodeCampService("http://localhost/codecamp/v1", "sample");
+            CodeCampService = new CodeCampService("http://codecamps.gregshackles.com/v1", "sample");
 
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;

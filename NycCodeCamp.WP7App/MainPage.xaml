@@ -23,15 +23,13 @@
                             <StackPanel Margin="0,0,0,17">
                                 <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
 
-                                <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sessions}">
+                                <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sessions}" SelectionChanged="SessionSelected">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <Button Margin="0,5,0,5" Name="OverviewSlotButton" Click="SessionSelected" Background="Black" BorderBrush="Black">
-                                                <StackPanel>
-                                                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
-                                                    <TextBlock Text="{Binding Speaker.Name}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSmallStyle}"/>
-                                                </StackPanel>
-                                            </Button>
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                                                <TextBlock Text="{Binding Speaker.Name}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSmallStyle}"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
@@ -48,15 +46,13 @@
                             <StackPanel Margin="0,0,0,17" Width="432">
                                 <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
 
-                                <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sessions}">
+                                <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sessions}" SelectionChanged="SessionSelected">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <Button Margin="0,5,0,5" Name="SessionsButton" Click="SessionSelected" Background="Black" BorderBrush="Black">
-                                                <StackPanel>
-                                                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
-                                                    <TextBlock Text="{Binding Speaker.Name}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSmallStyle}"/>
-                                                </StackPanel>
-                                            </Button>
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                                                <TextBlock Text="{Binding Speaker.Name}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSmallStyle}"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
@@ -67,42 +63,36 @@
             </controls:PivotItem>
 
             <controls:PivotItem Header="tags">
-                <ListBox x:Name="Tags" Margin="0,0,-12,0" ItemsSource="{Binding Tags}">
+                <ListBox x:Name="Tags" Margin="0,0,-12,0" ItemsSource="{Binding Tags}" SelectionChanged="TagSelected">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Button Margin="0,5,0,5" Name="TagButton" Click="TagSelected" Background="Black" BorderBrush="Black">
-                                <StackPanel>
-                                    <TextBlock Text="{Binding BindsDirectlyToSource=True}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                </StackPanel>
-                            </Button>
+                            <StackPanel>
+                                <TextBlock Text="{Binding BindsDirectlyToSource=True}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </controls:PivotItem>
 
             <controls:PivotItem Header="speakers">
-                <ListBox x:Name="Speakers" Margin="0,0,-12,0" ItemsSource="{Binding Speakers}">
+                <ListBox x:Name="Speakers" Margin="0,0,-12,0" ItemsSource="{Binding Speakers}" SelectionChanged="SpeakerSelected">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Button Margin="0,5,0,5" Name="SpeakerButton" Click="SpeakerSelected" Background="Black" BorderBrush="Black">
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
                                 </StackPanel>
-                            </Button>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </controls:PivotItem>
 
             <controls:PivotItem Header="sponsors">
-                <ListBox x:Name="Sponsors" Margin="0,0,-12,0" ItemsSource="{Binding Sponsors}">
+                <ListBox x:Name="Sponsors" Margin="0,0,-12,0" ItemsSource="{Binding Sponsors}" SelectionChanged="SponsorSelected">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Button Margin="0,5,0,5" Name="SponsorButton" Click="SponsorSelected" Background="Black" BorderBrush="Black">
-                                <StackPanel Margin="0,0,0,17" Width="432">
-                                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                </StackPanel>
-                            </Button>
+                            <StackPanel Margin="0,0,0,17" Width="432">
+                                <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

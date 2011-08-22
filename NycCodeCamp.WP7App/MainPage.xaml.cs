@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 using CodeCamp.Core.Messaging;
 using CodeCamp.Core.Messaging.Messages;
@@ -29,13 +31,6 @@ namespace NycCodeCamp.WP7App
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-        }
-
-        private void SessionSelected(object sender, RoutedEventArgs e)
-        {
-            var selectedSession = ((FrameworkElement)sender).DataContext as Entities.Session;
-
-            NavigationService.Navigate(new Uri("/Pages/Session.xaml?key=" + selectedSession.Key, UriKind.Relative));
         }
 
         private void showWaitingDialog(string message)
@@ -107,27 +102,43 @@ namespace NycCodeCamp.WP7App
             ApplicationBar.IsVisible = (e.Item == OverviewPivotItem);
         }
 
-        private void TagSelected(object sender, RoutedEventArgs e)
+        private void TagSelected(object sender, SelectionChangedEventArgs e)
         {
-            string tag = ((FrameworkElement) sender).DataContext as string;
-
-            MessageBox.Show(tag, "Tag selected", MessageBoxButton.OK);
+            processSelectedItem<string>(sender, e, tag =>
+                MessageBox.Show(tag, "Tag selected", MessageBoxButton.OK));
         }
 
-        private void SpeakerSelected(object sender, RoutedEventArgs e)
+        private void SpeakerSelected(object sender, SelectionChangedEventArgs e)
         {
-            var selectedSpeaker = ((FrameworkElement) sender).DataContext as Entities.Speaker;
-
-            NavigationService.Navigate(new Uri("/Pages/Speaker.xaml?key=" + selectedSpeaker.Key, UriKind.Relative));
+            processSelectedItem<Entities.Speaker>(sender, e, speaker =>
+                NavigationService.Navigate(new Uri("/Pages/Speaker.xaml?email=" + HttpUtility.UrlEncode(speaker.Email), UriKind.Relative)));
         }
 
-        private void SponsorSelected(object sender, RoutedEventArgs e)
+        private void SponsorSelected(object sender, SelectionChangedEventArgs e)
         {
-            var selectedSponsor = ((FrameworkElement) sender).DataContext as Entities.Sponsor;
+            processSelectedItem<Entities.Sponsor>(sender, e, sponsor =>
+            {
+                var browserTask = new WebBrowserTask();
+                browserTask.URL = sponsor.Website;
+                browserTask.Show();                                                         
+            });
+        }
 
-            var browserTask = new WebBrowserTask();
-            browserTask.URL = selectedSponsor.Website;
-            browserTask.Show();
+        private void SessionSelected(object sender, SelectionChangedEventArgs e)
+        {
+            processSelectedItem<Entities.Session>(sender, e, session =>
+                NavigationService.Navigate(new Uri("/Pages/Session.xaml?key=" + session.Key, UriKind.Relative)));
+        }
+
+        private void processSelectedItem<T>(object sender, SelectionChangedEventArgs e, Action<T> processItem)
+        {
+            if (e.AddedItems.Count == 0) return;
+
+            T selectedItem = (T) e.AddedItems[0];
+
+            ((ListBox) sender).SelectedItem = null;
+
+            processItem(selectedItem);
         }
     }
 }
