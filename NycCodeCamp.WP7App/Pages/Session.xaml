@@ -15,16 +15,37 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <ScrollViewer HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="Session Details" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="{Binding Title}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+                <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,15,0,15">
+                    <TextBlock x:Name="SessionTitle" Text="{Binding Title}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}" TextWrapping="Wrap"/>
+                </StackPanel>
 
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"></Grid>
+                <StackPanel x:Name="DetailsPanel" Grid.Row="1" Margin="0,15,0,15">
+                    <TextBlock x:Name="SpeakerName" Text="{Binding Speaker.Name}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" MouseLeftButtonDown="SpeakerSelected" />
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Starts, Converter={StaticResource ShortTimeStringValueConverter}}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" />
+                        <TextBlock Text="-" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" />
+                        <TextBlock Text="{Binding Ends, Converter={StaticResource ShortTimeStringValueConverter}}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Room:" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" />
+                        <TextBlock Text="{Binding Room}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" />
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Margin="0,15,0,15">
+                    <TextBlock Text="{Binding Abstract}" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}" />
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </phone:PhoneApplicationPage>

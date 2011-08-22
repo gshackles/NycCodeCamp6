@@ -6,30 +6,30 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:campconverters="clr-namespace:NycCodeCamp.WP7App.ValueConverters"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
     shell:SystemTray.IsVisible="True">
-
-    <phone:PhoneApplicationPage.Resources>
-        <campconverters:StringNullOrEmptyToBooleanValueConverter x:Key="StringNullOrEmptyToBooleanValueConverter" />
-    </phone:PhoneApplicationPage.Resources>
     
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <ScrollViewer HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle" Text="Speaker Details" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="{Binding Name}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+                <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,15,0,15">
+                    <TextBlock x:Name="SpeakerName" Text="{Binding Name}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}" TextWrapping="Wrap"/>
+                </StackPanel>
 
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"></Grid>
+                <StackPanel Grid.Row="2" Margin="0,15,0,15">
+                    <TextBlock Text="{Binding Bio}" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}" />
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
     </Grid>
  
     <phone:PhoneApplicationPage.ApplicationBar>

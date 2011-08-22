@@ -5,7 +5,8 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
-    xmlns:Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls">
+    xmlns:Controls="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:vc="clr-namespace:NycCodeCamp.WP7App.ValueConverters">
 
     <!--Application Resources-->
     <Application.Resources>
@@ -32,6 +33,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <vc:ShortTimeStringValueConverter x:Key="ShortTimeStringValueConverter" />
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

@@ -80,6 +80,7 @@
     <Compile Include="Pages\Session.xaml.cs">
       <DependentUpon>Session.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ValueConverters\ShortTimeStringValueConverter.cs" />
     <Compile Include="ValueConverters\StringNullOrEmptyToBooleanValueConverter.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
   </ItemGroup>
