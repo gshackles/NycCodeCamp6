@@ -57,9 +57,10 @@ namespace NycCodeCamp.MonoTouchApp
 			_speakersController.TabBarItem = new UITabBarItem("Speakers", UIImage.FromFile("Content/Images/sing.png"), 3);
 			
 			var sponsors = AppDelegate.CodeCampService.Repository.GetSponsors();
+			var tiers = AppDelegate.CodeCampService.Repository.GetSponsorTiers();
 			_sponsorsController = new CodeCampNavigationController();
 			_sponsorsController.NavigationBar.BarStyle = UIBarStyle.Black;
-			_sponsorsController.PushViewController(new SponsorListViewController(sponsors), false);
+			_sponsorsController.PushViewController(new SponsorListViewController(sponsors, tiers), false);
 			_sponsorsController.TabBarItem = new UITabBarItem("Sponsors", UIImage.FromFile("Content/Images/star.png"), 4);
 			
 			ViewControllers = new UIViewController[] {

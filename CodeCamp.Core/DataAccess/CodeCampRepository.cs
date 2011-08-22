@@ -12,6 +12,7 @@ namespace CodeCamp.Core.DataAccess
         private IList<Session> _sessions;
 		private IList<Sponsor> _sponsors;
         private IDictionary<string, List<Session>> _tags;
+		private IList<string> _sponsorTiers;
 		
 		public int CurrentVersion { get; private set; }
 		
@@ -21,6 +22,7 @@ namespace CodeCamp.Core.DataAccess
 			_sessions = new List<Session>();
 			_tags = new Dictionary<string, List<Session>>();
 			_sponsors = new List<Sponsor>();
+			_sponsorTiers = new List<string>();
 			
 			if (!string.IsNullOrEmpty(xml))
 			{
@@ -94,8 +96,18 @@ namespace CodeCamp.Core.DataAccess
 						{
 							Name = sponsor.Element("Name").Value,
 							Website = sponsor.Element("Website").Value,
-							Description = sponsor.Element("Description").Value
+							Description = sponsor.Element("Description").Value,
+							Tier = sponsor.Element("Tier").Value
 						}
+					).ToList();
+			}
+			
+			if (doc.Element("SponsorTiers") != null)
+			{
+				_sponsorTiers =
+					(
+						from tier in doc.Element("SponsorTiers").Descendants("Tier")
+						select tier.Value
 					).ToList();
 			}
         }
@@ -136,6 +148,11 @@ namespace CodeCamp.Core.DataAccess
 		public IList<Sponsor> GetSponsors()
 		{
 			return _sponsors;
+		}
+		
+		public IList<string> GetSponsorTiers()
+		{
+			return _sponsorTiers;
 		}
     }
 }

@@ -1,12 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NycCodeCamp.MonoTouchApp/ViewControllers/SessionViewController.xib.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NycCodeCamp.MonoTouchApp/ViewControllers/SponsorViewController.xib.cs">
     <Files>
-      <File FileName="NycCodeCamp.MonoTouchApp/Main.cs" Line="36" Column="4" />
-      <File FileName="CodeCamp.Core/Entities/Speaker.cs" Line="9" Column="27" />
-      <File FileName="CodeCamp.Core/Entities/Session.cs" Line="12" Column="35" />
-      <File FileName="CodeCamp.Core/DataAccess/CodeCampRepository.cs" Line="64" Column="45" />
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SessionViewController.xib.cs" Line="59" Column="5" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SessionViewController.xib.cs" Line="32" Column="23" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/DetailViewControllerBase.cs" Line="87" Column="4" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SpeakerViewController.xib.cs" Line="68" Column="4" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SponsorViewController.xib.cs" Line="64" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,11 +20,13 @@
             <Option id="ShowVersionControlOverlays" value="True" />
             <Option id="ShowAllFiles" value="False" />
             <Node name="ViewControllers" expanded="True">
-              <Node name="SessionViewController.xib" expanded="True">
-                <Node name="SessionViewController.xib.cs" selected="True" />
-              </Node>
+              <Node name="SessionViewController.xib" expanded="True" />
               <Node name="SpeakerViewController.xib" expanded="True" />
+              <Node name="SponsorViewController.xib" expanded="True">
+                <Node name="SponsorViewController.xib.cs" selected="True" />
+              </Node>
             </Node>
+            <Node name="Views" expanded="True" />
             <Node name="MainWindow.xib" expanded="True" />
           </Node>
         </State>
