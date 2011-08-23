@@ -11,7 +11,7 @@ namespace NycCodeCamp.WP7App.ViewModels
         public CampOverviewViewModel Overview { get; set; }
         public FullScheduleViewModel FullSchedule { get; set; }
         public IList<Speaker> Speakers { get; set; }
-        public IList<Sponsor> Sponsors { get; set; }
+        public SponsorListViewModel Sponsors { get; set; }
         public IList<string> Tags { get; set; }
 
         public MainViewModel()
@@ -27,10 +27,9 @@ namespace NycCodeCamp.WP7App.ViewModels
                     .OrderBy(speaker => speaker.Name)
                     .ToList();
 
-            Sponsors =
-                App.CodeCampService.Repository.GetSponsors()
-                    .OrderBy(sponsor => sponsor.Name)
-                    .ToList();
+            var sponsors = App.CodeCampService.Repository.GetSponsors();
+            var tiers = App.CodeCampService.Repository.GetSponsorTiers();
+            Sponsors = new SponsorListViewModel(tiers, sponsors);
 
             Tags =
                 App.CodeCampService.Repository.GetTags()

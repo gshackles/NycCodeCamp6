@@ -73,8 +73,14 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SessionsByTag.xaml.cs">
+      <DependentUpon>SessionsByTag.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Speaker.xaml.cs">
       <DependentUpon>Speaker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Sponsor.xaml.cs">
+      <DependentUpon>Sponsor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\Session.xaml.cs">
@@ -83,6 +89,7 @@
     <Compile Include="ValueConverters\ShortTimeStringValueConverter.cs" />
     <Compile Include="ValueConverters\StringNullOrEmptyToBooleanValueConverter.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\SessionsByTagViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -97,7 +104,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\SessionsByTag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Speaker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Sponsor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

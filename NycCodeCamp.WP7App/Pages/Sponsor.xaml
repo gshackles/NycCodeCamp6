@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage 
-    x:Class="NycCodeCamp.WP7App.Pages.Speaker"
+    x:Class="NycCodeCamp.WP7App.Pages.Sponsor"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -12,7 +12,7 @@
     SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
     mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
     shell:SystemTray.IsVisible="True">
-    
+
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <ScrollViewer HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
             <Grid>
@@ -22,19 +22,18 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,15,0,15">
-                    <TextBlock x:Name="SpeakerName" Text="{Binding Name}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="Name" Text="{Binding Name}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}" TextWrapping="Wrap"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Margin="0,15,0,15">
-                    <TextBlock Text="{Binding Bio}" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}" />
+                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Style="{StaticResource PhoneTextNormalStyle}" />
                 </StackPanel>
             </Grid>
         </ScrollViewer>
     </Grid>
- 
+
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton x:Name="EmailButton" IconUri="/Images/Icons/appbar.feature.email.rest.png" Text="Email" Click="EmailSpeaker" />
             <shell:ApplicationBarIconButton x:Name="WebsiteButton" IconUri="/Images/Icons/appbar.gotoaddressbar.rest.png" Text="Web" Click="GoToWebsite" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>

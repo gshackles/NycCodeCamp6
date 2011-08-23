@@ -9,6 +9,7 @@ using CodeCamp.Core.Messaging;
 using CodeCamp.Core.Messaging.Messages;
 using Coding4Fun.Phone.Controls;
 using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using NycCodeCamp.WP7App.ViewModels;
 using Entities = CodeCamp.Core.Entities;
@@ -105,7 +106,7 @@ namespace NycCodeCamp.WP7App
         private void TagSelected(object sender, SelectionChangedEventArgs e)
         {
             processSelectedItem<string>(sender, e, tag =>
-                MessageBox.Show(tag, "Tag selected", MessageBoxButton.OK));
+                NavigationService.Navigate(new Uri("/Pages/SessionsByTag.xaml?tag=" + HttpUtility.UrlEncode(tag), UriKind.Relative)));
         }
 
         private void SpeakerSelected(object sender, SelectionChangedEventArgs e)
@@ -118,9 +119,8 @@ namespace NycCodeCamp.WP7App
         {
             processSelectedItem<Entities.Sponsor>(sender, e, sponsor =>
             {
-                var browserTask = new WebBrowserTask();
-                browserTask.URL = sponsor.Website;
-                browserTask.Show();                                                         
+                PhoneApplicationService.Current.State["SelectedSponsor"] = sponsor;
+                NavigationService.Navigate(new Uri("/Pages/Sponsor.xaml", UriKind.Relative));
             });
         }
 
