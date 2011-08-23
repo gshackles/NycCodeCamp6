@@ -12,7 +12,8 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+    Style="{StaticResource TransitionPageStyle}">
     
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <controls:Pivot Title="NYC Code Camp 6" LoadingPivotItem="Pivot_LoadingPivotItem">
@@ -21,14 +22,18 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17">
-                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}">
+                                    <TextBlock.Foreground>
+                                        <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                                    </TextBlock.Foreground>
+                                </TextBlock>
 
                                 <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sessions}" SelectionChanged="SessionSelected">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Margin="0,10,0,10">
                                                 <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
-                                                <TextBlock Text="{Binding Speaker.Name}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSmallStyle}"/>
+                                                <TextBlock Text="{Binding Speaker.Name}" TextWrapping="Wrap" Margin="12,0,12,0" Style="{StaticResource PhoneTextSmallStyle}"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
@@ -44,14 +49,18 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17">
-                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}">
+                                    <TextBlock.Foreground>
+                                        <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                                    </TextBlock.Foreground>
+                                </TextBlock>
 
                                 <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sessions}" SelectionChanged="SessionSelected">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Margin="0,10,0,10">
                                                 <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
-                                                <TextBlock Text="{Binding Speaker.Name}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSmallStyle}"/>
+                                                <TextBlock Text="{Binding Speaker.Name}" TextWrapping="Wrap" Margin="12,0,12,0" Style="{StaticResource PhoneTextSmallStyle}"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
@@ -67,7 +76,7 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,10,0,10">
-                                <TextBlock Text="{Binding BindsDirectlyToSource=True}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <TextBlock Text="{Binding BindsDirectlyToSource=True}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -79,7 +88,7 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,10,0,10">
-                                <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
                                 </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -91,7 +100,11 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17">
-                                <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}">
+                                    <TextBlock.Foreground>
+                                        <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                                    </TextBlock.Foreground>
+                                </TextBlock>
 
                                 <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sponsors}" SelectionChanged="SponsorSelected">
                                     <ListBox.ItemTemplate>

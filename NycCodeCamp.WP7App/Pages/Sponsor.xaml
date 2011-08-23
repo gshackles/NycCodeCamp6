@@ -11,7 +11,8 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
     mc:Ignorable="d" d:DesignHeight="696" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+    Style="{StaticResource TransitionPageStyle}">
 
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <ScrollViewer HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
@@ -22,7 +23,11 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,15,0,15">
-                    <TextBlock x:Name="Name" Text="{Binding Name}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="Name" Text="{Binding Name}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}" TextWrapping="Wrap">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Margin="0,15,0,15">

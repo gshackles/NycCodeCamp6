@@ -11,7 +11,8 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
     mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+    Style="{StaticResource TransitionPageStyle}">
 
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <ScrollViewer HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto">
@@ -23,21 +24,50 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="0,15,0,15">
-                    <TextBlock x:Name="SessionTitle" Text="{Binding Title}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="SessionTitle" Text="{Binding Title}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}" 
+                               TextWrapping="Wrap">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
                 </StackPanel>
 
                 <StackPanel x:Name="DetailsPanel" Grid.Row="1" Margin="0,15,0,15">
-                    <TextBlock x:Name="SpeakerName" Text="{Binding Speaker.Name}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" MouseLeftButtonDown="SpeakerSelected" />
+                    <TextBlock x:Name="SpeakerName" Text="{Binding Speaker.Name}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" MouseLeftButtonDown="SpeakerSelected">
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
+                        </TextBlock.Foreground>
+                    </TextBlock>
 
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="15,0,0,0" Text="{Binding Starts, Converter={StaticResource ShortTimeStringValueConverter}}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" />
-                        <TextBlock Margin="5,0,5,0" Text="-" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" />
-                        <TextBlock Margin="0,0,0,0" Text="{Binding Ends, Converter={StaticResource ShortTimeStringValueConverter}}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" />
+                        <TextBlock Margin="15,0,0,0" Text="{Binding Starts, Converter={StaticResource ShortTimeStringValueConverter}}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBlock Margin="5,0,5,0" Text="-" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBlock Margin="0,0,0,0" Text="{Binding Ends, Converter={StaticResource ShortTimeStringValueConverter}}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Margin="15,0,0,0" Text="Room:" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}" />
-                        <TextBlock Margin="5,0,0,0" Text="{Binding Room}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" />
+                        <TextBlock Margin="15,0,0,0" Text="Room:" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBlock Margin="5,0,0,0" Text="{Binding Room}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
                     </StackPanel>
                 </StackPanel>
 
