@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.0">
   <App xmlns="" ProductID="{46b65c56-e009-4df5-9565-fd5433e55a1d}" Title="NYC Code Camp 6" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="NycCodeCamp.WP7App author" Description="Sample description" Publisher="NycCodeCamp.WP7App">
-    <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">Application_IconImage_62x62.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_GAMERSERVICES" />
       <Capability Name="ID_CAP_IDENTITY_DEVICE" />
@@ -21,9 +21,9 @@
     <Tokens>
       <PrimaryToken TokenID="NycCodeCamp.WP7AppToken" TaskName="_default">
         <TemplateType5>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Background.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Application_TileImage_173x173.png</BackgroundImageURI>
           <Count>0</Count>
-          <Title>NYC Code Camp 6</Title>
+          <Title>NYC Code Camp</Title>
         </TemplateType5>
       </PrimaryToken>
     </Tokens>

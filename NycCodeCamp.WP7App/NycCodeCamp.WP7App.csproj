@@ -125,12 +125,8 @@
     <None Include="Toolkit.Content\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ApplicationIcon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Background.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Application_IconImage_62x62.png" />
+    <Content Include="Application_TileImage_173x173.png" />
     <Content Include="Images\Icons\appbar.feature.email.rest.png" />
     <Content Include="Images\Icons\appbar.gotoaddressbar.rest.png" />
     <Content Include="Images\Icons\appbar.refresh.rest.png" />
