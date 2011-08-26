@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D78D167A-FBCA-465D-AC08-2E489B3BEF33}</ProjectGuid>
@@ -10,14 +10,15 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>NycCodeCamp.MonoTouchApp</RootNamespace>
     <MainNibFile>MainWindow.xib</MainNibFile>
-    <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
     <MtouchMinimumOS>3.0</MtouchMinimumOS>
-    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
-    <BundleDisplayName>Code Camp</BundleDisplayName>
+    <BundleDisplayName>NYC Code Camp</BundleDisplayName>
     <BundleIcon>Resources\Icon.png</BundleIcon>
     <BundleIconHigh>Resources\Icon@2x.png</BundleIconHigh>
     <BundleIconSpotlight>Resources\Icon-Small.png</BundleIconSpotlight>
     <BundleIconSpotlightHigh>Resources\Icon-Small@2x.png</BundleIconSpotlightHigh>
+    <BundleIdentifier>com.gregshackles.NYCCodeCamp6</BundleIdentifier>
+    <BundleVersion>1.0.0</BundleVersion>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,6 +36,7 @@
     <MtouchUseThumb>false</MtouchUseThumb>
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchI18n />
+    <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -49,6 +51,7 @@
     <MtouchUseThumb>false</MtouchUseThumb>
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchI18n />
+    <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,6 +70,7 @@
     <MtouchUseLlvm>false</MtouchUseLlvm>
     <MtouchI18n />
     <MtouchLink>Full</MtouchLink>
+    <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -78,12 +82,70 @@
     <MtouchDebug>False</MtouchDebug>
     <MtouchUseThumb>false</MtouchUseThumb>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer: Greg Shackles (28D6W88UZB)</CodesignKey>
+    <CodesignKey>iPhone Distribution: Gregory Shackles</CodesignKey>
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchUseLlvm>false</MtouchUseLlvm>
     <MtouchI18n />
-    <CodesignProvision>5B556B57-0398-4D25-AB16-D58A6818299B</CodesignProvision>
+    <CodesignProvision>1BA0F4C2-D051-4A7B-A25F-5F804E978C9A</CodesignProvision>
     <MtouchLink>Full</MtouchLink>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestFlight|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\TestFlight</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>Full</MtouchLink>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchI18n />
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <CodesignKey>iPhone Distribution: Gregory Shackles</CodesignKey>
+    <AssemblyName>NYCCodeCamp6</AssemblyName>
+    <MtouchUseSGen>false</MtouchUseSGen>
+    <MtouchUseThumb>false</MtouchUseThumb>
+    <MtouchArch>ARMv6</MtouchArch>
+    <CodesignProvision>1BA0F4C2-D051-4A7B-A25F-5F804E978C9A</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestFlight|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\TestFlight</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <MtouchUseSGen>false</MtouchUseSGen>
+    <MtouchDebug>False</MtouchDebug>
+    <AssemblyName>NYCCodeCamp6</AssemblyName>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <MtouchUseThumb>false</MtouchUseThumb>
+    <MtouchArch>ARMv6</MtouchArch>
+    <MtouchLink>Full</MtouchLink>
+    <MtouchI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <MtouchUseSGen>false</MtouchUseSGen>
+    <MtouchDebug>True</MtouchDebug>
+    <AssemblyName>NYCCodeCamp6</AssemblyName>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <MtouchUseThumb>false</MtouchUseThumb>
+    <MtouchArch>ARMv6</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <MtouchUseSGen>false</MtouchUseSGen>
+    <MtouchDebug>False</MtouchDebug>
+    <AssemblyName>NYCCodeCamp6</AssemblyName>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <MtouchUseThumb>false</MtouchUseThumb>
+    <MtouchArch>ARMv6</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchI18n />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -93,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindow.xib.designer.cs">
