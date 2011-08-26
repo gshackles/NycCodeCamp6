@@ -28,7 +28,7 @@
                                     </TextBlock.Foreground>
                                 </TextBlock>
 
-                                <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sessions}" SelectionChanged="SessionSelected">
+                                <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sessions}" SelectionChanged="SessionSelected" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Margin="0,10,0,10">
@@ -55,7 +55,7 @@
                                     </TextBlock.Foreground>
                                 </TextBlock>
 
-                                <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sessions}" SelectionChanged="SessionSelected">
+                                <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sessions}" SelectionChanged="SessionSelected" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Margin="0,10,0,10">
@@ -106,7 +106,7 @@
                                     </TextBlock.Foreground>
                                 </TextBlock>
 
-                                <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sponsors}" SelectionChanged="SponsorSelected">
+                                <ListBox x:Name="OverviewSlot" Margin="0,0,-12,0" ItemsSource="{Binding Sponsors}" SelectionChanged="SponsorSelected" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Margin="0,10,0,10">
