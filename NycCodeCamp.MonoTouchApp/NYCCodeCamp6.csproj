@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D78D167A-FBCA-465D-AC08-2E489B3BEF33}</ProjectGuid>
+    <ProjectTypeGuids>{E613F3A2-FE9C-494F-B74E-F63BCB86FEA6};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>NycCodeCamp.MonoTouchApp</RootNamespace>
+    <MainNibFile>MainWindow.xib</MainNibFile>
+    <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
+    <MtouchMinimumOS>3.0</MtouchMinimumOS>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <BundleDisplayName>Code Camp</BundleDisplayName>
+    <BundleIcon>Resources\Icon.png</BundleIcon>
+    <BundleIconHigh>Resources\Icon@2x.png</BundleIconHigh>
+    <BundleIconSpotlight>Resources\Icon-Small.png</BundleIconSpotlight>
+    <BundleIconSpotlightHigh>Resources\Icon-Small@2x.png</BundleIconSpotlightHigh>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <ConsolePause>false</ConsolePause>
+    <MtouchUseSGen>false</MtouchUseSGen>
+    <MtouchUseThumb>false</MtouchUseThumb>
+    <MtouchArch>ARMv6</MtouchArch>
+    <MtouchI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchUseSGen>false</MtouchUseSGen>
+    <ConsolePause>false</ConsolePause>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <MtouchUseThumb>false</MtouchUseThumb>
+    <MtouchArch>ARMv6</MtouchArch>
+    <MtouchI18n />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchUseSGen>false</MtouchUseSGen>
+    <MtouchDebug>True</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <ConsolePause>false</ConsolePause>
+    <MtouchUseThumb>false</MtouchUseThumb>
+    <MtouchArch>ARMv6</MtouchArch>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <MtouchI18n />
+    <MtouchLink>Full</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchUseSGen>false</MtouchUseSGen>
+    <MtouchDebug>False</MtouchDebug>
+    <MtouchUseThumb>false</MtouchUseThumb>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer: Greg Shackles (28D6W88UZB)</CodesignKey>
+    <MtouchArch>ARMv6</MtouchArch>
+    <MtouchUseLlvm>false</MtouchUseLlvm>
+    <MtouchI18n />
+    <CodesignProvision>5B556B57-0398-4D25-AB16-D58A6818299B</CodesignProvision>
+    <MtouchLink>Full</MtouchLink>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.xib.designer.cs">
+      <DependentUpon>MainWindow.xib</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs" />
+    <Compile Include="ViewControllers\CampOverviewViewController.cs" />
+    <Compile Include="ViewControllers\SessionViewController.xib.cs">
+      <DependentUpon>SessionViewController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SessionViewController.xib.designer.cs">
+      <DependentUpon>SessionViewController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SpeakerViewController.xib.cs">
+      <DependentUpon>SpeakerViewController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SpeakerViewController.xib.designer.cs">
+      <DependentUpon>SpeakerViewController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SpeakerListViewController.cs" />
+    <Compile Include="ViewControllers\SessionListViewController.cs" />
+    <Compile Include="ViewControllers\TabController.cs" />
+    <Compile Include="ViewControllers\ListControllerBase.cs" />
+    <Compile Include="ViewControllers\CodeCampNavigationController.cs" />
+    <Compile Include="ViewControllers\TagListViewController.cs" />
+    <Compile Include="ViewControllers\SessionListByTagViewController.cs" />
+    <Compile Include="Views\WaitingView.cs" />
+    <Compile Include="ViewControllers\SponsorListViewController.cs" />
+    <Compile Include="ViewControllers\SponsorViewController.xib.cs">
+      <DependentUpon>SponsorViewController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SponsorViewController.xib.designer.cs">
+      <DependentUpon>SponsorViewController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\DetailViewControllerBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xib" />
+    <Page Include="ViewControllers\SessionViewController.xib" />
+    <Page Include="ViewControllers\SpeakerViewController.xib" />
+    <Page Include="ViewControllers\SponsorViewController.xib" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\CodeCamp.Core.MonoTouch\CodeCamp.Core.MonoTouch.csproj">
+      <Project>{C38A563E-A3E4-461E-954C-875557FDDD83}</Project>
+      <Name>CodeCamp.Core.MonoTouch</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Images\megaphone.png" />
+    <Content Include="Content\Images\sing.png" />
+    <Content Include="Content\Images\sing%402x.png" />
+    <Content Include="Content\Images\todo-list.png" />
+    <Content Include="Content\Images\todo-list%402x.png" />
+    <Content Include="Content\Images\megaphone%402x.png" />
+    <Content Include="Content\Images\home1.png" />
+    <Content Include="Content\Images\home1%402x.png" />
+    <Content Include="Content\Images\background.png" />
+    <Content Include="Content\Images\background%402x.png" />
+    <Content Include="Content\Images\email.png" />
+    <Content Include="Content\Images\email%402x.png" />
+    <Content Include="Content\Images\globe.png" />
+    <Content Include="Content\Images\globe%402x.png" />
+    <Content Include="Content\Images\star.png" />
+    <Content Include="Content\Images\star%402x.png" />
+    <Content Include="Default.png" />
+    <Content Include="Default%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="ViewControllers\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="None" ResourceNamePolicy="FileName" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Resource Include="Resources\Icon.png" />
+    <Resource Include="Resources\Icon%402x.png" />
+    <Resource Include="Resources\Icon-72.png" />
+    <Resource Include="Resources\Icon-Small.png" />
+    <Resource Include="Resources\Icon-Small%402x.png" />
+    <Resource Include="Resources\Icon-Small-50.png" />
+  </ItemGroup>
+</Project>
