@@ -12,7 +12,8 @@ namespace NycCodeCamp.MonoTouchApp
 									   		 _tagsController,
 									   		 _speakersController,
 									   		 _campOverviewController,
-											 _sponsorsController;
+											 _sponsorsController,
+											 _roomController;
 		
 		public override void ViewDidLoad()
 		{
@@ -33,6 +34,8 @@ namespace NycCodeCamp.MonoTouchApp
 				_speakersController.Dispose();
 			if (_sponsorsController != null)
 				_sponsorsController.Dispose();
+			if (_roomController != null)
+				_roomController.Dispose();
 			
 			_campOverviewController = new CodeCampNavigationController();
 			_campOverviewController.NavigationBar.BarStyle = UIBarStyle.Black;
@@ -63,16 +66,31 @@ namespace NycCodeCamp.MonoTouchApp
 			_sponsorsController.PushViewController(new SponsorListViewController(sponsors, tiers), false);
 			_sponsorsController.TabBarItem = new UITabBarItem("Sponsors", UIImage.FromFile("Content/Images/star.png"), 4);
 			
+			_roomController = new CodeCampNavigationController();
+			_roomController.NavigationBar.BarStyle = UIBarStyle.Black;
+			_roomController.PushViewController(new RoomViewController(), false);
+			_roomController.TabBarItem = new UITabBarItem("Rooms", UIImage.FromFile("Content/Images/navigate-signs2.png"), 5);
+			
 			ViewControllers = new UIViewController[] {
 				_campOverviewController,
 				_sessionsController,
 				_tagsController,
 				_speakersController,
-				_sponsorsController
+				_sponsorsController,
+				_roomController
 			};
 			
+			MoreNavigationController.NavigationBar.BarStyle = UIBarStyle.Black;
+
 			SelectedIndex = 0;
+			
+			OnCustomizingViewControllers += delegate(object sender, UITabBarCustomizeEventArgs e) 
+			{
+				var editView = View.Subviews[1];
+				var modalNavBar = (UINavigationBar)editView.Subviews[0];
+				modalNavBar.TintColor = UIColor.Black;
+				modalNavBar.TopItem.Title = "Edit Tabs";
+			};
 		}
 	}
 }
-

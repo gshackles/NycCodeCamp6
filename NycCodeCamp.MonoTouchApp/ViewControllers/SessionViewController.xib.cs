@@ -68,13 +68,19 @@ namespace NycCodeCamp.MonoTouchApp
 			SessionTime.Text = string.Format("{0} - {1}",
 											 _session.Starts.ToLocalTime().ToShortTimeString(),
 											 _session.Ends.ToLocalTime().ToShortTimeString());
-			SessionRoom.Text = "Room: " + _session.Room;
+			SessionRoom.SetTitle("Room: " + _session.Room, UIControlState.Normal);
 			SessionAbstract.Text = _session.Abstract;
 			
 			SpeakerName.TouchUpInside += delegate 
 			{
 				NavigationController.PushViewController(
 					new SpeakerViewController(_session.Speaker), true);
+			};
+			
+			SessionRoom.TouchUpInside += delegate 
+			{
+				NavigationController.PushViewController(
+					new RoomViewController(), true);
 			};
 		}
 	}

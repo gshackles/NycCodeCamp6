@@ -27,7 +27,7 @@ namespace NycCodeCamp.MonoTouchApp {
 		
 		private MonoTouch.UIKit.UIScrollView __mt_Scroller;
 		
-		private MonoTouch.UIKit.UILabel __mt_SessionRoom;
+		private MonoTouch.UIKit.UIButton __mt_SessionRoom;
 		
 		#pragma warning disable 0169
 		[MonoTouch.Foundation.Connect("view")]
@@ -103,9 +103,9 @@ namespace NycCodeCamp.MonoTouchApp {
 		}
 		
 		[MonoTouch.Foundation.Connect("SessionRoom")]
-		private MonoTouch.UIKit.UILabel SessionRoom {
+		private MonoTouch.UIKit.UIButton SessionRoom {
 			get {
-				this.__mt_SessionRoom = ((MonoTouch.UIKit.UILabel)(this.GetNativeField("SessionRoom")));
+				this.__mt_SessionRoom = ((MonoTouch.UIKit.UIButton)(this.GetNativeField("SessionRoom")));
 				return this.__mt_SessionRoom;
 			}
 			set {

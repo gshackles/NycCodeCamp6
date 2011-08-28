@@ -1,15 +1,25 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="TestFlight|iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="NycCodeCamp.MonoTouchApp/Main.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NycCodeCamp.MonoTouchApp/ViewControllers/RoomViewController.cs">
     <Files>
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SponsorListViewController.cs" Line="62" Column="54" />
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/CampOverviewViewController.cs" Line="1" Column="1" />
-      <File FileName="NycCodeCamp.MonoTouchApp/Main.cs" Line="72" Column="20" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/RoomViewController.cs" Line="41" Column="4" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/DetailViewControllerBase.cs" Line="60" Column="21" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SessionListViewController.cs" Line="59" Column="5" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SessionListByTagViewController.cs" Line="55" Column="29" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/CampOverviewViewController.cs" Line="68" Column="102" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SpeakerViewController.xib.cs" Line="1" Column="1" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SessionViewController.xib.cs" Line="67" Column="40" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="NYCCodeCamp6" expanded="True" selected="True" />
+          <Node name="NYCCodeCamp6" expanded="True" selected="True">
+            <Node name="Content" expanded="True" />
+            <Node name="ViewControllers" expanded="True">
+              <Node name="SessionViewController.xib" expanded="True" />
+              <Node name="SpeakerViewController.xib" expanded="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">

@@ -49,9 +49,10 @@ namespace NycCodeCamp.MonoTouchApp
 				var session = _sessions[indexPath.Row];
 				
 				cell.TextLabel.Text = session.Title;
-				cell.DetailTextLabel.Text = string.Format("{0} - {1}",
+				cell.DetailTextLabel.Text = string.Format("Room: {2}, {0} - {1}",
 														  session.Starts.ToLocalTime().ToShortTimeString(),
-														  session.Ends.ToLocalTime().ToShortTimeString());
+														  session.Ends.ToLocalTime().ToShortTimeString(),
+														  session.Room);
 				cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 				cell.BackgroundView = new UIView(cell.Frame) { BackgroundColor = UIColor.White };
 				

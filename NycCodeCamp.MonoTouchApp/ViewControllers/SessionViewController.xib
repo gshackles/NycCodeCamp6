@@ -98,29 +98,6 @@
                 <int key="IBUINumberOfLines">0</int>
                 <int key="IBUILineBreakMode">0</int>
               </object>
-              <object class="IBUILabel" id="833463066">
-                <reference key="NSNextResponder" ref="320371610"/>
-                <int key="NSvFlags">290</int>
-                <string key="NSFrame">{{20, 108}, {280, 21}}</string>
-                <reference key="NSSuperview" ref="320371610"/>
-                <string key="NSReuseIdentifierKey">_NS:173</string>
-                <bool key="IBUIOpaque">NO</bool>
-                <bool key="IBUIClipsSubviews">YES</bool>
-                <int key="IBUIContentMode">7</int>
-                <bool key="IBUIUserInteractionEnabled">NO</bool>
-                <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-                <string key="IBUIText">Session Room</string>
-                <object class="NSColor" key="IBUITextColor">
-                  <int key="NSColorSpace">1</int>
-                  <bytes key="NSRGB">MC42IDAuNiAwLjYgMC42AA</bytes>
-                </object>
-                <reference key="IBUIHighlightedColor" ref="751749913"/>
-                <int key="IBUIBaselineAdjustment">1</int>
-                <bool key="IBUIAdjustsFontSizeToFit">NO</bool>
-                <float key="IBUIMinimumFontSize">10</float>
-                <int key="IBUINumberOfLines">0</int>
-                <int key="IBUILineBreakMode">0</int>
-              </object>
               <object class="IBUILabel" id="600203729">
                 <reference key="NSNextResponder" ref="320371610"/>
                 <int key="NSvFlags">290</int>
@@ -168,10 +145,32 @@
                 <string key="IBUINormalTitle">Speaker Name</string>
                 <reference key="IBUIHighlightedTitleColor" ref="751749913"/>
                 <reference key="IBUINormalTitleColor" ref="139336505"/>
-                <object class="NSColor" key="IBUINormalTitleShadowColor">
+                <object class="NSColor" key="IBUINormalTitleShadowColor" id="1019729484">
                   <int key="NSColorSpace">3</int>
                   <bytes key="NSWhite">MC41AA</bytes>
                 </object>
+              </object>
+              <object class="IBUIButton" id="709412852">
+                <reference key="NSNextResponder" ref="320371610"/>
+                <int key="NSvFlags">292</int>
+                <string key="NSFrame">{{10, 105}, {280, 37}}</string>
+                <reference key="NSSuperview" ref="320371610"/>
+                <string key="NSReuseIdentifierKey">_NS:84</string>
+                <bool key="IBUIOpaque">NO</bool>
+                <string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+                <int key="IBUIContentVerticalAlignment">0</int>
+                <object class="NSFont" key="IBUIFont">
+                  <string key="NSName">Helvetica</string>
+                  <double key="NSSize">17</double>
+                  <int key="NSfFlags">16</int>
+                </object>
+                <string key="IBUINormalTitle">Session Room</string>
+                <reference key="IBUIHighlightedTitleColor" ref="751749913"/>
+                <object class="NSColor" key="IBUINormalTitleColor">
+                  <int key="NSColorSpace">1</int>
+                  <bytes key="NSRGB">MC42IDAuNiAwLjYgMC42AA</bytes>
+                </object>
+                <reference key="IBUINormalTitleShadowColor" ref="1019729484"/>
               </object>
             </object>
             <string key="NSFrameSize">{320, 460}</string>
@@ -244,9 +243,9 @@
           <object class="IBCocoaTouchOutletConnection" key="connection">
             <string key="label">SessionRoom</string>
             <reference key="source" ref="372490531"/>
-            <reference key="destination" ref="833463066"/>
+            <reference key="destination" ref="709412852"/>
           </object>
-          <int key="connectionID">22</int>
+          <int key="connectionID">24</int>
         </object>
       </object>
       <object class="IBMutableOrderedSet" key="objectRecords">
@@ -287,7 +286,7 @@
               <reference ref="600203729"/>
               <reference ref="516709859"/>
               <reference ref="305076836"/>
-              <reference ref="833463066"/>
+              <reference ref="709412852"/>
             </object>
             <reference key="parent" ref="191373211"/>
           </object>
@@ -312,8 +311,8 @@
             <reference key="parent" ref="320371610"/>
           </object>
           <object class="IBObjectRecord">
-            <int key="objectID">21</int>
-            <reference key="object" ref="833463066"/>
+            <int key="objectID">23</int>
+            <reference key="object" ref="709412852"/>
             <reference key="parent" ref="320371610"/>
           </object>
         </object>
@@ -334,8 +333,8 @@
           <string>16.IBViewBoundsToFrameTransform</string>
           <string>19.IBPluginDependency</string>
           <string>19.IBViewBoundsToFrameTransform</string>
-          <string>21.IBPluginDependency</string>
-          <string>21.IBViewBoundsToFrameTransform</string>
+          <string>23.IBPluginDependency</string>
+          <string>23.IBViewBoundsToFrameTransform</string>
           <string>8.IBPluginDependency</string>
           <string>8.IBViewBoundsToFrameTransform</string>
         </object>
@@ -363,7 +362,7 @@
           </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <object class="NSAffineTransform">
-            <bytes key="NSTransformStruct">AUGgAABCngAAA</bytes>
+            <bytes key="NSTransformStruct">P4AAAL+AAABBoAAAw5IAAA</bytes>
           </object>
           <string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
           <object class="NSAffineTransform">
@@ -387,7 +386,7 @@
         </object>
       </object>
       <nil key="sourceID"/>
-      <int key="maxID">22</int>
+      <int key="maxID">24</int>
     </object>
     <object class="IBClassDescriber" key="IBDocument.Classes">
       <object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -410,7 +409,7 @@
               <bool key="EncodedWithXMLCoder">YES</bool>
               <string>UIScrollView</string>
               <string>UILabel</string>
-              <string>UILabel</string>
+              <string>UIButton</string>
               <string>UILabel</string>
               <string>UILabel</string>
               <string>UIButton</string>
@@ -441,7 +440,7 @@
               </object>
               <object class="IBToOneOutletInfo">
                 <string key="name">SessionRoom</string>
-                <string key="candidateClassName">UILabel</string>
+                <string key="candidateClassName">UIButton</string>
               </object>
               <object class="IBToOneOutletInfo">
                 <string key="name">SessionTime</string>

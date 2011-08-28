@@ -82,13 +82,11 @@
     <MtouchDebug>False</MtouchDebug>
     <MtouchUseThumb>false</MtouchUseThumb>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Distribution: Gregory Shackles</CodesignKey>
+    <CodesignKey>iPhone Developer: Greg Shackles (28D6W88UZB)</CodesignKey>
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchUseLlvm>false</MtouchUseLlvm>
     <MtouchI18n />
-    <CodesignProvision>1BA0F4C2-D051-4A7B-A25F-5F804E978C9A</CodesignProvision>
     <MtouchLink>Full</MtouchLink>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestFlight|iPhone' ">
@@ -191,6 +189,7 @@
       <DependentUpon>SponsorViewController.xib</DependentUpon>
     </Compile>
     <Compile Include="ViewControllers\DetailViewControllerBase.cs" />
+    <Compile Include="ViewControllers\RoomViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />
@@ -224,6 +223,9 @@
     <Content Include="Content\Images\star%402x.png" />
     <Content Include="Default.png" />
     <Content Include="Default%402x.png" />
+    <Content Include="Content\Images\GameOfThrones.jpg" />
+    <Content Include="Content\Images\navigate-signs2.png" />
+    <Content Include="Content\Images\navigate-signs2%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
