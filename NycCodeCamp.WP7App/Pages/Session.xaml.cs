@@ -32,5 +32,10 @@ namespace NycCodeCamp.WP7App.Pages
             NavigationService.Navigate(new Uri("/Pages/Speaker.xaml?email=" + HttpUtility.UrlEncode(email),
                                                UriKind.Relative));
         }
+
+        private void RoomSelected(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/Map.xaml", UriKind.Relative));
+        }
     }
 }

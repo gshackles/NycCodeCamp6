@@ -57,7 +57,7 @@
                         </TextBlock>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" MouseLeftButtonDown="RoomSelected">
                         <TextBlock Margin="15,0,0,0" Text="Room:" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}">
                             <TextBlock.Foreground>
                                 <SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>

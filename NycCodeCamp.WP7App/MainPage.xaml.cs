@@ -140,5 +140,10 @@ namespace NycCodeCamp.WP7App
 
             processItem(selectedItem);
         }
+
+        private void ViewDetailedMap(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/Map.xaml", UriKind.Relative));
+        }
     }
 }
