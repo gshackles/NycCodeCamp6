@@ -91,7 +91,7 @@
       <DependentUpon>Session.xaml</DependentUpon>
     </Compile>
     <Compile Include="ValueConverters\ShortTimeStringValueConverter.cs" />
-    <Compile Include="ValueConverters\StringNullOrEmptyToBooleanValueConverter.cs" />
+    <Compile Include="ValueConverters\StringNullOrEmptyToVisibilityValueConverter.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SessionsByTagViewModel.cs" />
   </ItemGroup>

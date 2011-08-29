@@ -33,7 +33,8 @@
                 </StackPanel>
 
                 <StackPanel x:Name="DetailsPanel" Grid.Row="1" Margin="0,15,0,15">
-                    <TextBlock x:Name="SpeakerName" Text="{Binding Speaker.Name}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" MouseLeftButtonDown="SpeakerSelected">
+                    <TextBlock x:Name="SpeakerName" Text="{Binding Speaker.Name}" Style="{StaticResource PhoneTextLargeStyle}" TextWrapping="Wrap" MouseLeftButtonDown="SpeakerSelected"
+                               Visibility="{Binding Speaker.Name, Converter={StaticResource StringNullOrEmptyToVisibilityConverter}}">
                         <TextBlock.Foreground>
                             <SolidColorBrush Color="{StaticResource PhoneSubtleColor}"/>
                         </TextBlock.Foreground>

@@ -59,6 +59,7 @@
             </Setter>
         </Style>
         <vc:ShortTimeStringValueConverter x:Key="ShortTimeStringValueConverter" />
+        <vc:StringNullOrEmptyToVisibilityValueConverter x:Key="StringNullOrEmptyToVisibilityConverter" />
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>
