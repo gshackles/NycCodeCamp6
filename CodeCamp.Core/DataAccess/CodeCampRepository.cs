@@ -119,7 +119,7 @@ namespace CodeCamp.Core.DataAccess
 
         public IList<Speaker> GetSpeakers()
         {
-            return _speakers;
+            return _speakers.Where(speaker => !string.IsNullOrEmpty(speaker.Name)).ToList();
         }
 
         public Session GetSession(string sessionKey)
@@ -142,7 +142,7 @@ namespace CodeCamp.Core.DataAccess
 
         public IList<string> GetTags()
         {
-            return _tags.Keys.ToList();
+            return _tags.Keys.Where(tag => !string.IsNullOrEmpty(tag)).ToList();
         }
 		
 		public IList<Sponsor> GetSponsors()

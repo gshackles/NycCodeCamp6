@@ -65,7 +65,12 @@ namespace NycCodeCamp.MonoTouchApp
 					var session = _viewModel.UpcomingSlots[indexPath.Section].Sessions[indexPath.Row];
 					
 					cell.TextLabel.Text = session.Title;
-					cell.DetailTextLabel.Text = string.Format("Room: {0}, {1}", session.Room, session.Speaker.Name);
+					
+					if (string.IsNullOrEmpty(session.Speaker.Name))
+						cell.DetailTextLabel.Text = "Room: " + session.Room;
+					else
+						cell.DetailTextLabel.Text = string.Format("Room: {0}, {1}", session.Room, session.Speaker.Name);
+					
 					cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 					
 					return cell;

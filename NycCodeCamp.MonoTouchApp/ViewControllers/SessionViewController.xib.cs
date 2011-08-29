@@ -53,6 +53,9 @@ namespace NycCodeCamp.MonoTouchApp
 				if (_views == null)
 				{
 					_views = new List<UIView>() { SessionTitle, SpeakerName, SessionTime, SessionRoom, SessionAbstract };
+					
+					if (string.IsNullOrEmpty(_session.Speaker.Name))
+						_views.Remove(SpeakerName);
 				}
 				
 				return _views;
@@ -71,11 +74,14 @@ namespace NycCodeCamp.MonoTouchApp
 			SessionRoom.SetTitle("Room: " + _session.Room, UIControlState.Normal);
 			SessionAbstract.Text = _session.Abstract;
 			
-			SpeakerName.TouchUpInside += delegate 
+			if (!string.IsNullOrEmpty(_session.Speaker.Name))
 			{
-				NavigationController.PushViewController(
-					new SpeakerViewController(_session.Speaker), true);
-			};
+				SpeakerName.TouchUpInside += delegate 
+				{
+					NavigationController.PushViewController(
+						new SpeakerViewController(_session.Speaker), true);
+				};
+			}
 			
 			SessionRoom.TouchUpInside += delegate 
 			{
