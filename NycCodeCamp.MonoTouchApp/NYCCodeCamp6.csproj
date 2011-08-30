@@ -82,12 +82,13 @@
     <MtouchDebug>False</MtouchDebug>
     <MtouchUseThumb>false</MtouchUseThumb>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer: Greg Shackles (28D6W88UZB)</CodesignKey>
+    <CodesignKey>iPhone Distribution: Gregory Shackles</CodesignKey>
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchUseLlvm>false</MtouchUseLlvm>
     <MtouchI18n />
     <MtouchLink>Full</MtouchLink>
     <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
+    <CodesignProvision>1BA0F4C2-D051-4A7B-A25F-5F804E978C9A</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestFlight|iPhone' ">
     <DebugType>none</DebugType>
