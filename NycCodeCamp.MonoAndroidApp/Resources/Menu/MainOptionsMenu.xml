@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/Update"
+          android:title="Update"
+          android:icon="@drawable/update"/>
+    <item android:id="@+id/Overview"
+          android:title="Overview"
+          android:icon="@drawable/overview"/>
+    <item android:id="@+id/Sessions"
+          android:title="Sessions"
+          android:icon="@drawable/schedule"/>
+    <item android:id="@+id/Tags"
+          android:title="Tags"
+          android:icon="@drawable/tags"/>
+    <item android:id="@+id/Speakers"
+          android:title="Speakers"
+          android:icon="@drawable/speakers"/>
+    <item android:id="@+id/Rooms"
+          android:title="Rooms"
+          android:icon="@drawable/rooms"/>
+    <item android:id="@+id/Sponsors"
+          android:title="Sponsors"
+          android:icon="@drawable/sponsors"/>
+</menu>

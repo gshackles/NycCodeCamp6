@@ -15,8 +15,14 @@ namespace CodeCamp.Core.DataAccess
 		
 		public CodeCampService(string baseUrl, string campKey)
 		{
+            // ideally each app would just send in its folder path or helper instead of doing it this way
+            // including this as a example of how to use compiler directives in shared layers
 #if WINDOWS_PHONE
             _fileHelper = new IsolatedStorageFileSystemHelper();
+#elif __ANDROID__
+            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),
+                                             "../cache");
+            _fileHelper = new StandardFileSystemHelper(folderPath);
 #else
             string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), 
 											 "../Library/Caches");
