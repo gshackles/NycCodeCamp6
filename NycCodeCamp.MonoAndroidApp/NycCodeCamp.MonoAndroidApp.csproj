@@ -36,7 +36,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
-    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidLinkMode>Full</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -105,9 +105,6 @@
     <AndroidResource Include="Resources\Values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\Icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CodeCamp.Core.MonoAndroid\CodeCamp.Core.MonoAndroid.csproj">
       <Project>{D8BE3E81-EC9A-40A3-BF00-821B5791AC34}</Project>
       <Name>CodeCamp.Core.MonoAndroid</Name>
@@ -172,6 +169,9 @@
     <AndroidResource Include="Resources\Drawable-hdpi\Update.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\Update.png" />
     <AndroidResource Include="Resources\Drawable-mdpi\Update.png" />
+    <AndroidResource Include="Resources\Drawable-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\Drawable-ldpi\Icon.png" />
+    <AndroidResource Include="Resources\Drawable-mdpi\Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\Session.axml">
@@ -197,6 +197,9 @@
     <AndroidResource Include="Resources\Layout\SessionsByTagItem.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Drawable\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
