@@ -7,20 +7,22 @@ namespace NycCodeCamp.MonoTouchApp
 	public class RoomViewController : UIViewController
 	{
 		private UIScrollView _scroller;
+		private readonly Room _room;
 		
-		public RoomViewController ()
+		public RoomViewController (Room room)
 		{
 			HidesBottomBarWhenPushed = true;
+			_room = room;
 		}
 		
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad ();
 			
-			NavigationItem.Title = "Room Layout";
+			NavigationItem.Title = _room.Name;
 			
 			_scroller = new UIScrollView(View.Frame);
-			var roomImage = new UIImageView(UIImage.FromFile("Content/Images/GameOfThrones.jpg"));
+			var roomImage = new UIImageView(UIImage.FromFile("Content/Images/" + _room.Filename));
 			
 			_scroller.AddSubview(roomImage);
 			_scroller.ContentSize = roomImage.Frame.Size;

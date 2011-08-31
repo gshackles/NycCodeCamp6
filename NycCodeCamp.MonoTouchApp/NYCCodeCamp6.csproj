@@ -131,6 +131,7 @@
     <MtouchUseLlvm>false</MtouchUseLlvm>
     <MtouchUseThumb>false</MtouchUseThumb>
     <MtouchArch>ARMv6</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -203,6 +204,8 @@
     </Compile>
     <Compile Include="ViewControllers\DetailViewControllerBase.cs" />
     <Compile Include="ViewControllers\RoomViewController.cs" />
+    <Compile Include="ViewControllers\RoomListViewController.cs" />
+    <Compile Include="Entities\Room.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainWindow.xib" />
@@ -244,6 +247,7 @@
     <Folder Include="Content\" />
     <Folder Include="ViewControllers\" />
     <Folder Include="Views\" />
+    <Folder Include="Entities\" />
   </ItemGroup>
   <ProjectExtensions>
     <MonoDevelop>

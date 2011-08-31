@@ -1,23 +1,20 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CodeCamp.Core/DataAccess/CodeCampRepository.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NycCodeCamp.MonoTouchApp/ViewControllers/RoomListViewController.cs">
     <Files>
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/RoomViewController.cs" Line="45" Column="31" />
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/TabController.cs" Line="91" Column="28" />
-      <File FileName="CodeCamp.Core/DataAccess/CodeCampRepository.cs" Line="30" Column="5" />
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/CampOverviewViewController.cs" Line="69" Column="6" />
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SessionViewController.xib.cs" Line="76" Column="4" />
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SessionListViewController.cs" Line="65" Column="5" />
-      <File FileName="CodeCamp.Core/ViewModels/CampOverviewViewModel.cs" Line="32" Column="16" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/RoomListViewController.cs" Line="72" Column="5" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/RoomViewController.cs" Line="25" Column="31" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SessionViewController.xib.cs" Line="89" Column="14" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/TabController.cs" Line="71" Column="51" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="NYCCodeCamp6" expanded="True" selected="True">
-            <Node name="Content" expanded="True" />
+          <Node name="CodeCamp.Core.MonoAndroid" expanded="True" />
+          <Node name="CodeCamp.Core.MonoTouch" selected="True" />
+          <Node name="NYCCodeCamp6" expanded="True">
             <Node name="ViewControllers" expanded="True">
               <Node name="SessionViewController.xib" expanded="True" />
-              <Node name="SpeakerViewController.xib" expanded="True" />
             </Node>
           </Node>
         </State>

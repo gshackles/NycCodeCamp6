@@ -68,7 +68,7 @@ namespace NycCodeCamp.MonoTouchApp
 			
 			_roomController = new CodeCampNavigationController();
 			_roomController.NavigationBar.BarStyle = UIBarStyle.Black;
-			_roomController.PushViewController(new RoomViewController(), false);
+			_roomController.PushViewController(new RoomListViewController(), false);
 			_roomController.TabBarItem = new UITabBarItem("Rooms", UIImage.FromFile("Content/Images/navigate-signs2.png"), 5);
 			
 			ViewControllers = new UIViewController[] {
