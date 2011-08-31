@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
+using NycCodeCamp.WP7App.ViewModels;
 
 namespace NycCodeCamp.WP7App.Pages
 {
@@ -18,6 +12,14 @@ namespace NycCodeCamp.WP7App.Pages
         public Map()
         {
             InitializeComponent();
+
+            Loaded += Map_Loaded;
+        }
+
+        private void Map_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataContext = new MapViewModel(NavigationContext.QueryString["name"],
+                                           NavigationContext.QueryString["filename"]);
         }
     }
 }

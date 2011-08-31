@@ -71,6 +71,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Room.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -93,6 +94,7 @@
     <Compile Include="ValueConverters\ShortTimeStringValueConverter.cs" />
     <Compile Include="ValueConverters\StringNullOrEmptyToVisibilityValueConverter.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\SessionsByTagViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

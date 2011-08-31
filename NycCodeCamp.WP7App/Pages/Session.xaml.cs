@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Microsoft.Phone.Controls;
-using Entities = CodeCamp.Core.Entities;
+using CoreEntities = CodeCamp.Core.Entities;
 
 namespace NycCodeCamp.WP7App.Pages
 {
@@ -27,7 +27,7 @@ namespace NycCodeCamp.WP7App.Pages
 
         private void SpeakerSelected(object sender, MouseButtonEventArgs e)
         {
-            string email = ((Entities.Session) ((TextBlock) sender).DataContext).Speaker.Email;
+            string email = ((CoreEntities.Session)((TextBlock)sender).DataContext).Speaker.Email;
 
             NavigationService.Navigate(new Uri("/Pages/Speaker.xaml?email=" + HttpUtility.UrlEncode(email),
                                                UriKind.Relative));

@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Phone.Controls;
 using NycCodeCamp.WP7App.ViewModels;
-using Entities = CodeCamp.Core.Entities;
+using CoreEntities = CodeCamp.Core.Entities;
 
 namespace NycCodeCamp.WP7App.Pages
 {
@@ -29,7 +29,7 @@ namespace NycCodeCamp.WP7App.Pages
 
             ((ListBox)sender).SelectedItem = null;
 
-            var session = (Entities.Session)e.AddedItems[0];
+            var session = (CoreEntities.Session)e.AddedItems[0];
             NavigationService.Navigate(new Uri("/Pages/Session.xaml?key=" + session.Key, UriKind.Relative));
         }
     }

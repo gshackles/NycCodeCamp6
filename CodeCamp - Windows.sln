@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCamp.Core.WP7", "CodeCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NycCodeCamp.WP7App", "NycCodeCamp.WP7App\NycCodeCamp.WP7App.csproj", "{D4D32B56-3DD5-4251-8FC6-AF1453C083B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NycCodeCamp.MonoAndroidApp", "NycCodeCamp.MonoAndroidApp\NycCodeCamp.MonoAndroidApp.csproj", "{314E127F-735C-45B0-9F42-34ACA5039466}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,16 +53,6 @@ Global
 		{D4D32B56-3DD5-4251-8FC6-AF1453C083B3}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{D4D32B56-3DD5-4251-8FC6-AF1453C083B3}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{D4D32B56-3DD5-4251-8FC6-AF1453C083B3}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{314E127F-735C-45B0-9F42-34ACA5039466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{314E127F-735C-45B0-9F42-34ACA5039466}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{314E127F-735C-45B0-9F42-34ACA5039466}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{314E127F-735C-45B0-9F42-34ACA5039466}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{314E127F-735C-45B0-9F42-34ACA5039466}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{314E127F-735C-45B0-9F42-34ACA5039466}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{314E127F-735C-45B0-9F42-34ACA5039466}.Release|Any CPU.Build.0 = Release|Any CPU
-		{314E127F-735C-45B0-9F42-34ACA5039466}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{314E127F-735C-45B0-9F42-34ACA5039466}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{314E127F-735C-45B0-9F42-34ACA5039466}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

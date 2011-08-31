@@ -4,15 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 using CodeCamp.Core.Messaging;
 using CodeCamp.Core.Messaging.Messages;
 using Coding4Fun.Phone.Controls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Microsoft.Phone.Tasks;
+using NycCodeCamp.WP7App.Entities;
 using NycCodeCamp.WP7App.ViewModels;
-using Entities = CodeCamp.Core.Entities;
+using CoreEntities = CodeCamp.Core.Entities;
 
 namespace NycCodeCamp.WP7App
 {
@@ -111,13 +110,13 @@ namespace NycCodeCamp.WP7App
 
         private void SpeakerSelected(object sender, SelectionChangedEventArgs e)
         {
-            processSelectedItem<Entities.Speaker>(sender, e, speaker =>
+            processSelectedItem<CoreEntities.Speaker>(sender, e, speaker =>
                 NavigationService.Navigate(new Uri("/Pages/Speaker.xaml?email=" + HttpUtility.UrlEncode(speaker.Email), UriKind.Relative)));
         }
 
         private void SponsorSelected(object sender, SelectionChangedEventArgs e)
         {
-            processSelectedItem<Entities.Sponsor>(sender, e, sponsor =>
+            processSelectedItem<CoreEntities.Sponsor>(sender, e, sponsor =>
             {
                 PhoneApplicationService.Current.State["SelectedSponsor"] = sponsor;
                 NavigationService.Navigate(new Uri("/Pages/Sponsor.xaml", UriKind.Relative));
@@ -126,7 +125,7 @@ namespace NycCodeCamp.WP7App
 
         private void SessionSelected(object sender, SelectionChangedEventArgs e)
         {
-            processSelectedItem<Entities.Session>(sender, e, session =>
+            processSelectedItem<CoreEntities.Session>(sender, e, session =>
                 NavigationService.Navigate(new Uri("/Pages/Session.xaml?key=" + session.Key, UriKind.Relative)));
         }
 
@@ -141,9 +140,13 @@ namespace NycCodeCamp.WP7App
             processItem(selectedItem);
         }
 
-        private void ViewDetailedMap(object sender, RoutedEventArgs e)
+        private void RoomSelected(object sender, SelectionChangedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Pages/Map.xaml", UriKind.Relative));
+            processSelectedItem<Room>(sender, e, room =>
+                NavigationService.Navigate(
+                    new Uri(string.Format("/Pages/Map.xaml?name={0}&filename={1}",
+                                          HttpUtility.UrlEncode(room.Name),
+                                          HttpUtility.UrlEncode(room.Filename)), UriKind.Relative)));
         }
     }
 }

@@ -107,7 +107,19 @@
             </controls:PivotItem>
 
             <controls:PivotItem Header="rooms" x:Name="MapPivotItem">
-                <Button Click="ViewDetailedMap" x:Name="MapButton">
+                <ListBox x:Name="Rooms" Margin="0,0,-12,0" ItemsSource="{Binding Rooms}" SelectionChanged="RoomSelected">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,10,0,10">
+                                <TextBlock Text="{Binding Name}" TextWrapping="Wrap" Style="{StaticResource PhoneTextLargeStyle}"/>
+                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="12,0,12,0" 
+                                           Style="{StaticResource PhoneTextSmallStyle}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <!--<Button Click="ViewDetailedMap" x:Name="MapButton">
                     <Button.Template>
                         <ControlTemplate>
                             <StackPanel>
@@ -116,9 +128,9 @@
                             </StackPanel>
                         </ControlTemplate>
                     </Button.Template>
-                </Button>
+                </Button>-->
             </controls:PivotItem>
-            
+
             <controls:PivotItem Header="sponsors">
                 <ListBox x:Name="Sponsors" Margin="0,0,-12,0" ItemsSource="{Binding Sponsors.Tiers}">
                     <ListBox.ItemTemplate>

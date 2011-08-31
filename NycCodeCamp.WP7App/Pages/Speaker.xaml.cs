@@ -4,13 +4,13 @@ using System.Linq;
 using System.Windows;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
-using Entities = CodeCamp.Core.Entities;
+using CoreEntities = CodeCamp.Core.Entities;
 
 namespace NycCodeCamp.WP7App.Pages
 {
     public partial class Speaker : PhoneApplicationPage
     {
-        private Entities.Speaker _speaker;
+        private CoreEntities.Speaker _speaker;
 
         public Speaker()
         {
@@ -19,7 +19,7 @@ namespace NycCodeCamp.WP7App.Pages
             Loaded += Speaker_Loaded;
         }
 
-        void Speaker_Loaded(object sender, RoutedEventArgs e)
+        private void Speaker_Loaded(object sender, RoutedEventArgs e)
         {
             _speaker = App.CodeCampService.Repository.GetSpeaker(NavigationContext.QueryString["email"]);
 

@@ -4,19 +4,19 @@ using System.Linq;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
-using Entities = CodeCamp.Core.Entities;
+using CoreEntities = CodeCamp.Core.Entities;
 
 namespace NycCodeCamp.WP7App.Pages
 {
     public partial class Sponsor : PhoneApplicationPage
     {
-        private readonly Entities.Sponsor _sponsor;
+        private readonly CoreEntities.Sponsor _sponsor;
 
         public Sponsor()
         {
             InitializeComponent();
 
-            _sponsor = PhoneApplicationService.Current.State["SelectedSponsor"] as Entities.Sponsor;
+            _sponsor = PhoneApplicationService.Current.State["SelectedSponsor"] as CoreEntities.Sponsor;
             DataContext = _sponsor;
         }
 
