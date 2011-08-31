@@ -64,32 +64,35 @@ namespace NycCodeCamp.MonoAndroidApp
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060006
-			public const int Abstract = 2131099654;
-			
-			// aapt resource value: 0x7f060008
-			public const int Bio = 2131099656;
+			// aapt resource value: 0x7f060009
+			public const int Abstract = 2131099657;
 			
 			// aapt resource value: 0x7f06000b
-			public const int Description = 2131099659;
+			public const int Bio = 2131099659;
 			
-			// aapt resource value: 0x7f060012
-			public const int Email = 2131099666;
+			// aapt resource value: 0x7f060007
+			public const int Description = 2131099655;
+			
+			// aapt resource value: 0x7f060013
+			public const int Email = 2131099667;
 			
 			// aapt resource value: 0x7f060004
 			public const int MapImage = 2131099652;
 			
-			// aapt resource value: 0x7f060010
-			public const int Overview = 2131099664;
+			// aapt resource value: 0x7f060006
+			public const int Name = 2131099654;
+			
+			// aapt resource value: 0x7f060012
+			public const int Overview = 2131099666;
 			
 			// aapt resource value: 0x7f060003
 			public const int Room = 2131099651;
 			
-			// aapt resource value: 0x7f060011
-			public const int Rooms = 2131099665;
+			// aapt resource value: 0x7f060005
+			public const int Rooms = 2131099653;
 			
-			// aapt resource value: 0x7f060007
-			public const int Sessions = 2131099655;
+			// aapt resource value: 0x7f06000a
+			public const int Sessions = 2131099658;
 			
 			// aapt resource value: 0x7f060000
 			public const int Slots = 2131099648;
@@ -97,32 +100,32 @@ namespace NycCodeCamp.MonoAndroidApp
 			// aapt resource value: 0x7f060002
 			public const int SpeakerName = 2131099650;
 			
-			// aapt resource value: 0x7f060009
-			public const int Speakers = 2131099657;
-			
-			// aapt resource value: 0x7f06000a
-			public const int SponsorName = 2131099658;
-			
 			// aapt resource value: 0x7f06000c
-			public const int Sponsors = 2131099660;
-			
-			// aapt resource value: 0x7f06000e
-			public const int TagName = 2131099662;
+			public const int Speakers = 2131099660;
 			
 			// aapt resource value: 0x7f06000d
-			public const int Tags = 2131099661;
+			public const int SponsorName = 2131099661;
 			
-			// aapt resource value: 0x7f060005
-			public const int Time = 2131099653;
+			// aapt resource value: 0x7f06000e
+			public const int Sponsors = 2131099662;
+			
+			// aapt resource value: 0x7f060010
+			public const int TagName = 2131099664;
+			
+			// aapt resource value: 0x7f06000f
+			public const int Tags = 2131099663;
+			
+			// aapt resource value: 0x7f060008
+			public const int Time = 2131099656;
 			
 			// aapt resource value: 0x7f060001
 			public const int Title = 2131099649;
 			
-			// aapt resource value: 0x7f06000f
-			public const int Update = 2131099663;
+			// aapt resource value: 0x7f060011
+			public const int Update = 2131099665;
 			
-			// aapt resource value: 0x7f060013
-			public const int Web = 2131099667;
+			// aapt resource value: 0x7f060014
+			public const int Web = 2131099668;
 			
 			private Id()
 			{
@@ -142,52 +145,58 @@ namespace NycCodeCamp.MonoAndroidApp
 			public const int OverviewSectionHeader = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int Rooms = 2130903043;
+			public const int Room = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int Session = 2130903044;
+			public const int Rooms = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int Sessions = 2130903045;
+			public const int RoomsItem = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int SessionsByTag = 2130903046;
+			public const int Session = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int SessionsByTagItem = 2130903047;
+			public const int Sessions = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int SessionsItem = 2130903048;
+			public const int SessionsByTag = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int SessionsSectionHeader = 2130903049;
+			public const int SessionsByTagItem = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int Speaker = 2130903050;
+			public const int SessionsItem = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int Speakers = 2130903051;
+			public const int SessionsSectionHeader = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int SpeakersItem = 2130903052;
+			public const int Speaker = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int Sponsor = 2130903053;
+			public const int Speakers = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int Sponsors = 2130903054;
+			public const int SpeakersItem = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int SponsorsItem = 2130903055;
+			public const int Sponsor = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int SponsorsSectionHeader = 2130903056;
+			public const int Sponsors = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int Tags = 2130903057;
+			public const int SponsorsItem = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int TagsItem = 2130903058;
+			public const int SponsorsSectionHeader = 2130903058;
+			
+			// aapt resource value: 0x7f030013
+			public const int Tags = 2130903059;
+			
+			// aapt resource value: 0x7f030014
+			public const int TagsItem = 2130903060;
 			
 			private Layout()
 			{

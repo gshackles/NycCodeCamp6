@@ -3,8 +3,8 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <ListView
-            android:id="@+id/Rooms"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+    <WebView
+        android:id="@+id/MapImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

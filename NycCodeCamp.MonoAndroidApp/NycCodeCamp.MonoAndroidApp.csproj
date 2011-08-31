@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\CampActivityBase.cs" />
+    <Compile Include="Activities\RoomActivity.cs" />
     <Compile Include="Activities\SessionsByTagActivity.cs" />
     <Compile Include="Activities\SponsorActivity.cs" />
     <Compile Include="Activities\RoomsActivity.cs" />
@@ -59,7 +60,9 @@
     <Compile Include="Activities\TagsActivity.cs" />
     <Compile Include="CodeCampApplication.cs" />
     <Compile Include="Activities\OverviewActivity.cs" />
+    <Compile Include="Entities\Room.cs" />
     <Compile Include="ListAdapters\OverviewSlotAdapter.cs" />
+    <Compile Include="ListAdapters\RoomListAdapter.cs" />
     <Compile Include="ListAdapters\SectionListAdaperBase.cs" />
     <Compile Include="ListAdapters\SessionListAdapter.cs" />
     <Compile Include="ListAdapters\SessionsByTagListAdapter.cs" />
@@ -69,7 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\Sessions.axml" />
-    <AndroidResource Include="Resources\Layout\Rooms.axml" />
+    <AndroidResource Include="Resources\Layout\Room.axml" />
     <AndroidResource Include="Resources\Layout\Speakers.axml" />
     <AndroidResource Include="Resources\Layout\Tags.axml" />
     <AndroidResource Include="Resources\Layout\Sponsors.axml" />
@@ -80,10 +83,10 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\TagsItem.axml">
-      <SubType>AndroidResource</SubType>
+      <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\SpeakersItem.axml">
-      <SubType>AndroidResource</SubType>
+      <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\SessionsSectionHeader.axml">
       <SubType>AndroidResource</SubType>
@@ -92,7 +95,7 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\SponsorsItem.axml">
-      <SubType>AndroidResource</SubType>
+      <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\SponsorsSectionHeader.axml">
       <SubType>AndroidResource</SubType>
@@ -139,7 +142,9 @@
     <AndroidAsset Include="Assets\map\gameofthrones_7.jpg" />
     <AndroidAsset Include="Assets\map\gameofthrones_8.jpg" />
     <AndroidAsset Include="Assets\map\gameofthrones_9.jpg" />
-    <Content Include="Properties\AndroidManifest.xml" />
+    <Content Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <AndroidResource Include="Resources\Menu\SpeakerOptionsMenu.xml" />
     <AndroidResource Include="Resources\Menu\SponsorOptionsMenu.xml" />
     <AndroidResource Include="Resources\Drawable-hdpi\Email.png" />
@@ -200,6 +205,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Drawable\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Layout\Rooms.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Layout\RoomsItem.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

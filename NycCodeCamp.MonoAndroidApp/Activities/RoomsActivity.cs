@@ -2,8 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Android.App;
+using Android.Content;
 using Android.OS;
-using Android.Webkit;
+using Android.Widget;
+using NycCodeCamp.MonoAndroidApp.Entities;
+using NycCodeCamp.MonoAndroidApp.ListAdapters;
 
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
@@ -16,13 +19,26 @@ namespace NycCodeCamp.MonoAndroidApp.Activities
 
             SetContentView(Resource.Layout.Rooms);
 
-            var mapImage = FindViewById<WebView>(Resource.Id.MapImage);
+            var rooms = new List<Room>
+			{
+				new Room("Lower Level", "Auditorium, Cafeteria", "map.html"),
+				new Room("Ground Level", "Student Union meeting spaces", "map.html"),
+				new Room("Second Floor", "Classroom meeting spaces", "map.html")
+			};
 
-            mapImage.LoadUrl("file:///android_asset/map.html");
-            mapImage.Settings.SetSupportZoom(true);
-            mapImage.Settings.BuiltInZoomControls = true;
-            mapImage.Settings.UseWideViewPort = true;
-            mapImage.Settings.DefaultZoom = WebSettings.ZoomDensity.Far;
+            var roomList = FindViewById<ListView>(Resource.Id.Rooms);
+            roomList.Adapter = new RoomListAdapter(this, rooms);
+            roomList.ItemClick += (sender, e) => viewRoom(rooms[e.Position]);
+        }
+
+        private void viewRoom(Room room)
+        {
+            var intent = new Intent();
+            intent.SetClass(this, typeof (RoomActivity));
+            intent.PutExtra("name", room.Name);
+            intent.PutExtra("filename", room.Filename);
+
+            StartActivity(intent);
         }
     }
 }
