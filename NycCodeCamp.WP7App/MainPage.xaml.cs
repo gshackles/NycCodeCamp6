@@ -4,12 +4,12 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
+using CodeCamp.Core.Entities;
 using CodeCamp.Core.Messaging;
 using CodeCamp.Core.Messaging.Messages;
 using Coding4Fun.Phone.Controls;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using NycCodeCamp.WP7App.Entities;
 using NycCodeCamp.WP7App.ViewModels;
 using CoreEntities = CodeCamp.Core.Entities;
 
@@ -144,9 +144,9 @@ namespace NycCodeCamp.WP7App
         {
             processSelectedItem<Room>(sender, e, room =>
                 NavigationService.Navigate(
-                    new Uri(string.Format("/Pages/Map.xaml?name={0}&filename={1}",
+                    new Uri(string.Format("/Pages/Map.xaml?name={0}&key={1}",
                                           HttpUtility.UrlEncode(room.Name),
-                                          HttpUtility.UrlEncode(room.Filename)), UriKind.Relative)));
+                                          HttpUtility.UrlEncode(room.Key)), UriKind.Relative)));
         }
     }
 }

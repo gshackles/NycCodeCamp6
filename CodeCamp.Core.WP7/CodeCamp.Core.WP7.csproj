@@ -64,6 +64,9 @@
     <Compile Include="..\CodeCamp.Core\DataAccess\StandardFileSystemHelper.cs">
       <Link>DataAccess\StandardFileSystemHelper.cs</Link>
     </Compile>
+    <Compile Include="..\CodeCamp.Core\Entities\Room.cs">
+      <Link>Entities\Room.cs</Link>
+    </Compile>
     <Compile Include="..\CodeCamp.Core\Entities\Session.cs">
       <Link>Entities\Session.cs</Link>
     </Compile>
@@ -116,7 +119,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties ProjectLinkReference="b76dd2c9-0780-462e-83ee-1310d2f8f30b" ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" />
+      <UserProperties ProjectLinkerExcludeFilter="\\?desktop(\\.*)?$;\\?silverlight(\\.*)?$;\.desktop;\.silverlight;\.xaml;^service references(\\.*)?$;\.clientconfig;^web references(\\.*)?$" ProjectLinkReference="b76dd2c9-0780-462e-83ee-1310d2f8f30b" />
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -19,7 +19,7 @@ namespace NycCodeCamp.WP7App.Pages
         private void Map_Loaded(object sender, RoutedEventArgs e)
         {
             DataContext = new MapViewModel(NavigationContext.QueryString["name"],
-                                           NavigationContext.QueryString["filename"]);
+                                           NavigationContext.QueryString["key"]);
         }
     }
 }

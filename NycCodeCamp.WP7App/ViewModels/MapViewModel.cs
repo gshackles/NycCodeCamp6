@@ -8,10 +8,10 @@ namespace NycCodeCamp.WP7App.ViewModels
 
         public string FilePath { get; set; }
 
-        public MapViewModel(string name, string filename)
+        public MapViewModel(string name, string key)
         {
             Name = name;
-            FilePath = "../Images/" + filename;
+            FilePath = "../Images/Maps/" + key + ".jpg";
         }
     }
 }

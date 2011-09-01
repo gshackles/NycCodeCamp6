@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using CodeCamp.Core.Entities;
 using CodeCamp.Core.ViewModels;
-using NycCodeCamp.WP7App.Entities;
 
 namespace NycCodeCamp.WP7App.ViewModels
 {
@@ -38,12 +37,7 @@ namespace NycCodeCamp.WP7App.ViewModels
                     .OrderBy(tag => tag)
                     .ToList();
 
-            Rooms = new List<Room>
-			{
-				new Room("Lower Level", "Auditorium, Cafeteria", "GameOfThrones.jpg"),
-				new Room("Ground Level", "Student Union meeting spaces", "GameOfThrones.jpg"),
-				new Room("Second Floor", "Classroom meeting spaces", "GameOfThrones.jpg")
-			};
+            Rooms = App.CodeCampService.Repository.GetRooms();
         }
     }
 }
