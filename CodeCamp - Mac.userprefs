@@ -2,17 +2,16 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.Workbench ActiveDocument="NycCodeCamp.MonoTouchApp/ViewControllers/RoomListViewController.cs">
     <Files>
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/RoomListViewController.cs" Line="72" Column="5" />
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/RoomViewController.cs" Line="25" Column="31" />
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/SessionViewController.xib.cs" Line="89" Column="14" />
-      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/TabController.cs" Line="71" Column="51" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/RoomListViewController.cs" Line="17" Column="3" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/RoomViewController.cs" Line="1" Column="1" />
+      <File FileName="NycCodeCamp.MonoTouchApp/ViewControllers/TabController.cs" Line="1" Column="1" />
+      <File FileName="NycCodeCamp.MonoTouchApp/Entities/Room.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="CodeCamp.Core.MonoAndroid" expanded="True" />
-          <Node name="CodeCamp.Core.MonoTouch" selected="True" />
+        <State expanded="True" selected="True">
           <Node name="NYCCodeCamp6" expanded="True">
+            <Node name="Entities" expanded="True" />
             <Node name="ViewControllers" expanded="True">
               <Node name="SessionViewController.xib" expanded="True" />
             </Node>

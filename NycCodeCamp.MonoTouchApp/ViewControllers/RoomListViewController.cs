@@ -1,38 +1,29 @@
 using System;
 using MonoTouch.UIKit;
 using System.Collections.Generic;
+using CodeCamp.Core.Entities;
 
 namespace NycCodeCamp.MonoTouchApp
 {
 	public class RoomListViewController : ListControllerBase
 	{
-		private readonly List<Room> _rooms;
-		
-		public RoomListViewController()
-		{
-			_rooms = new List<Room>
-			{
-				new Room("Lower Level", "Auditorium, Cafeteria", "GameOfThrones.jpg"),
-				new Room("Ground Level", "Student Union meeting spaces", "GameOfThrones.jpg"),
-				new Room("Second Floor", "Classroom meeting spaces", "GameOfThrones.jpg")
-			};
-		}
-		
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad ();
 			
 			Title = "Rooms";
-			TableView.Source = new RoomTableViewSource(this, _rooms);
+			
+			var rooms = AppDelegate.CodeCampService.Repository.GetRooms();
+			TableView.Source = new RoomTableViewSource(this, rooms);
 		}
 		
 		private class RoomTableViewSource : UITableViewSource
 		{
 			private readonly RoomListViewController _hostController;
-			private readonly List<Room> _rooms;
+			private readonly IList<Room> _rooms;
 			private const string ROOM_CELL = "roomCell";
 			
-			public RoomTableViewSource (RoomListViewController hostController, List<Room> rooms)
+			public RoomTableViewSource (RoomListViewController hostController, IList<Room> rooms)
 			{
 				_hostController = hostController;
 				_rooms = rooms;

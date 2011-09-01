@@ -1,6 +1,7 @@
 using System;
 using MonoTouch.UIKit;
 using System.Drawing;
+using CodeCamp.Core.Entities;
 
 namespace NycCodeCamp.MonoTouchApp
 {
@@ -22,7 +23,7 @@ namespace NycCodeCamp.MonoTouchApp
 			NavigationItem.Title = _room.Name;
 			
 			_scroller = new UIScrollView(View.Frame);
-			var roomImage = new UIImageView(UIImage.FromFile("Content/Images/" + _room.Filename));
+			var roomImage = new UIImageView(UIImage.FromFile("Content/Images/Maps/" + _room.Key + ".jpg"));
 			
 			_scroller.AddSubview(roomImage);
 			_scroller.ContentSize = roomImage.Frame.Size;
