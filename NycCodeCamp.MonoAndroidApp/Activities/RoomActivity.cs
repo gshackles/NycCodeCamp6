@@ -1,15 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Webkit;
-using Android.Widget;
 
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
@@ -26,7 +20,7 @@ namespace NycCodeCamp.MonoAndroidApp.Activities
 
             var mapImage = FindViewById<WebView>(Resource.Id.MapImage);
 
-            mapImage.LoadUrl("file:///android_asset/" + Intent.GetStringExtra("filename"));
+            mapImage.LoadUrl("file:///android_asset/" + Intent.GetStringExtra("key") + ".html");
             mapImage.Settings.SetSupportZoom(true);
             mapImage.Settings.BuiltInZoomControls = true;
             mapImage.Settings.UseWideViewPort = true;

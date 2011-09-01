@@ -5,7 +5,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Widget;
-using NycCodeCamp.MonoAndroidApp.Entities;
+using CodeCamp.Core.Entities;
 using NycCodeCamp.MonoAndroidApp.ListAdapters;
 
 namespace NycCodeCamp.MonoAndroidApp.Activities
@@ -19,13 +19,7 @@ namespace NycCodeCamp.MonoAndroidApp.Activities
 
             SetContentView(Resource.Layout.Rooms);
 
-            var rooms = new List<Room>
-			{
-				new Room("Lower Level", "Auditorium, Cafeteria", "map.html"),
-				new Room("Ground Level", "Student Union meeting spaces", "map.html"),
-				new Room("Second Floor", "Classroom meeting spaces", "map.html")
-			};
-
+            var rooms = CodeCampApplication.CodeCampService.Repository.GetRooms();
             var roomList = FindViewById<ListView>(Resource.Id.Rooms);
             roomList.Adapter = new RoomListAdapter(this, rooms);
             roomList.ItemClick += (sender, e) => viewRoom(rooms[e.Position]);
@@ -36,7 +30,7 @@ namespace NycCodeCamp.MonoAndroidApp.Activities
             var intent = new Intent();
             intent.SetClass(this, typeof (RoomActivity));
             intent.PutExtra("name", room.Name);
-            intent.PutExtra("filename", room.Filename);
+            intent.PutExtra("key", room.Key);
 
             StartActivity(intent);
         }

@@ -60,7 +60,6 @@
     <Compile Include="Activities\TagsActivity.cs" />
     <Compile Include="CodeCampApplication.cs" />
     <Compile Include="Activities\OverviewActivity.cs" />
-    <Compile Include="Entities\Room.cs" />
     <Compile Include="ListAdapters\OverviewSlotAdapter.cs" />
     <Compile Include="ListAdapters\RoomListAdapter.cs" />
     <Compile Include="ListAdapters\SectionListAdaperBase.cs" />
@@ -117,7 +116,7 @@
     <AndroidResource Include="Resources\Menu\MainOptionsMenu.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\map.html" />
+    <AndroidAsset Include="Assets\1.html" />
     <AndroidAsset Include="Assets\map\gameofthrones_0.jpg" />
     <AndroidAsset Include="Assets\map\gameofthrones_1.jpg" />
     <AndroidAsset Include="Assets\map\gameofthrones_10.jpg" />
@@ -142,6 +141,8 @@
     <AndroidAsset Include="Assets\map\gameofthrones_7.jpg" />
     <AndroidAsset Include="Assets\map\gameofthrones_8.jpg" />
     <AndroidAsset Include="Assets\map\gameofthrones_9.jpg" />
+    <AndroidAsset Include="Assets\3.html" />
+    <AndroidAsset Include="Assets\2.html" />
     <Content Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </Content>

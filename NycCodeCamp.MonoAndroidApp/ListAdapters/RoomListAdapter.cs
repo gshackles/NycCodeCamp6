@@ -4,7 +4,7 @@ using System.Linq;
 using Android.App;
 using Android.Views;
 using Android.Widget;
-using NycCodeCamp.MonoAndroidApp.Entities;
+using CodeCamp.Core.Entities;
 using Object = Java.Lang.Object;
 
 namespace NycCodeCamp.MonoAndroidApp.ListAdapters
