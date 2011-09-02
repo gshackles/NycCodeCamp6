@@ -26,8 +26,8 @@
 
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                <Canvas Width="683" Height="2000">
-                    <Image Source="{Binding FilePath}" x:Name="MapImage" />
+                <Canvas x:Name="MapCanvas">
+                    <Image Source="{Binding FilePath}" x:Name="MapImage" ImageOpened="MapImage_ImageOpened" />
                 </Canvas>
             </ScrollViewer>
         </Grid>

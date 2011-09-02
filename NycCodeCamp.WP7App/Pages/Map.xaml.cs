@@ -21,5 +21,11 @@ namespace NycCodeCamp.WP7App.Pages
             DataContext = new MapViewModel(NavigationContext.QueryString["name"],
                                            NavigationContext.QueryString["key"]);
         }
+
+        private void MapImage_ImageOpened(object sender, RoutedEventArgs e)
+        {
+            MapCanvas.Height = MapImage.ActualHeight;
+            MapCanvas.Width = MapImage.ActualWidth;
+        }
     }
 }
