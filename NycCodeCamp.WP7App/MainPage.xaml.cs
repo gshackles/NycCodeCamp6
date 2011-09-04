@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
+using CodeCamp.Core.DataAccess;
 using CodeCamp.Core.Entities;
 using CodeCamp.Core.Messaging;
 using CodeCamp.Core.Messaging.Messages;
@@ -24,13 +25,9 @@ namespace NycCodeCamp.WP7App
             InitializeComponent();
 
             subscribeToMessages();
+            App.CodeCampService = new CodeCampService("http://codecamps.gregshackles.com/v1", "sample");
 
             DataContext = new MainViewModel();
-            Loaded += MainPage_Loaded;
-        }
-
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
-        {
         }
 
         private void showWaitingDialog(string message)
@@ -144,9 +141,7 @@ namespace NycCodeCamp.WP7App
         {
             processSelectedItem<Room>(sender, e, room =>
                 NavigationService.Navigate(
-                    new Uri(string.Format("/Pages/Map.xaml?name={0}&key={1}",
-                                          HttpUtility.UrlEncode(room.Name),
-                                          HttpUtility.UrlEncode(room.Key)), UriKind.Relative)));
+                    new Uri("/Pages/Map.xaml?key=" + HttpUtility.UrlEncode(room.Key), UriKind.Relative)));
         }
     }
 }

@@ -136,12 +136,12 @@
   <ItemGroup>
     <Content Include="Application_IconImage_62x62.png" />
     <Content Include="Application_TileImage_173x173.png" />
-    <Resource Include="Images\Maps\1.jpg" />
     <Content Include="Images\Icons\appbar.feature.email.rest.png" />
     <Content Include="Images\Icons\appbar.gotoaddressbar.rest.png" />
     <Content Include="Images\Icons\appbar.refresh.rest.png" />
-    <Resource Include="Images\Maps\3.jpg" />
-    <Resource Include="Images\Maps\2.jpg" />
+    <Resource Include="Images\Maps\ground.png" />
+    <Resource Include="Images\Maps\lower.png" />
+    <Resource Include="Images\Maps\upper.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="SplashScreenImage.jpg" />
     <Resource Include="Toolkit.Content\ApplicationBar.Cancel.png" />

@@ -66,6 +66,7 @@ namespace CodeCamp.Core.DataAccess
 	                        Title = session.Element("Title").Value,
 	                        Abstract = insertNewLines(session.Element("Abstract").Value),
 							Room = session.Element("Room").Value,
+                            RoomKey = session.Element("RoomKey").Value,
 	                        Speaker = speaker,
 	                        Starts = DateTime.Parse(session.Element("StartDate").Value),
 	                        Ends = DateTime.Parse(session.Element("EndDate").Value),
@@ -175,6 +176,11 @@ namespace CodeCamp.Core.DataAccess
 		{
 			return _rooms;
 		}
+
+        public Room GetRoom(string roomKey)
+        {
+            return _rooms.FirstOrDefault(room => room.Key == roomKey);
+        }
 		
 		private string insertNewLines(string input)
 		{

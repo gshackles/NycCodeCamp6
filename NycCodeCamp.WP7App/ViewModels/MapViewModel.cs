@@ -11,7 +11,7 @@ namespace NycCodeCamp.WP7App.ViewModels
         public MapViewModel(string name, string key)
         {
             Name = name;
-            FilePath = "../Images/Maps/" + key + ".jpg";
+            FilePath = "../Images/Maps/" + key + ".png";
         }
     }
 }

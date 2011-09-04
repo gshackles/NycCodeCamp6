@@ -18,8 +18,9 @@ namespace NycCodeCamp.WP7App.Pages
 
         private void Map_Loaded(object sender, RoutedEventArgs e)
         {
-            DataContext = new MapViewModel(NavigationContext.QueryString["name"],
-                                           NavigationContext.QueryString["key"]);
+            var room = App.CodeCampService.Repository.GetRoom(NavigationContext.QueryString["key"]);
+
+            DataContext = new MapViewModel(room.Name, room.Key);
         }
 
         private void MapImage_ImageOpened(object sender, RoutedEventArgs e)

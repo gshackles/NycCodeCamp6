@@ -12,6 +12,8 @@ namespace NycCodeCamp.WP7App.Pages
 {
     public partial class Session : PhoneApplicationPage
     {
+        private CodeCamp.Core.Entities.Session _session;
+
         public Session()
         {
             InitializeComponent();
@@ -21,8 +23,8 @@ namespace NycCodeCamp.WP7App.Pages
 
         void Session_Loaded(object sender, RoutedEventArgs e)
         {
-            var session = App.CodeCampService.Repository.GetSession(NavigationContext.QueryString["key"]);
-            DataContext = session;
+            _session = App.CodeCampService.Repository.GetSession(NavigationContext.QueryString["key"]);
+            DataContext = _session;
         }
 
         private void SpeakerSelected(object sender, MouseButtonEventArgs e)
@@ -35,7 +37,8 @@ namespace NycCodeCamp.WP7App.Pages
 
         private void RoomSelected(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Pages/Map.xaml", UriKind.Relative));
+                NavigationService.Navigate(
+                    new Uri("/Pages/Map.xaml?key=" + HttpUtility.UrlEncode(_session.RoomKey), UriKind.Relative));
         }
     }
 }

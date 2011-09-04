@@ -11,7 +11,7 @@ namespace NycCodeCamp.WP7App
 {
     public partial class App : Application
     {
-        public static CodeCampService CodeCampService { get; private set; }
+        public static CodeCampService CodeCampService { get; set; }
 
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
@@ -24,9 +24,6 @@ namespace NycCodeCamp.WP7App
         /// </summary>
         public App()
         {
-            //CodeCampService = new CodeCampService("http://localhost/codecamp/v1", "sample");
-            CodeCampService = new CodeCampService("http://codecamps.gregshackles.com/v1", "sample");
-
             // Global handler for uncaught exceptions. 
             UnhandledException += Application_UnhandledException;
 
