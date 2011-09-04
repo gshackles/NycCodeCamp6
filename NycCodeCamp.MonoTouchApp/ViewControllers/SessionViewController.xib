@@ -164,6 +164,7 @@
                   <double key="NSSize">17</double>
                   <int key="NSfFlags">16</int>
                 </object>
+                <int key="IBUILineBreakMode">0</int>
                 <string key="IBUINormalTitle">Session Room</string>
                 <reference key="IBUIHighlightedTitleColor" ref="751749913"/>
                 <object class="NSColor" key="IBUINormalTitleColor">

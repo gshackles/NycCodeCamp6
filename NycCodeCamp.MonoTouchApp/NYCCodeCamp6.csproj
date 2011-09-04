@@ -11,7 +11,7 @@
     <RootNamespace>NycCodeCamp.MonoTouchApp</RootNamespace>
     <MainNibFile>MainWindow.xib</MainNibFile>
     <MtouchMinimumOS>3.0</MtouchMinimumOS>
-    <BundleDisplayName>NYC Code Camp</BundleDisplayName>
+    <BundleDisplayName>Code Camp 6</BundleDisplayName>
     <BundleIcon>Resources\Icon.png</BundleIcon>
     <BundleIconHigh>Resources\Icon@2x.png</BundleIconHigh>
     <BundleIconSpotlight>Resources\Icon-Small.png</BundleIconSpotlight>

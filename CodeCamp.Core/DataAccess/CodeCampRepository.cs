@@ -46,7 +46,7 @@ namespace CodeCamp.Core.DataAccess
 	                    select new Speaker
 	                    {
 	                        Name = speaker.Element("Name").Value,
-	                        Bio = speaker.Element("Bio").Value,
+	                        Bio = insertNewLines(speaker.Element("Bio").Value),
 	                        Website = speaker.Element("Website").Value,
 	                        Email = speaker.Element("Email").Value
 	                    }
@@ -64,7 +64,7 @@ namespace CodeCamp.Core.DataAccess
 	                    {
 	                        Key = session.Element("Key").Value,
 	                        Title = session.Element("Title").Value,
-	                        Abstract = session.Element("Abstract").Value,
+	                        Abstract = insertNewLines(session.Element("Abstract").Value),
 							Room = session.Element("Room").Value,
 	                        Speaker = speaker,
 	                        Starts = DateTime.Parse(session.Element("StartDate").Value),
@@ -98,7 +98,7 @@ namespace CodeCamp.Core.DataAccess
 						{
 							Name = sponsor.Element("Name").Value,
 							Website = sponsor.Element("Website").Value,
-							Description = sponsor.Element("Description").Value,
+							Description = insertNewLines(sponsor.Element("Description").Value),
 							Tier = sponsor.Element("Tier").Value
 						}
 					).ToList();
@@ -174,6 +174,11 @@ namespace CodeCamp.Core.DataAccess
 		public IList<Room> GetRooms()
 		{
 			return _rooms;
+		}
+		
+		private string insertNewLines(string input)
+		{
+			return input.Replace("{nl}", Environment.NewLine);
 		}
     }
 }
