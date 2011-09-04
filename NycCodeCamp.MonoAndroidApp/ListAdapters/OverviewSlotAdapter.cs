@@ -12,7 +12,7 @@ namespace NycCodeCamp.MonoAndroidApp.ListAdapters
     public class OverviewSlotAdapter : SectionListAdaperBase<CampOverviewViewModel.TimeSlot, Session>
     {
         public OverviewSlotAdapter(Activity context, IList<CampOverviewViewModel.TimeSlot> slots)
-            : base(context, slots, slot => slot.Description, slot => slot.Sessions, Resource.Layout.OverviewSectionHeader, Resource.Layout.OverviewItem)
+            : base(context, slots, slot => slot.Description, slot => slot.Sessions, Resource.Layout.OverviewItem)
         {
         }
 

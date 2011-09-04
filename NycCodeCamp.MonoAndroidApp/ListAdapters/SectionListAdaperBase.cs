@@ -11,12 +11,11 @@ namespace NycCodeCamp.MonoAndroidApp.ListAdapters
     {
         private readonly Activity _context;
         private readonly IList<object> _items;
-        private readonly int _headerResourceId, _itemResourceId;
+        private readonly int _itemResourceId;
 
-        public SectionListAdaperBase(Activity context, IList<TSection> sections, Func<TSection, string> getHeaderText, Func<TSection, IEnumerable<TListItem>> getItems, int headerResourceId, int itemResourceId)
+        public SectionListAdaperBase(Activity context, IList<TSection> sections, Func<TSection, string> getHeaderText, Func<TSection, IEnumerable<TListItem>> getItems, int itemResourceId)
         {
             _context = context;
-            _headerResourceId = headerResourceId;
             _itemResourceId = itemResourceId;
 
             _items = new List<object>();
@@ -50,7 +49,7 @@ namespace NycCodeCamp.MonoAndroidApp.ListAdapters
             // section heading
             if (item is string)
             {
-                view = _context.LayoutInflater.Inflate(_headerResourceId, null);
+                view = _context.LayoutInflater.Inflate(Resource.Layout.SectionHeader, null);
                 view.Clickable = false;
                 view.LongClickable = false;
                 view.SetOnClickListener(null);

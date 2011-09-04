@@ -6,22 +6,18 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dip"
-        android:layout_marginRight="6dip"
-        android:layout_marginTop="6dip"
-        android:layout_marginBottom="6dip"
+        style="@style/Wrapper"
         android:layout_weight="1">
         <TextView android:id="@+id/Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            style="@style/ListItemTitle" />
         <TextView android:id="@+id/Time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Title"
             android:layout_alignLeft="@id/Title"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="?android:attr/textColorSecondary" />
+            style="@style/ListItemSubtitle" />
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -31,14 +27,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="?android:attr/textColorSecondary"
+                style="@style/ListItemSubtitle"
                 android:text="Room: "/>
             <TextView android:id="@+id/Room"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="?android:attr/textColorSecondary" />
+                style="@style/ListItemSubtitle" />
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

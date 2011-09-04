@@ -10,12 +10,11 @@
             android:id="@+id/SponsorName"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="?android:attr/textColorSecondary"/>
+            style="@style/DetailTitle"/>
         <TextView
                 android:id="@+id/Description"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                style="@style/DetailText" />
     </LinearLayout>
 </ScrollView>

@@ -75,7 +75,7 @@
     <AndroidResource Include="Resources\Layout\Speakers.axml" />
     <AndroidResource Include="Resources\Layout\Tags.axml" />
     <AndroidResource Include="Resources\Layout\Sponsors.axml" />
-    <AndroidResource Include="Resources\Layout\OverviewSectionHeader.axml">
+    <AndroidResource Include="Resources\Layout\SectionHeader.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\OverviewItem.axml">
@@ -87,17 +87,11 @@
     <AndroidResource Include="Resources\Layout\SpeakersItem.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\Layout\SessionsSectionHeader.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\Layout\SessionsItem.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\SponsorsItem.axml">
       <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\Layout\SponsorsSectionHeader.axml">
-      <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +172,8 @@
     <AndroidResource Include="Resources\Drawable-hdpi\Icon.png" />
     <AndroidResource Include="Resources\Drawable-ldpi\Icon.png" />
     <AndroidResource Include="Resources\Drawable-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\Values\Colors.xml" />
+    <AndroidResource Include="Resources\Values\Styles.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\Session.axml">

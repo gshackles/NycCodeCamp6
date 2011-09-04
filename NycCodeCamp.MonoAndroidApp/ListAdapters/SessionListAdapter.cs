@@ -10,7 +10,7 @@ namespace NycCodeCamp.MonoAndroidApp.ListAdapters
     public class SessionListAdapter : SectionListAdaperBase<FullScheduleViewModel.TimeSlot, Session>
     {
         public SessionListAdapter(Activity context, IList<FullScheduleViewModel.TimeSlot> slots)
-            : base(context, slots, slot => slot.Description, slot => slot.Sessions, Resource.Layout.SessionsSectionHeader, Resource.Layout.SessionsItem)
+            : base(context, slots, slot => slot.Description, slot => slot.Sessions, Resource.Layout.SessionsItem)
         {
         }
 

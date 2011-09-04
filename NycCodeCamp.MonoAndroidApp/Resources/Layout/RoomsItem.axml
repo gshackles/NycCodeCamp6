@@ -6,21 +6,16 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dip"
-        android:layout_marginRight="6dip"
-        android:layout_marginTop="6dip"
-        android:layout_marginBottom="6dip"
-        android:layout_weight="1">
+        style="@style/Wrapper">
         <TextView android:id="@+id/Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            style="@style/ListItemTitle" />
         <TextView android:id="@+id/Description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Name"
             android:layout_alignLeft="@id/Name"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="?android:attr/textColorSecondary" />
+            style="@style/ListItemSubtitle" />
     </RelativeLayout>
 </LinearLayout>

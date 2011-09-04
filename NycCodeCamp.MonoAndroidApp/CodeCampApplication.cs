@@ -6,7 +6,7 @@ using CodeCamp.Core.DataAccess;
 
 namespace NycCodeCamp.MonoAndroidApp
 {
-    [Application(Label = "@string/ApplicationName")]
+    [Application(Theme = "@style/ApplicationTheme", Label = "@string/ApplicationName")]
     public class CodeCampApplication : Application
     {
         public static CodeCampService CodeCampService { get; set; }

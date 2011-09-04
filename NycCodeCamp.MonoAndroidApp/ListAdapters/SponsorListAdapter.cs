@@ -10,7 +10,7 @@ namespace NycCodeCamp.MonoAndroidApp.ListAdapters
     public class SponsorListAdapter : SectionListAdaperBase<SponsorListViewModel.Tier, Sponsor>
     {
         public SponsorListAdapter(Activity context, IList<SponsorListViewModel.Tier> tiers)
-            : base(context, tiers, tier => tier.Name, tier => tier.Sponsors, Resource.Layout.SponsorsSectionHeader, Resource.Layout.SponsorsItem)
+            : base(context, tiers, tier => tier.Name, tier => tier.Sponsors, Resource.Layout.SponsorsItem)
         {
         }
 
