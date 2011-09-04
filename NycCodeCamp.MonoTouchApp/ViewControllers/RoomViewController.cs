@@ -23,11 +23,11 @@ namespace NycCodeCamp.MonoTouchApp
 			NavigationItem.Title = _room.Name;
 			
 			_scroller = new UIScrollView(View.Frame);
-			var roomImage = new UIImageView(UIImage.FromFile("Content/Images/Maps/" + _room.Key + ".jpg"));
+			var roomImage = new UIImageView(UIImage.FromFile("Content/Images/Maps/" + _room.Key + ".png"));
 			
 			_scroller.AddSubview(roomImage);
 			_scroller.ContentSize = roomImage.Frame.Size;
-			_scroller.MinimumZoomScale = 1.0f;
+			_scroller.MinimumZoomScale = 0.50f;
 			_scroller.MaximumZoomScale = 3.0f;
 			_scroller.MultipleTouchEnabled = true;
 			_scroller.ViewForZoomingInScrollView = (scrollView) => roomImage;

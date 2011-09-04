@@ -88,6 +88,7 @@
     <MtouchI18n />
     <MtouchLink>Full</MtouchLink>
     <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
+    <MtouchSdkVersion>4.3</MtouchSdkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestFlight|iPhone' ">
     <DebugType>none</DebugType>
@@ -239,9 +240,9 @@
     <Content Include="Default%402x.png" />
     <Content Include="Content\Images\navigate-signs2.png" />
     <Content Include="Content\Images\navigate-signs2%402x.png" />
-    <Content Include="Content\Images\Maps\1.jpg" />
-    <Content Include="Content\Images\Maps\2.jpg" />
-    <Content Include="Content\Images\Maps\3.jpg" />
+    <Content Include="Content\Images\Maps\1.png" />
+    <Content Include="Content\Images\Maps\2.png" />
+    <Content Include="Content\Images\Maps\3.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
