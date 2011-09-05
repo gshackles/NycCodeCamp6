@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Microsoft.Phone.Controls;
@@ -17,12 +16,12 @@ namespace NycCodeCamp.WP7App.Pages
         public Session()
         {
             InitializeComponent();
-
-            Loaded += Session_Loaded;
         }
 
-        void Session_Loaded(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            base.OnNavigatedTo(e);
+
             _session = App.CodeCampService.Repository.GetSession(NavigationContext.QueryString["key"]);
             DataContext = _session;
         }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Phone.Controls;
 using NycCodeCamp.WP7App.ViewModels;
@@ -14,12 +13,12 @@ namespace NycCodeCamp.WP7App.Pages
         public SessionsByTag()
         {
             InitializeComponent();
-
-            Loaded += SessionsByTag_Loaded;
         }
 
-        void SessionsByTag_Loaded(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            base.OnNavigatedTo(e);
+
             DataContext = new SessionsByTagViewModel(NavigationContext.QueryString["tag"]);
         }
 

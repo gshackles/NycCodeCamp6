@@ -12,12 +12,12 @@ namespace NycCodeCamp.WP7App.Pages
         public Map()
         {
             InitializeComponent();
-
-            Loaded += Map_Loaded;
         }
 
-        private void Map_Loaded(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            base.OnNavigatedTo(e);
+
             var room = App.CodeCampService.Repository.GetRoom(NavigationContext.QueryString["key"]);
 
             DataContext = new MapViewModel(room.Name, room.Key);

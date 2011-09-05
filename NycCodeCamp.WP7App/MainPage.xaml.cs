@@ -4,7 +4,6 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using CodeCamp.Core.DataAccess;
 using CodeCamp.Core.Entities;
 using CodeCamp.Core.Messaging;
 using CodeCamp.Core.Messaging.Messages;
@@ -25,7 +24,6 @@ namespace NycCodeCamp.WP7App
             InitializeComponent();
 
             subscribeToMessages();
-            App.CodeCampService = new CodeCampService("http://codecamps.gregshackles.com/v1", "sample");
 
             DataContext = new MainViewModel();
         }

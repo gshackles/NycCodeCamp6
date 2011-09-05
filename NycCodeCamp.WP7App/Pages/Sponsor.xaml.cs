@@ -10,11 +10,16 @@ namespace NycCodeCamp.WP7App.Pages
 {
     public partial class Sponsor : PhoneApplicationPage
     {
-        private readonly CoreEntities.Sponsor _sponsor;
+        private CoreEntities.Sponsor _sponsor;
 
         public Sponsor()
         {
             InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
 
             _sponsor = PhoneApplicationService.Current.State["SelectedSponsor"] as CoreEntities.Sponsor;
             DataContext = _sponsor;

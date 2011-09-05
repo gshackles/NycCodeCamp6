@@ -11,7 +11,18 @@ namespace NycCodeCamp.WP7App
 {
     public partial class App : Application
     {
-        public static CodeCampService CodeCampService { get; set; }
+        private static CodeCampService _service;
+        public static CodeCampService CodeCampService { 
+            get
+            {
+                if (_service == null)
+                {
+                    _service = new CodeCampService("http://codecamps.gregshackles.com/v1", "nyccodecamp6");
+                }
+
+                return _service;
+            } 
+        }
 
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
 using CoreEntities = CodeCamp.Core.Entities;
@@ -15,12 +14,12 @@ namespace NycCodeCamp.WP7App.Pages
         public Speaker()
         {
             InitializeComponent();
-
-            Loaded += Speaker_Loaded;
         }
 
-        private void Speaker_Loaded(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
+            base.OnNavigatedTo(e);
+
             _speaker = App.CodeCampService.Repository.GetSpeaker(NavigationContext.QueryString["email"]);
 
             DataContext = _speaker;
