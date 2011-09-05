@@ -10,10 +10,10 @@ namespace NycCodeCamp.MonoTouchApp
 		private UIScrollView _scroller;
 		private readonly Room _room;
 		
-		public RoomViewController (Room room)
+		public RoomViewController (string roomKey)
 		{
 			HidesBottomBarWhenPushed = true;
-			_room = room;
+			_room = AppDelegate.CodeCampService.Repository.GetRoom(roomKey);
 		}
 		
 		public override void ViewDidLoad()

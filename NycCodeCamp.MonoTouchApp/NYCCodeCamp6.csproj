@@ -10,14 +10,13 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>NycCodeCamp.MonoTouchApp</RootNamespace>
     <MainNibFile>MainWindow.xib</MainNibFile>
-    <MtouchMinimumOS>3.0</MtouchMinimumOS>
     <BundleDisplayName>Code Camp 6</BundleDisplayName>
     <BundleIcon>Resources\Icon.png</BundleIcon>
     <BundleIconHigh>Resources\Icon@2x.png</BundleIconHigh>
     <BundleIconSpotlight>Resources\Icon-Small.png</BundleIconSpotlight>
     <BundleIconSpotlightHigh>Resources\Icon-Small@2x.png</BundleIconSpotlightHigh>
-    <BundleIdentifier>com.gregshackles.NYCCodeCamp6</BundleIdentifier>
-    <BundleVersion>1.0.0</BundleVersion>
+    <BundleIdentifier>com.gregshackles.nyccodecamp6</BundleIdentifier>
+    <BundleVersion>1.0</BundleVersion>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
@@ -37,6 +36,7 @@
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchI18n />
     <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
+    <MtouchMinimumOS>4.0</MtouchMinimumOS>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -52,6 +52,8 @@
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchI18n />
     <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
+    <MtouchLink>Full</MtouchLink>
+    <MtouchMinimumOS>4.0</MtouchMinimumOS>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -71,6 +73,8 @@
     <MtouchI18n />
     <MtouchLink>Full</MtouchLink>
     <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
+    <CodesignProvision>2AAD2EF0-498B-4B14-B54B-7240177B872A</CodesignProvision>
+    <MtouchMinimumOS>4.0</MtouchMinimumOS>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -82,13 +86,15 @@
     <MtouchDebug>False</MtouchDebug>
     <MtouchUseThumb>false</MtouchUseThumb>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer: Greg Shackles (28D6W88UZB)</CodesignKey>
+    <CodesignKey>iPhone Distribution: Gregory Shackles</CodesignKey>
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchUseLlvm>false</MtouchUseLlvm>
     <MtouchI18n />
     <MtouchLink>Full</MtouchLink>
     <AssemblyName>NycCodeCampMonoTouchApp</AssemblyName>
     <MtouchSdkVersion>4.3</MtouchSdkVersion>
+    <MtouchMinimumOS>4.0</MtouchMinimumOS>
+    <CodesignProvision>6B6C0F48-D12F-45C9-A81C-CB0D830BA677</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestFlight|iPhone' ">
     <DebugType>none</DebugType>
@@ -105,6 +111,7 @@
     <MtouchUseThumb>false</MtouchUseThumb>
     <MtouchArch>ARMv6</MtouchArch>
     <CodesignProvision>1BA0F4C2-D051-4A7B-A25F-5F804E978C9A</CodesignProvision>
+    <MtouchMinimumOS>4.0</MtouchMinimumOS>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestFlight|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -119,6 +126,7 @@
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchLink>Full</MtouchLink>
     <MtouchI18n />
+    <MtouchMinimumOS>4.0</MtouchMinimumOS>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -132,6 +140,7 @@
     <MtouchUseThumb>false</MtouchUseThumb>
     <MtouchArch>ARMv6</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchMinimumOS>3.0</MtouchMinimumOS>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -146,6 +155,7 @@
     <MtouchArch>ARMv6</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchI18n />
+    <MtouchMinimumOS>3.0</MtouchMinimumOS>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'TestFlight|AnyCPU' ">
     <DebugType>none</DebugType>
@@ -158,6 +168,7 @@
     <MtouchUseLlvm>false</MtouchUseLlvm>
     <MtouchUseThumb>false</MtouchUseThumb>
     <MtouchArch>ARMv6</MtouchArch>
+    <MtouchMinimumOS>3.0</MtouchMinimumOS>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -240,9 +251,9 @@
     <Content Include="Default%402x.png" />
     <Content Include="Content\Images\navigate-signs2.png" />
     <Content Include="Content\Images\navigate-signs2%402x.png" />
-    <Content Include="Content\Images\Maps\1.png" />
-    <Content Include="Content\Images\Maps\2.png" />
-    <Content Include="Content\Images\Maps\3.png" />
+    <Content Include="Content\Images\Maps\ground.png" />
+    <Content Include="Content\Images\Maps\lower.png" />
+    <Content Include="Content\Images\Maps\upper.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />

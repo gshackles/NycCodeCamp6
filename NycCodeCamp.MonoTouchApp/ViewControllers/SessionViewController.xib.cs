@@ -86,7 +86,7 @@ namespace NycCodeCamp.MonoTouchApp
 			SessionRoom.TouchUpInside += delegate 
 			{
 				NavigationController.PushViewController(
-					new RoomListViewController(), true);
+					new RoomViewController(_session.RoomKey), true);
 			};
 		}
 	}

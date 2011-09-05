@@ -52,7 +52,7 @@ namespace NycCodeCamp.MonoTouchApp
 			public override void RowSelected(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
 			{
 				_hostController.NavigationController.PushViewController(
-					new RoomViewController(_rooms[indexPath.Row]), true);
+					new RoomViewController(_rooms[indexPath.Row].Key), true);
 			}
 			
 			public override float GetHeightForRow(UITableView tableView, MonoTouch.Foundation.NSIndexPath indexPath)
