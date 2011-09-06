@@ -8,7 +8,7 @@ using Android.Webkit;
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
     [Activity(Label = "Room")]
-    public class RoomActivity : Activity
+    public class RoomActivity : CampActivityBase
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -16,11 +16,13 @@ namespace NycCodeCamp.MonoAndroidApp.Activities
 
             SetContentView(Resource.Layout.Room);
 
-            Title = Intent.GetStringExtra("name");
+            var room = CodeCampApplication.CodeCampService.Repository.GetRoom(Intent.GetStringExtra("key"));
+
+            Title = room.Name;
 
             var mapImage = FindViewById<WebView>(Resource.Id.MapImage);
 
-            mapImage.LoadUrl("file:///android_asset/" + Intent.GetStringExtra("key") + ".html");
+            mapImage.LoadUrl("file:///android_asset/Maps/" + room.Key + "/map.html");
             mapImage.Settings.SetSupportZoom(true);
             mapImage.Settings.BuiltInZoomControls = true;
             mapImage.Settings.UseWideViewPort = true;

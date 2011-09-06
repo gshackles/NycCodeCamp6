@@ -11,7 +11,7 @@ using CodeCamp.Core.Entities;
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
     [Activity(Label = "Speaker Details")]
-    public class SpeakerActivity : Activity
+    public class SpeakerActivity : CampActivityBase
     {
         private Speaker _speaker;
 

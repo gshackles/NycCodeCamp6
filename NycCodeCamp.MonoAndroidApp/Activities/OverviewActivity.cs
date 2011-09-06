@@ -12,10 +12,10 @@ using NycCodeCamp.MonoAndroidApp.ListAdapters;
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
     [Activity(Label = "NYC Code Camp 6", MainLauncher = true, Icon = "@drawable/icon")]
-    public class OverviewActivity : CampActivityBase
+    public class OverviewActivity : TopLevelCampActivityBase
     {
         private ListView _slots;
-        private ProgressDialog _waitingDialog = null;
+        private ProgressDialog _waitingDialog;
         private OverviewSlotAdapter _adapter;
 
         protected override void OnCreate(Bundle bundle)
@@ -23,7 +23,7 @@ namespace NycCodeCamp.MonoAndroidApp.Activities
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.Overview);
-
+            
             _slots = FindViewById<ListView>(Resource.Id.Slots);
 
             subscribeToMessages();

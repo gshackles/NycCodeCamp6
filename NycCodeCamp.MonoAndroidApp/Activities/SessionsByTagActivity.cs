@@ -10,7 +10,7 @@ using NycCodeCamp.MonoAndroidApp.ListAdapters;
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
     [Activity(Label = "Sessions By Tag")]
-    public class SessionsByTagActivity : Activity
+    public class SessionsByTagActivity : CampActivityBase
     {
         protected override void OnCreate(Bundle bundle)
         {

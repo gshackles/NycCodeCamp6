@@ -11,7 +11,7 @@ using NycCodeCamp.MonoAndroidApp.ListAdapters;
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
     [Activity(Label = "Sponsors")]
-    public class SponsorsActivity : CampActivityBase
+    public class SponsorsActivity : TopLevelCampActivityBase
     {
         private SponsorListAdapter _adapter;
 

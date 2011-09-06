@@ -11,7 +11,7 @@ using NycCodeCamp.MonoAndroidApp.ListAdapters;
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
     [Activity(Label = "Rooms")]
-    public class RoomsActivity : CampActivityBase
+    public class RoomsActivity : TopLevelCampActivityBase
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,7 +29,6 @@ namespace NycCodeCamp.MonoAndroidApp.Activities
         {
             var intent = new Intent();
             intent.SetClass(this, typeof (RoomActivity));
-            intent.PutExtra("name", room.Name);
             intent.PutExtra("key", room.Key);
 
             StartActivity(intent);

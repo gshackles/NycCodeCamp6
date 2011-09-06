@@ -10,7 +10,7 @@ using Android.Widget;
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
     [Activity(Label = "Sponsor Details")]
-    public class SponsorActivity : Activity
+    public class SponsorActivity : CampActivityBase
     {
         private string _website;
 

@@ -16,6 +16,10 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <AndroidSupportedAbis>armeabi</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <TargetFrameworkVersion>v2.1</TargetFrameworkVersion>
+    <MandroidI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\CampActivityBase.cs" />
+    <Compile Include="Activities\TopLevelCampActivityBase.cs" />
     <Compile Include="Activities\RoomActivity.cs" />
     <Compile Include="Activities\SessionsByTagActivity.cs" />
     <Compile Include="Activities\SponsorActivity.cs" />
@@ -60,6 +65,7 @@
     <Compile Include="Activities\TagsActivity.cs" />
     <Compile Include="CodeCampApplication.cs" />
     <Compile Include="Activities\OverviewActivity.cs" />
+    <Compile Include="Extensions\ViewExtensions.cs" />
     <Compile Include="ListAdapters\OverviewSlotAdapter.cs" />
     <Compile Include="ListAdapters\RoomListAdapter.cs" />
     <Compile Include="ListAdapters\SectionListAdaperBase.cs" />
@@ -110,33 +116,105 @@
     <AndroidResource Include="Resources\Menu\MainOptionsMenu.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\1.html" />
-    <AndroidAsset Include="Assets\map\gameofthrones_0.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_1.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_10.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_11.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_12.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_13.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_14.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_15.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_16.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_17.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_18.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_19.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_2.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_20.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_21.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_22.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_23.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_3.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_4.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_5.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_6.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_7.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_8.jpg" />
-    <AndroidAsset Include="Assets\map\gameofthrones_9.jpg" />
-    <AndroidAsset Include="Assets\3.html" />
-    <AndroidAsset Include="Assets\2.html" />
+    <AndroidAsset Include="Assets\Maps\ground\0.png" />
+    <AndroidAsset Include="Assets\Maps\ground\1.png" />
+    <AndroidAsset Include="Assets\Maps\ground\10.png" />
+    <AndroidAsset Include="Assets\Maps\ground\11.png" />
+    <AndroidAsset Include="Assets\Maps\ground\12.png" />
+    <AndroidAsset Include="Assets\Maps\ground\13.png" />
+    <AndroidAsset Include="Assets\Maps\ground\14.png" />
+    <AndroidAsset Include="Assets\Maps\ground\15.png" />
+    <AndroidAsset Include="Assets\Maps\ground\16.png" />
+    <AndroidAsset Include="Assets\Maps\ground\17.png" />
+    <AndroidAsset Include="Assets\Maps\ground\18.png" />
+    <AndroidAsset Include="Assets\Maps\ground\19.png" />
+    <AndroidAsset Include="Assets\Maps\ground\2.png" />
+    <AndroidAsset Include="Assets\Maps\ground\20.png" />
+    <AndroidAsset Include="Assets\Maps\ground\21.png" />
+    <AndroidAsset Include="Assets\Maps\ground\22.png" />
+    <AndroidAsset Include="Assets\Maps\ground\23.png" />
+    <AndroidAsset Include="Assets\Maps\ground\3.png" />
+    <AndroidAsset Include="Assets\Maps\ground\4.png" />
+    <AndroidAsset Include="Assets\Maps\ground\5.png" />
+    <AndroidAsset Include="Assets\Maps\ground\6.png" />
+    <AndroidAsset Include="Assets\Maps\ground\7.png" />
+    <AndroidAsset Include="Assets\Maps\ground\8.png" />
+    <AndroidAsset Include="Assets\Maps\ground\9.png" />
+    <AndroidAsset Include="Assets\Maps\ground\map.html" />
+    <AndroidAsset Include="Assets\Maps\lower\0.png" />
+    <AndroidAsset Include="Assets\Maps\lower\1.png" />
+    <AndroidAsset Include="Assets\Maps\lower\10.png" />
+    <AndroidAsset Include="Assets\Maps\lower\11.png" />
+    <AndroidAsset Include="Assets\Maps\lower\12.png" />
+    <AndroidAsset Include="Assets\Maps\lower\13.png" />
+    <AndroidAsset Include="Assets\Maps\lower\14.png" />
+    <AndroidAsset Include="Assets\Maps\lower\15.png" />
+    <AndroidAsset Include="Assets\Maps\lower\16.png" />
+    <AndroidAsset Include="Assets\Maps\lower\17.png" />
+    <AndroidAsset Include="Assets\Maps\lower\18.png" />
+    <AndroidAsset Include="Assets\Maps\lower\19.png" />
+    <AndroidAsset Include="Assets\Maps\lower\2.png" />
+    <AndroidAsset Include="Assets\Maps\lower\20.png" />
+    <AndroidAsset Include="Assets\Maps\lower\21.png" />
+    <AndroidAsset Include="Assets\Maps\lower\22.png" />
+    <AndroidAsset Include="Assets\Maps\lower\23.png" />
+    <AndroidAsset Include="Assets\Maps\lower\24.png" />
+    <AndroidAsset Include="Assets\Maps\lower\25.png" />
+    <AndroidAsset Include="Assets\Maps\lower\26.png" />
+    <AndroidAsset Include="Assets\Maps\lower\27.png" />
+    <AndroidAsset Include="Assets\Maps\lower\28.png" />
+    <AndroidAsset Include="Assets\Maps\lower\29.png" />
+    <AndroidAsset Include="Assets\Maps\lower\3.png" />
+    <AndroidAsset Include="Assets\Maps\lower\30.png" />
+    <AndroidAsset Include="Assets\Maps\lower\31.png" />
+    <AndroidAsset Include="Assets\Maps\lower\4.png" />
+    <AndroidAsset Include="Assets\Maps\lower\5.png" />
+    <AndroidAsset Include="Assets\Maps\lower\6.png" />
+    <AndroidAsset Include="Assets\Maps\lower\7.png" />
+    <AndroidAsset Include="Assets\Maps\lower\8.png" />
+    <AndroidAsset Include="Assets\Maps\lower\9.png" />
+    <AndroidAsset Include="Assets\Maps\lower\map.html" />
+    <AndroidAsset Include="Assets\Maps\upper\0.png" />
+    <AndroidAsset Include="Assets\Maps\upper\1.png" />
+    <AndroidAsset Include="Assets\Maps\upper\10.png" />
+    <AndroidAsset Include="Assets\Maps\upper\11.png" />
+    <AndroidAsset Include="Assets\Maps\upper\12.png" />
+    <AndroidAsset Include="Assets\Maps\upper\13.png" />
+    <AndroidAsset Include="Assets\Maps\upper\14.png" />
+    <AndroidAsset Include="Assets\Maps\upper\15.png" />
+    <AndroidAsset Include="Assets\Maps\upper\16.png" />
+    <AndroidAsset Include="Assets\Maps\upper\17.png" />
+    <AndroidAsset Include="Assets\Maps\upper\18.png" />
+    <AndroidAsset Include="Assets\Maps\upper\19.png" />
+    <AndroidAsset Include="Assets\Maps\upper\2.png" />
+    <AndroidAsset Include="Assets\Maps\upper\20.png" />
+    <AndroidAsset Include="Assets\Maps\upper\21.png" />
+    <AndroidAsset Include="Assets\Maps\upper\22.png" />
+    <AndroidAsset Include="Assets\Maps\upper\23.png" />
+    <AndroidAsset Include="Assets\Maps\upper\24.png" />
+    <AndroidAsset Include="Assets\Maps\upper\25.png" />
+    <AndroidAsset Include="Assets\Maps\upper\26.png" />
+    <AndroidAsset Include="Assets\Maps\upper\27.png" />
+    <AndroidAsset Include="Assets\Maps\upper\28.png" />
+    <AndroidAsset Include="Assets\Maps\upper\29.png" />
+    <AndroidAsset Include="Assets\Maps\upper\3.png" />
+    <AndroidAsset Include="Assets\Maps\upper\30.png" />
+    <AndroidAsset Include="Assets\Maps\upper\31.png" />
+    <AndroidAsset Include="Assets\Maps\upper\32.png" />
+    <AndroidAsset Include="Assets\Maps\upper\33.png" />
+    <AndroidAsset Include="Assets\Maps\upper\34.png" />
+    <AndroidAsset Include="Assets\Maps\upper\35.png" />
+    <AndroidAsset Include="Assets\Maps\upper\36.png" />
+    <AndroidAsset Include="Assets\Maps\upper\37.png" />
+    <AndroidAsset Include="Assets\Maps\upper\38.png" />
+    <AndroidAsset Include="Assets\Maps\upper\39.png" />
+    <AndroidAsset Include="Assets\Maps\upper\4.png" />
+    <AndroidAsset Include="Assets\Maps\upper\5.png" />
+    <AndroidAsset Include="Assets\Maps\upper\6.png" />
+    <AndroidAsset Include="Assets\Maps\upper\7.png" />
+    <AndroidAsset Include="Assets\Maps\upper\8.png" />
+    <AndroidAsset Include="Assets\Maps\upper\9.png" />
+    <AndroidAsset Include="Assets\Maps\upper\map.html" />
     <Content Include="Properties\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -174,6 +252,11 @@
     <AndroidResource Include="Resources\Drawable-mdpi\Icon.png" />
     <AndroidResource Include="Resources\Values\Colors.xml" />
     <AndroidResource Include="Resources\Values\Styles.xml" />
+    <AndroidResource Include="Resources\Drawable\ListSelectorFocusedPressed.xml" />
+    <AndroidResource Include="Resources\Drawable\ListSelector.xml" />
+    <AndroidResource Include="Resources\Drawable\splash.png" />
+    <AndroidResource Include="Resources\Drawable\WindowBackground.xml" />
+    <AndroidResource Include="Resources\Drawable-land\splash.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\Session.axml">
@@ -200,9 +283,7 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Drawable\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\Rooms.axml">
       <SubType>AndroidResource</SubType>
@@ -210,7 +291,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\RoomsItem.axml">
-      <SubType>AndroidResource</SubType>
+      <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />

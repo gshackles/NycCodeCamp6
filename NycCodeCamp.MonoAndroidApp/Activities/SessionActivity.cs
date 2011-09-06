@@ -4,13 +4,13 @@ using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Util;
 using Android.Widget;
+using NycCodeCamp.MonoAndroidApp.Extensions;
 
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
     [Activity(Label = "Session Details")]
-    public class SessionActivity : Activity
+    public class SessionActivity : CampActivityBase
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -19,10 +19,7 @@ namespace NycCodeCamp.MonoAndroidApp.Activities
             SetContentView(Resource.Layout.Session);
 
             string sessionKey = Intent.GetStringExtra("key");
-            Log.Debug("SessionActivity", sessionKey);
             var session = CodeCampApplication.CodeCampService.Repository.GetSession(sessionKey);
-
-            Log.Debug("SessionActivity", (session == null).ToString());
 
             FindViewById<TextView>(Resource.Id.Title).Text = session.Title;
             FindViewById<TextView>(Resource.Id.Time).Text = string.Format("{0} - {1}",
@@ -30,13 +27,18 @@ namespace NycCodeCamp.MonoAndroidApp.Activities
                                                                           session.Ends.ToLocalTime().ToShortTimeString());
             FindViewById<TextView>(Resource.Id.Abstract).Text = session.Abstract;
             var room = FindViewById<TextView>(Resource.Id.Room);
-            room.Text = session.Room;
+            room.Text = "Room: " + session.Room;
             room.Click += delegate
                               {
-                                  StartActivity(typeof(RoomsActivity));
+                                  var intent = new Intent();
+                                  intent.SetClass(this, typeof (RoomActivity));
+                                  intent.PutExtra("key", session.RoomKey);
+
+                                  StartActivity(intent);
                               };
 
             var speakerName = FindViewById<TextView>(Resource.Id.SpeakerName);
+            speakerName.ShowIf(!string.IsNullOrEmpty(session.Speaker.Name));
             speakerName.Text = session.Speaker.Name;
             speakerName.Click += delegate
                                      {

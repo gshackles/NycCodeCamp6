@@ -9,7 +9,7 @@ using Android.Widget;
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
     [Activity(Label = "Tags")]
-    public class TagsActivity : CampActivityBase
+    public class TagsActivity : TopLevelCampActivityBase
     {
         private ListView _tagList;
         private IList<string> _tags; 

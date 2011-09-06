@@ -11,7 +11,7 @@ using NycCodeCamp.MonoAndroidApp.ListAdapters;
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
     [Activity(Label = "Sessions")]
-    public class SessionsActivity : CampActivityBase
+    public class SessionsActivity : TopLevelCampActivityBase
     {
         private SessionListAdapter _adapter;
 

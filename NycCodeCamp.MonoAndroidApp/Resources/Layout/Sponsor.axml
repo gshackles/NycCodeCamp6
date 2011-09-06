@@ -6,15 +6,21 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
-        <TextView
-            android:id="@+id/SponsorName"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            style="@style/DetailTitle"/>
-        <TextView
-                android:id="@+id/Description"
+            android:layout_height="fill_parent"
+            style="@style/Wrapper">
+            <TextView
+                android:id="@+id/SponsorName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                style="@style/DetailText" />
+                style="@style/DetailTitle"/>
+            <TextView
+                    android:id="@+id/Description"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/DetailText" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

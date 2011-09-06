@@ -10,7 +10,7 @@ using CodeCamp.Core.Entities;
 namespace NycCodeCamp.MonoAndroidApp.Activities
 {
     [Activity(Label = "Speakers")]
-    public class SpeakersActivity : CampActivityBase
+    public class SpeakersActivity : TopLevelCampActivityBase
     {
         private ListView _speakerList;
         private IList<Speaker> _speakers; 
