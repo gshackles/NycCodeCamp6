@@ -28,7 +28,7 @@ namespace NycCodeCamp.MonoAndroidApp.Activities
 
             subscribeToMessages();
 
-            CodeCampApplication.CodeCampService = new CodeCampService("http://codecamps.gregshackles.com/v1", "sample");
+            CodeCampApplication.CodeCampService = new CodeCampService("http://codecamps.gregshackles.com/v1", "nyccodecamp6");
 
             reloadData();
 
